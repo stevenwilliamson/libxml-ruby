@@ -19,43 +19,157 @@
 
 </div>
 <div class="content">
-    <h2 id='welcome_to_libxml_ruby'>Welcome to LibXml Ruby</h2>
+    <h1 id='libxml_ruby'>LibXML Ruby</h1>
 
-<p>The <span style='color: red;'>Libxml-Ruby</span> project provides Ruby language bindings for the <a href='http://xmlsoft.org'>GNOME Libxml2 XML toolkit</a>. It is free software, released under the <a href='license.xml'>MIT License</a>.</p>
+<h2 id='overview'>Overview</h2>
 
-<p>Libxml-ruby&#8217;s primary advantage over REXML is performance - if speed is your need, these are good libraries to consider, as demonstrated by the informal benchmark below.</p>
-<table border='1' style='border: 1px solid red; margin: 30px;'>
-    <tr><td colspan='3'><b>Speed Comparison libxml vs. rexml</b></td></tr>
-    <tr><th> in seconds    </th><th> libxml   </th><th> rexml    </th></tr>
-    <tr><td> opening       </td><td> 0.003954 </td><td> 0.104750 </td></tr>
-    <tr><td> attribute_add </td><td> 0.001895 </td><td> 0.011114 </td></tr>
-    <tr><td> subelems      </td><td> 0.000585 </td><td> 0.004729 </td></tr>
-    <tr><td> xpath         </td><td> 0.013269 </td><td> 2.981499 </td></tr>
-</table>
-<h2 id='installation'>Installation</h2>
+<p>The libxml gem provides Ruby language bindings for GNOME&#8217;s Libxml2 XML toolkit. It is free software, released under the MIT License.</p>
 
-<p>Installation is very simple - just issue the appropriate command, e.g:</p>
+<p>We think libxml-ruby is the best XML library for Ruby because:</p>
 
-<pre><code>  gem install -r libxml-ruby</code></pre>
+<ul>
+<li>Speed - Its much faster than REXML and Hpricot</li>
 
-<p>Note that depending on your setup you may need to run this as root:</p>
+<li>Features - It provides an amazing number of featues</li>
 
-<pre><code>  su -c &#39;gem install -r libxml-ruby&#39;</code></pre>
+<li>Conformance - It passes all 1800+ tests from the OASIS XML Tests Suite</li>
+</ul>
 
-<p>During installation Gems should build and install the extension to the correct location.</p>
+<h2 id='requirements'>Requirements</h2>
 
-<h2 id='windows_support'>Windows Support</h2>
+<p>libxml-ruby requires Ruby 1.8.4 or higher. It is dependent on the following libraries to function properly:</p>
 
-<p>libxml-ruby comes with prebuilt Windows binaries for both Ruby 1.8 and 1.9.</p>
+<ul>
+<li>libm (math routines: very standard)</li>
 
-<h2 id='prerequisites'>Prerequisites</h2>
+<li>libz (zlib)</li>
 
-<p>libxml requires a few other libraries to be installed in order to build and function properly.</p>
+<li>libiconv</li>
 
-<pre><code>  * libm      (math routines: very standard)
-  * libz      (zlib)
-  * libiconv
-  * libxml2</code></pre>
+<li>libxml2</li>
+</ul>
+
+<p>If you are running Linux or Unix you&#8217;ll need a C compiler so the extension can be compiled when it is installed. If you are running Windows, then install the Windows specific RubyGem which includes an already built extension.</p>
+
+<h2 id='installation'>INSTALLATION</h2>
+
+<p>The easiest way to install libxml-ruby is via Ruby Gems. To install:</p>
+<tt>gem install libxml-ruby</tt>
+<p>If you are running Windows, make sure to install the Win32 RubyGem which includes prebuilt extensions for Ruby 1.8, 1.9 and 2.0 preview. These extensions are built with MinGW32 against libxml2 version 2.9.0, iconv version 1.13 and zlib version 1.2.5. Note these binaries are available in the lib\libs directory. To use them, put them someplace on your path.</p>
+
+<p>The gem also includes a Microsoft VC++ 2012 solution (useful for debugging).</p>
+
+<p>libxml-ruby&#8217;s source codes lives on Github at <a href='https://github.com/xml4r/libxml-ruby'>https://github.com/xml4r/libxml-ruby</a>.</p>
+
+<h2 id='getting_started'>Getting Started</h2>
+
+<p>Using libxml is easy. First decide what parser you want to use:</p>
+
+<ul>
+<li>Generally you&#8217;ll want to use the LibXML::XML::Parser which provides a tree based API.</li>
+
+<li>For larger documents that don&#8217;t fit into memory, or if you prefer an input based API, use the LibXML::XML::Reader.</li>
+
+<li>To parse HTML files use LibXML::XML::HTMLParser.</li>
+
+<li>If you are masochistic, then use the LibXML::XML::SaxParser, which provides a callback API.</li>
+</ul>
+
+<p>Once you have chosen a parser, choose a datasource. Libxml can parse files, strings, URIs and IO streams. For each data source you can specify an LibXML::XML::Encoding, a base uri and various parser options. For more information, refer the LibXML::XML::Parser.document, LibXML::XML::Parser.file, LibXML::XML::Parser.io or LibXML:::XML::Parser.string methods (the same methods are defined on all four parser classes).</p>
+
+<h2 id='advanced_functionality'>Advanced Functionality</h2>
+
+<p>Beyond the basics of parsing and processing XML and HTML documents, libxml provides a wealth of additional functionality.</p>
+
+<p>Most commonly, you&#8217;ll want to use its LibXML::XML::XPath support, which makes it easy to find data inside a XML document. Although not as popular, LibXML::XML::XPointer provides another API for finding data inside an XML document.</p>
+
+<p>Often times you&#8217;ll need to validate data before processing it. For example, if you accept user generated content submitted over the Web, you&#8217;ll want to verify that it does not contain malicious code such as embedded scripts. This can be done using libxml&#8217;s powerful set of validators:</p>
+
+<ul>
+<li>DTDs (LibXML::XML::Dtd)</li>
+
+<li>Relax Schemas (LibXML::XML::RelaxNG)</li>
+
+<li>XML Schema (LibXML::XML::Schema)</li>
+</ul>
+
+<p>Finally, if you&#8217;d like to use XSL Transformations to process data, then install the libxslt gem which is available at <a href='https://github.com/xml4r/libxslt-ruby'>https://github.com/xml4r/libxslt-ruby</a>.</p>
+
+<h2 id='usage'>Usage</h2>
+
+<p>For information about using libxml-ruby please refer to its documentation at <a href='http://xml4r.github.com/libxml-ruby/rdoc/index.html'>http://xml4r.github.com/libxml-ruby/rdoc/index.html</a>. Some tutorials are also available at <a href='https://github.com/xml4r/libxml-ruby/wiki'>https://github.com/xml4r/libxml-ruby/wiki</a>.</p>
+
+<p>All libxml classes are in the LibXML::XML module. The easiest way to use libxml is to require &#8216;xml&#8217;. This will mixin the LibXML module into the global namespace, allowing you to write code like this:</p>
+
+<p>require &#8216;xml&#8217; document # XML::Document.new</p>
+
+<p>However, when creating an application or library you plan to redistribute, it is best to not add the LibXML module to the global namespace, in which case you can either write your code like this:</p>
+
+<p>require &#8216;libxml&#8217; document # LibXML::XML::Document.new</p>
+
+<p>Or you can utilize a namespace for your own work and include LibXML into it. For example:</p>
+
+<p>require &#8216;libxml&#8217;</p>
+
+<p>module MyApplication include LibXML</p>
+
+<pre><code>class MyClass
+  def some_method
+    document # XML::Document.new
+  end
+end</code></pre>
+
+<p>end</p>
+
+<p>For simplicity&#8217;s sake, the documentation uses the xml module in its examples.</p>
+
+<h2 id='memory_management'>Memory Management</h2>
+
+<p>libxml-ruby automatically manages memory associated with the underlying libxml2 library. There is however one corner case that your code must handle. If a node is imported into a document, but not added to the document, a segmentation fault may occur on program termination.</p>
+
+<p># Do NOT do this require &#8216;xml&#8217; doc1 # XML::Document.string(&#8220;test1&#8221;) doc2 # XML::Document.string(&#8220;test2&#8221;) node # doc2.import(doc1.root)</p>
+
+<p>If doc2 is freed before node2 a segmentatin fault will occur since node2 references the document. To avoid this, simply make sure to add the node to the document:</p>
+
+<p># DO this instead doc1 # XML::Document.string(&#8220;test1&#8221;) doc2 # XML::Document.string(&#8220;test2&#8221;) doc2.root &#171;&#160;doc2.import(doc1.root)</p>
+
+<p>Alternatively, you can call node2.remove! to disassociate node2 from doc2.</p>
+
+<h2 id='threading'>Threading</h2>
+
+<p>libxml-ruby fully supports native, background Ruby threads. This of course only applies to Ruby 1.9.x and higher since earlier versions of Ruby do not support native threads.</p>
+
+<h2 id='performance'>Performance</h2>
+
+<p>In addition to being feature rich and conformation, the main reason people use libxml-ruby is for performance. Here are the results of a couple simple benchmarks recently blogged about on the Web (you can find them in the benchmark directory of the libxml distribution).</p>
+
+<p>From <a href='http://depixelate.com/2008/4/23/ruby-xml-parsing-benchmarks'>http://depixelate.com/2008/4/23/ruby-xml-parsing-benchmarks</a>.</p>
+
+<pre><code>           user     system      total        real</code></pre>
+
+<p>libxml 0.032000 0.000000 0.032000 ( 0.031000) Hpricot 0.640000 0.031000 0.671000 ( 0.890000) REXML 1.813000 0.047000 1.860000 ( 2.031000)</p>
+
+<p>From <a href='https://svn.concord.org/svn/projects/trunk/common/ruby/xml_benchmarks/'>https://svn.concord.org/svn/projects/trunk/common/ruby/xml_benchmarks/</a></p>
+
+<pre><code>           user     system      total        real</code></pre>
+
+<p>libxml 0.641000 0.031000 0.672000 ( 0.672000) hpricot 5.359000 0.062000 5.421000 ( 5.516000) rexml 22.859000 0.047000 22.906000 ( 23.203000)</p>
+
+<h2 id='documentation'>Documentation</h2>
+
+<p>Documentation is available via rdoc, and is installed automatically with the gem.</p>
+
+<p>libxml-ruby&#8217;s online documentation is generated using Hanna, which is a development gem dependency.</p>
+
+<p>Note that older versions of Rdoc, which ship with Ruby 1.8.x, will report a number of errors. To avoid them, install Rdoc 2.1 or higher. Once you have installed the gem, you&#8217;ll have to disable the version of Rdoc that Ruby 1.8.x includes. An easy way to do that is rename the directory ruby/lib/ruby/1.8/rdoc to ruby/lib/ruby/1.8/rdoc_old.</p>
+
+<h2 id='support'>Support</h2>
+
+<p>If you have any questions about using libxml-ruby, please report them to Git Hub at <a href='https://github.com/xml4r/libxml-ruby/issues'>https://github.com/xml4r/libxml-ruby/issues</a></p>
+
+<h2 id='license'>License</h2>
+
+<p>See LICENSE for license information.</p>
 </div>
 <div class="sidebar">
     <strong>Navigation</strong><br/>
