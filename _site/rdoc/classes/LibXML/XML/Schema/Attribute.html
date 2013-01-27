@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>LibXML::XML::Schema::Attribute</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../../../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>
+          <span class='type'>class</span>
+          LibXML::XML::Schema::Attribute
+        </h1>
+        <ol class='paths'>
+          <li>
+            <a target="docwin" href="../../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
+          </li>
+          <li class='other'>
+            <a target="docwin" href="../../../../files/lib/libxml/schema/attribute_rb.html">lib/libxml/schema/attribute.rb</a>
+          </li>
+          <li>
+            <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
+          </li>
+        </ol>
+        <div class='parent'>
+          Parent:
+          <strong><a target="docwin" href="../Schema.html">Schema</a></strong>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'></div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>Public Instance</h3>
+            <ol>
+              <li><a target="docwin" href="#method-i-default">default</a></li>
+              <li><a target="docwin" href="#method-i-name">name</a></li>
+              <li><a target="docwin" href="#method-i-namespace">namespace</a></li>
+              <li><a target="docwin" href="#method-i-node">node</a></li>
+              <li><a target="docwin" href="#method-i-occurs">occurs</a></li>
+              <li><a target="docwin" href="#method-i-required-3F">required?</a></li>
+              <li><a target="docwin" href="#method-i-type">type</a></li>
+              <li><a target="docwin" href="#method-i-value">value</a></li>
+            </ol>
+          </div>
+          <div id='context'>
+          </div>
+          <div id='section'>
+            <div id='constants-list'>
+              <h2>Constants</h2>
+              <div class='name-list'>
+                <table summary='Constants'>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>OPTIONAL</td>
+                    <td>=</td>
+                    <td class='context-item-value'>2</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>REQUIRED</td>
+                    <td>=</td>
+                    <td class='context-item-value'>1</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id='methods'>
+              <h2>Public Instance methods</h2>
+              <div class='method public-instance' id='method-method-i-default'>
+                <a name='method-i-default'></a>
+                <div class='synopsis'>
+                  <span class='name'>default</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-default-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-default-source'><span class="ruby-comment"># File lib/libxml/schema/attribute.rb, line 8</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">default</span>&#x000A;  <span class="ruby-identifier">node</span>[<span class="ruby-string">'default'</span>]&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-name'>
+                <a name='method-i-name'></a>
+                <div class='synopsis'>
+                  <span class='name'>name</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-name-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-name-source'>static VALUE rxml_schema_attribute_name(VALUE self)&#x000A;{&#x000A;  xmlSchemaAttributeUsePtr attr;&#x000A;  const xmlChar *name;&#x000A;&#x000A;  Data_Get_Struct(self, xmlSchemaAttributeUse, attr);&#x000A;&#x000A;  if (attr == NULL)&#x000A;    return Qnil;&#x000A;&#x000A;  if (attr-&gt;type == XML_SCHEMA_EXTRA_ATTR_USE_PROHIB) {&#x000A;      name = ((xmlSchemaAttributeUseProhibPtr) attr)-&gt;name;&#x000A;  } else if (attr-&gt;type == XML_SCHEMA_EXTRA_QNAMEREF) {&#x000A;      name = ((xmlSchemaQNameRefPtr) attr)-&gt;name;&#x000A;  } else {&#x000A;      xmlSchemaAttributePtr attrDecl = ((xmlSchemaAttributeUsePtr) attr)-&gt;attrDecl;&#x000A;      name = attrDecl-&gt;name;&#x000A;  }&#x000A;&#x000A;  QNIL_OR_STRING(name)&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-namespace'>
+                <a name='method-i-namespace'></a>
+                <div class='synopsis'>
+                  <span class='name'>namespace</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-namespace-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-namespace-source'>static VALUE rxml_schema_attribute_namespace(VALUE self)&#x000A;{&#x000A;  xmlSchemaAttributeUsePtr attr;&#x000A;  const xmlChar *tns;&#x000A;&#x000A;  Data_Get_Struct(self, xmlSchemaAttributeUse, attr);&#x000A;&#x000A;  if (attr == NULL)&#x000A;    return Qnil;&#x000A;&#x000A;  if (attr-&gt;type == XML_SCHEMA_EXTRA_ATTR_USE_PROHIB) {&#x000A;      tns = ((xmlSchemaAttributeUseProhibPtr) attr)-&gt;targetNamespace;&#x000A;  } else if (attr-&gt;type == XML_SCHEMA_EXTRA_QNAMEREF) {&#x000A;      tns = ((xmlSchemaQNameRefPtr) attr)-&gt;targetNamespace;&#x000A;  } else {&#x000A;      tns = ((xmlSchemaAttributePtr) ((xmlSchemaAttributeUsePtr) (attr))-&gt;attrDecl)-&gt;targetNamespace;&#x000A;  }&#x000A;&#x000A;  QNIL_OR_STRING(tns)&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-node'>
+                <a name='method-i-node'></a>
+                <div class='synopsis'>
+                  <span class='name'>node</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-node-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-node-source'>static VALUE rxml_schema_attribute_node(VALUE self)&#x000A;{&#x000A;  xmlSchemaAttributeUsePtr attr;&#x000A;&#x000A;  Data_Get_Struct(self, xmlSchemaAttributeUse, attr);&#x000A;&#x000A;  return rxml_node_wrap(attr-&gt;node);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-occurs'>
+                <a name='method-i-occurs'></a>
+                <div class='synopsis'>
+                  <span class='name'>occurs</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-occurs-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-occurs-source'>static VALUE rxml_schema_attribute_occurs(VALUE self)&#x000A;{&#x000A;  xmlSchemaAttributeUsePtr attr;&#x000A;&#x000A;  Data_Get_Struct(self, xmlSchemaAttributeUse, attr);&#x000A;&#x000A;  return INT2NUM(attr-&gt;occurs);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-required-3F'>
+                <a name='method-i-required-3F'></a>
+                <div class='synopsis'>
+                  <span class='name'>required?</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-required-3F-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-required-3F-source'><span class="ruby-comment"># File lib/libxml/schema/attribute.rb, line 12</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">required?</span>&#x000A;  <span class="ruby-identifier">occurs</span> <span class="ruby-operator">==</span> <span class="ruby-constant">REQUIRED</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-type'>
+                <a name='method-i-type'></a>
+                <div class='synopsis'>
+                  <span class='name'>type</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-type-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-type-source'>static VALUE rxml_schema_attribute_type(VALUE self)&#x000A;{&#x000A;  xmlSchemaAttributeUsePtr attr;&#x000A;  xmlSchemaTypePtr xtype;&#x000A;&#x000A;  Data_Get_Struct(self, xmlSchemaAttributeUse, attr);&#x000A;&#x000A;  xtype = attr-&gt;attrDecl-&gt;subtypes;&#x000A;&#x000A;  return rxml_wrap_schema_type((xmlSchemaTypePtr) xtype);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-value'>
+                <a name='method-i-value'></a>
+                <div class='synopsis'>
+                  <span class='name'>value</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-value-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-value-source'>static VALUE rxml_schema_attribute_value(VALUE self)&#x000A;{&#x000A;  xmlSchemaAttributeUsePtr attr;&#x000A;&#x000A;  Data_Get_Struct(self, xmlSchemaAttributeUse, attr);&#x000A;&#x000A;  QNIL_OR_STRING(attr-&gt;defValue)&#x000A;}</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

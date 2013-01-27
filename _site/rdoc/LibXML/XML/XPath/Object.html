@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF8" http-equiv="Content-Type">
+
+<title>class LibXML::XML::XPath::Object - LibXML</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>ext/libxml/libxml.c
+    <li>lib/libxml/xpath_object.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../../../Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-debug">#debug</a>
+    
+    <li><a href="#method-i-each">#each</a>
+    
+    <li><a href="#method-i-empty-3F">#empty?</a>
+    
+    <li><a href="#method-i-first">#first</a>
+    
+    <li><a href="#method-i-last">#last</a>
+    
+    <li><a href="#method-i-length">#length</a>
+    
+    <li><a href="#method-i-set">#set</a>
+    
+    <li><a href="#method-i-size">#size</a>
+    
+    <li><a href="#method-i-string">#string</a>
+    
+    <li><a href="#method-i-to_a">#to_a</a>
+    
+    <li><a href="#method-i-xpath_type">#xpath_type</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../HISTORY.html">HISTORY</a>
+  
+    <li class="file"><a href="../../../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../LibXML.html">LibXML</a>
+  
+    <li><a href="../../../LibXML/XML.html">LibXML::XML</a>
+  
+    <li><a href="../../../LibXML/XML/Attr.html">LibXML::XML::Attr</a>
+  
+    <li><a href="../../../LibXML/XML/AttrDecl.html">LibXML::XML::AttrDecl</a>
+  
+    <li><a href="../../../LibXML/XML/Attributes.html">LibXML::XML::Attributes</a>
+  
+    <li><a href="../../../LibXML/XML/Document.html">LibXML::XML::Document</a>
+  
+    <li><a href="../../../LibXML/XML/Dtd.html">LibXML::XML::Dtd</a>
+  
+    <li><a href="../../../LibXML/XML/Encoding.html">LibXML::XML::Encoding</a>
+  
+    <li><a href="../../../LibXML/XML/Error.html">LibXML::XML::Error</a>
+  
+    <li><a href="../../../LibXML/XML/HTMLParser.html">LibXML::XML::HTMLParser</a>
+  
+    <li><a href="../../../LibXML/XML/HTMLParser/Context.html">LibXML::XML::HTMLParser::Context</a>
+  
+    <li><a href="../../../LibXML/XML/HTMLParser/Options.html">LibXML::XML::HTMLParser::Options</a>
+  
+    <li><a href="../../../LibXML/XML/InputCallbacks.html">LibXML::XML::InputCallbacks</a>
+  
+    <li><a href="../../../LibXML/XML/Namespace.html">LibXML::XML::Namespace</a>
+  
+    <li><a href="../../../LibXML/XML/Namespaces.html">LibXML::XML::Namespaces</a>
+  
+    <li><a href="../../../LibXML/XML/Node.html">LibXML::XML::Node</a>
+  
+    <li><a href="../../../LibXML/XML/Parser.html">LibXML::XML::Parser</a>
+  
+    <li><a href="../../../LibXML/XML/Parser/Context.html">LibXML::XML::Parser::Context</a>
+  
+    <li><a href="../../../LibXML/XML/Parser/Options.html">LibXML::XML::Parser::Options</a>
+  
+    <li><a href="../../../LibXML/XML/Reader.html">LibXML::XML::Reader</a>
+  
+    <li><a href="../../../LibXML/XML/RelaxNG.html">LibXML::XML::RelaxNG</a>
+  
+    <li><a href="../../../LibXML/XML/SaxParser.html">LibXML::XML::SaxParser</a>
+  
+    <li><a href="../../../LibXML/XML/SaxParser/Callbacks.html">LibXML::XML::SaxParser::Callbacks</a>
+  
+    <li><a href="../../../LibXML/XML/SaxParser/VerboseCallbacks.html">LibXML::XML::SaxParser::VerboseCallbacks</a>
+  
+    <li><a href="../../../LibXML/XML/Schema.html">LibXML::XML::Schema</a>
+  
+    <li><a href="../../../LibXML/XML/Schema/Attribute.html">LibXML::XML::Schema::Attribute</a>
+  
+    <li><a href="../../../LibXML/XML/Schema/Element.html">LibXML::XML::Schema::Element</a>
+  
+    <li><a href="../../../LibXML/XML/Schema/Facet.html">LibXML::XML::Schema::Facet</a>
+  
+    <li><a href="../../../LibXML/XML/Schema/Namespaces.html">LibXML::XML::Schema::Namespaces</a>
+  
+    <li><a href="../../../LibXML/XML/Schema/Type.html">LibXML::XML::Schema::Type</a>
+  
+    <li><a href="../../../LibXML/XML/Schema/Types.html">LibXML::XML::Schema::Types</a>
+  
+    <li><a href="../../../LibXML/XML/Writer.html">LibXML::XML::Writer</a>
+  
+    <li><a href="../../../LibXML/XML/XInclude.html">LibXML::XML::XInclude</a>
+  
+    <li><a href="../../../LibXML/XML/XPath.html">LibXML::XML::XPath</a>
+  
+    <li><a href="../../../LibXML/XML/XPath/Context.html">LibXML::XML::XPath::Context</a>
+  
+    <li><a href="../../../LibXML/XML/XPath/Expression.html">LibXML::XML::XPath::Expression</a>
+  
+    <li><a href="../../../LibXML/XML/XPath/Object.html">LibXML::XML::XPath::Object</a>
+  
+    <li><a href="../../../LibXML/XML/XPointer.html">LibXML::XML::XPointer</a>
+  
+    <li><a href="../../../Float.html">Float</a>
+  
+    <li><a href="../../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class LibXML::XML::XPath::Object</h1>
+
+  <div id="description" class="description">
+    
+<p>A collection of nodes returned from the evaluation of an <a
+href="../XPath.html">XML::XPath</a> or <a
+href="../XPointer.html">XML::XPointer</a> expression.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-context" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">context</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            xpath_object[i] &rarr; node
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>array index into set of nodes</p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre>static VALUE rxml_xpath_object_aref(VALUE self, VALUE aref)
+{
+  rxml_xpath_object *rxpop;
+
+  if (rxml_xpath_object_empty_q(self) == Qtrue)
+    return Qnil;
+
+  Data_Get_Struct(self, rxml_xpath_object, rxpop);
+  return rxml_xpath_object_tabref(rxpop-&gt;xpop, NUM2INT(aref));
+}</pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-debug" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            debug &rarr; (true|false)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Dump libxml debugging information to stdout. Requires Libxml be compiled
+with debugging enabled.</p>
+          
+
+          
+          <div class="method-source-code" id="debug-source">
+            <pre>static VALUE rxml_xpath_object_debug(VALUE self)
+{
+#ifdef LIBXML_DEBUG_ENABLED
+  rxml_xpath_object *rxpop;
+  Data_Get_Struct(self, rxml_xpath_object, rxpop);
+  xmlXPathDebugDumpObject(stdout, rxpop-&gt;xpop, 0);
+  return Qtrue;
+#else
+  rb_warn(&quot;libxml was compiled without debugging support.&quot;)
+  return Qfalse;
+#endif
+}</pre>
+          </div><!-- debug-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- debug-method -->
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            each { |node| ... } &rarr; self
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Call the supplied block for each node in this set.</p>
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre>static VALUE rxml_xpath_object_each(VALUE self)
+{
+  rxml_xpath_object *rxpop;
+  int i;
+
+  if (rxml_xpath_object_empty_q(self) == Qtrue)
+    return Qnil;
+
+  Data_Get_Struct(self, rxml_xpath_object, rxpop);
+
+  for (i = 0; i &lt; rxpop-&gt;xpop-&gt;nodesetval-&gt;nodeNr; i++)
+  {
+    rb_yield(rxml_xpath_object_tabref(rxpop-&gt;xpop, i));
+  }
+  return (self);
+}</pre>
+          </div><!-- each-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each-method -->
+
+    
+      <div id="method-i-empty-3F" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            empty? &rarr; (true|false)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Determine whether this nodeset is empty (contains no nodes).</p>
+          
+
+          
+          <div class="method-source-code" id="empty-3F-source">
+            <pre>static VALUE rxml_xpath_object_empty_q(VALUE self)
+{
+  rxml_xpath_object *rxpop;
+  Data_Get_Struct(self, rxml_xpath_object, rxpop);
+
+  if (rxpop-&gt;xpop-&gt;type != XPATH_NODESET)
+    return Qnil;
+
+  return (rxpop-&gt;xpop-&gt;nodesetval == NULL || rxpop-&gt;xpop-&gt;nodesetval-&gt;nodeNr &lt;= 0) ? Qtrue
+      : Qfalse;
+}</pre>
+          </div><!-- empty-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- empty-3F-method -->
+
+    
+      <div id="method-i-first" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            first &rarr; node
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns the first node in this node set, or nil if none exist.</p>
+          
+
+          
+          <div class="method-source-code" id="first-source">
+            <pre>static VALUE rxml_xpath_object_first(VALUE self)
+{
+  rxml_xpath_object *rxpop;
+
+  if (rxml_xpath_object_empty_q(self) == Qtrue)
+    return Qnil;
+
+  Data_Get_Struct(self, rxml_xpath_object, rxpop);
+  return rxml_xpath_object_tabref(rxpop-&gt;xpop, 0);
+}</pre>
+          </div><!-- first-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- first-method -->
+
+    
+      <div id="method-i-last" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            last &rarr; node
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns the last node in this node set, or nil if none exist.</p>
+          
+
+          
+          <div class="method-source-code" id="last-source">
+            <pre>static VALUE rxml_xpath_object_last(VALUE self)
+{
+  rxml_xpath_object *rxpop;
+
+  if (rxml_xpath_object_empty_q(self) == Qtrue)
+    return Qnil;
+
+  Data_Get_Struct(self, rxml_xpath_object, rxpop);
+  return rxml_xpath_object_tabref(rxpop-&gt;xpop, -1);
+}</pre>
+          </div><!-- last-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- last-method -->
+
+    
+      <div id="method-i-length" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            length &rarr; num
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Obtain the length of the nodesetval node list.</p>
+          
+
+          
+          <div class="method-source-code" id="length-source">
+            <pre>static VALUE rxml_xpath_object_length(VALUE self)
+{
+  rxml_xpath_object *rxpop;
+
+  if (rxml_xpath_object_empty_q(self) == Qtrue)
+    return INT2FIX(0);
+
+  Data_Get_Struct(self, rxml_xpath_object, rxpop);
+  return INT2NUM(rxpop-&gt;xpop-&gt;nodesetval-&gt;nodeNr);
+}</pre>
+          </div><!-- length-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Object.html#method-i-size">size</a>
+        </div>
+        
+
+        
+      </div><!-- length-method -->
+
+    
+      <div id="method-i-set" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set-source">
+            <pre><span class="ruby-comment"># File lib/libxml/xpath_object.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set</span>
+  <span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;XPath::Object#set is deprecated.  Simply use the XPath::Object API instead&quot;</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set-method -->
+
+    
+      <div id="method-i-size" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Object.html#method-i-length">length</a>
+        </div>
+        
+      </div><!-- size-method -->
+
+    
+      <div id="method-i-string" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            string &rarr; String
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns the original <a href="../XPath.html">XPath</a> expression as a
+string.</p>
+          
+
+          
+          <div class="method-source-code" id="string-source">
+            <pre>static VALUE rxml_xpath_object_string(VALUE self)
+{
+  rxml_xpath_object *rxpop;
+
+  Data_Get_Struct(self, rxml_xpath_object, rxpop);
+
+  if (rxpop-&gt;xpop-&gt;stringval == NULL)
+    return Qnil;
+
+  return rxml_new_cstr((const char*) rxpop-&gt;xpop-&gt;stringval, rxpop-&gt;xdoc-&gt;encoding);
+}</pre>
+          </div><!-- string-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- string-method -->
+
+    
+      <div id="method-i-to_a" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            to_a &rarr; [node, ..., node]
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Obtain an array of the nodes in this set.</p>
+          
+
+          
+          <div class="method-source-code" id="to_a-source">
+            <pre>static VALUE rxml_xpath_object_to_a(VALUE self)
+{
+  VALUE set_ary, nodeobj;
+  rxml_xpath_object *rxpop;
+  xmlXPathObjectPtr xpop;
+  int i;
+
+  Data_Get_Struct(self, rxml_xpath_object, rxpop);
+  xpop = rxpop-&gt;xpop;
+
+  set_ary = rb_ary_new();
+
+  if (!((xpop-&gt;nodesetval == NULL) || (xpop-&gt;nodesetval-&gt;nodeNr == 0)))
+  {
+    for (i = 0; i &lt; xpop-&gt;nodesetval-&gt;nodeNr; i++)
+    {
+      nodeobj = rxml_xpath_object_tabref(xpop, i);
+      rb_ary_push(set_ary, nodeobj);
+    }
+  }
+
+  return (set_ary);
+}</pre>
+          </div><!-- to_a-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_a-method -->
+
+    
+      <div id="method-i-xpath_type" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            xpath_type &rarr; int
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Returns the <a href="../XPath.html">XPath</a> type of the result object.
+Possible values are defined as constants on the <a
+href="../XPath.html">XML::XPath</a> class and include:</p>
+<ul><li>
+<p>XML::XPath::UNDEFINED</p>
+</li><li>
+<p>XML::XPath::NODESET</p>
+</li><li>
+<p>XML::XPath::BOOLEAN</p>
+</li><li>
+<p>XML::XPath::NUMBER</p>
+</li><li>
+<p>XML::XPath::STRING</p>
+</li><li>
+<p>XML::XPath::POINT</p>
+</li><li>
+<p>XML::XPath::RANGE</p>
+</li><li>
+<p>XML::XPath::LOCATIONSET</p>
+</li><li>
+<p>XML::XPath::USERS</p>
+</li><li>
+<p>XML::XPath::XSLT_TREE</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="xpath_type-source">
+            <pre>static VALUE rxml_xpath_object_get_type(VALUE self)
+{
+  rxml_xpath_object *rxpop;
+  Data_Get_Struct(self, rxml_xpath_object, rxpop);
+  return INT2FIX(rxpop-&gt;xpop-&gt;type);
+}</pre>
+          </div><!-- xpath_type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- xpath_type-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

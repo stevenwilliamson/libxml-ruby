@@ -1,0 +1,620 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>LibXML::XML::Attr</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>
+          <span class='type'>class</span>
+          LibXML::XML::Attr
+        </h1>
+        <ol class='paths'>
+          <li>
+            <a target="docwin" href="../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
+          </li>
+          <li class='other'>
+            <a target="docwin" href="../../../files/lib/libxml/attr_rb.html">lib/libxml/attr.rb</a>
+          </li>
+          <li>
+            <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
+          </li>
+        </ol>
+        <div class='parent'>
+          Parent:
+          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            
+            <p>Provides access to an attribute defined on an element.</p>
+            
+            <p>Basic Usage:</p>
+            
+            <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'test_helper'</span>&#x000A;&#x000A;<span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">&lt;</span><span class="ruby-identifier">some_file</span><span class="ruby-operator">&gt;</span>)&#x000A;<span class="ruby-identifier">attribute</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">get_attribute_ns</span>(<span class="ruby-string">'http://www.w3.org/1999/xlink'</span>, <span class="ruby-string">'href'</span>)&#x000A;<span class="ruby-identifier">attribute</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'href'</span>&#x000A;<span class="ruby-identifier">attribute</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-string">'http://www.mydocument.com'</span>&#x000A;<span class="ruby-identifier">attribute</span>.<span class="ruby-identifier">remove!</span></pre>
+          </div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>Public Class</h3>
+            <ol>
+              <li><a target="docwin" href="#method-c-new">new</a></li>
+            </ol>
+            <h3>Public Instance</h3>
+            <ol>
+              <li><a target="docwin" href="#method-i-child">child</a></li>
+              <li><a target="docwin" href="#method-i-child-3F">child?</a></li>
+              <li><a target="docwin" href="#method-i-doc">doc</a></li>
+              <li><a target="docwin" href="#method-i-doc-3F">doc?</a></li>
+              <li><a target="docwin" href="#method-i-each_sibling">each_sibling</a></li>
+              <li><a target="docwin" href="#method-i-last">last</a></li>
+              <li><a target="docwin" href="#method-i-last-3F">last?</a></li>
+              <li><a target="docwin" href="#method-i-name">name</a></li>
+              <li><a target="docwin" href="#method-i-namespaces">namespaces</a></li>
+              <li><a target="docwin" href="#method-i-next">next</a></li>
+              <li><a target="docwin" href="#method-i-next-3F">next?</a></li>
+              <li><a target="docwin" href="#method-i-node_type">node_type</a></li>
+              <li><a target="docwin" href="#method-i-node_type_name">node_type_name</a></li>
+              <li><a target="docwin" href="#method-i-ns">ns</a></li>
+              <li><a target="docwin" href="#method-i-ns-3F">ns?</a></li>
+              <li><a target="docwin" href="#method-i-parent">parent</a></li>
+              <li><a target="docwin" href="#method-i-parent-3F">parent?</a></li>
+              <li><a target="docwin" href="#method-i-prev">prev</a></li>
+              <li><a target="docwin" href="#method-i-prev-3F">prev?</a></li>
+              <li><a target="docwin" href="#method-i-remove-21">remove!</a></li>
+              <li><a target="docwin" href="#method-i-siblings">siblings</a></li>
+              <li><a target="docwin" href="#method-i-to_a">to_a</a></li>
+              <li><a target="docwin" href="#method-i-to_h">to_h</a></li>
+              <li><a target="docwin" href="#method-i-to_s">to_s</a></li>
+              <li><a target="docwin" href="#method-i-value">value</a></li>
+              <li><a target="docwin" href="#method-i-value-3D">value=</a></li>
+            </ol>
+          </div>
+          <div id='context'>
+            <div id='includes'>
+              <h2>Included modules</h2>
+              <ol>
+                <li>Enumerable</li>
+              </ol>
+            </div>
+          </div>
+          <div id='section'>
+            <div id='aliases-list'>
+              <h2>Public Instance Aliases</h2>
+              <div class='name-list'>
+                <table summary='Public Instance Aliases'>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>each</td>
+                    <td>-&gt;</td>
+                    <td class='context-item-value'><a target="docwin" href="#method-i-each_sibling">each_sibling</a></td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>each_attr</td>
+                    <td>-&gt;</td>
+                    <td class='context-item-value'><a target="docwin" href="#method-i-each_sibling">each_sibling</a></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id='methods'>
+              <h2>Public Class methods</h2>
+              <div class='method public-class' id='method-method-c-new'>
+                <a name='method-c-new'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.initialize(node, "name", "value")</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Creates a new attribute for the node.</p>
+                  
+                  <p>node: The <a href="Node.html">XML::Node</a> that will contain the attribute
+                  name: The name of the attribute value: The value of the attribute</p>
+                  
+                  <pre>attr = XML::Attr.new(doc.root, 'name', 'libxml')</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-new-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-c-new-source'>static VALUE rxml_attr_initialize(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;  VALUE node = argv[0];&#x000A;  VALUE name = argv[1];&#x000A;  VALUE value = argv[2];&#x000A;  VALUE ns = (argc == 4 ? argv[3] : Qnil);&#x000A;&#x000A;  xmlNodePtr xnode;&#x000A;  xmlAttrPtr xattr;&#x000A;&#x000A;  if (argc &lt; 3 || argc &gt; 4)&#x000A;    rb_raise(rb_eArgError, &quot;Wrong number of arguments (3 or 4)&quot;);&#x000A;&#x000A;  Check_Type(name, T_STRING);&#x000A;  Check_Type(value, T_STRING);&#x000A;&#x000A;  Data_Get_Struct(node, xmlNode, xnode);&#x000A;&#x000A;  if (xnode-&gt;type != XML_ELEMENT_NODE)&#x000A;    rb_raise(rb_eArgError, &quot;Attributes can only be created on element nodes.&quot;);&#x000A;&#x000A;  if (NIL_P(ns))&#x000A;  {&#x000A;    xattr = xmlNewProp(xnode, (xmlChar*)StringValuePtr(name), (xmlChar*)StringValuePtr(value));&#x000A;  }&#x000A;  else&#x000A;  {&#x000A;    xmlNsPtr xns;&#x000A;    Data_Get_Struct(ns, xmlNs, xns);&#x000A;    xattr = xmlNewNsProp(xnode, xns, (xmlChar*)StringValuePtr(name), (xmlChar*)StringValuePtr(value));&#x000A;  }&#x000A;&#x000A;  if (!xattr)&#x000A;    rb_raise(rb_eRuntimeError, &quot;Could not create attribute.&quot;);&#x000A;&#x000A;  DATA_PTR( self) = xattr;&#x000A;  return self;&#x000A;}</pre>
+                </div>
+              </div>
+              <h2>Public Instance methods</h2>
+              <div class='method public-instance' id='method-method-i-child'>
+                <a name='method-i-child'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.child -> node</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Obtain this attribute's child attribute(s).</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-child-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-child-source'>static VALUE rxml_attr_child_get(VALUE self)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;  if (xattr-&gt;children == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_node_wrap((xmlNodePtr) xattr-&gt;children);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-child-3F'>
+                <a name='method-i-child-3F'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.child? -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns whether this attribute has child attributes.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-child-3F-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-child-3F-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 12</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">child?</span>&#x000A;  <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">nil?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-doc'>
+                <a name='method-i-doc'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.doc -> XML::Document</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns this attribute's document.</p>
+                  
+                  <pre>doc.root.attributes.get_attribute('name').doc == doc</pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-doc-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-doc-source'>static VALUE rxml_attr_doc_get(VALUE self)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;  if (xattr-&gt;doc == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_document_wrap(xattr-&gt;doc);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-doc-3F'>
+                <a name='method-i-doc-3F'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.doc? -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Determine whether this attribute is associated with an <a
+                  href="Document.html">XML::Document</a>.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-doc-3F-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-doc-3F-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 21</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">doc?</span>&#x000A;  <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">nil?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-each_sibling'>
+                <a name='method-i-each_sibling'></a>
+                <div class='synopsis'>
+                  <span class='name'>each_sibling</span>
+                  <span class='arguments'>(&blk)</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-each_sibling-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-each_sibling-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 96</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_sibling</span>(&amp;<span class="ruby-identifier">blk</span>)&#x000A;  <span class="ruby-identifier">siblings</span>(<span class="ruby-keyword">self</span>,&amp;<span class="ruby-identifier">blk</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-last'>
+                <a name='method-i-last'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.last -> node</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Obtain the last attribute.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-last-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-last-source'>static VALUE rxml_attr_last_get(VALUE self)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;  if (xattr-&gt;last == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_node_wrap(xattr-&gt;last);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-last-3F'>
+                <a name='method-i-last-3F'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.last? -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Determine whether this is the last attribute.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-last-3F-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-last-3F-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 29</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">last?</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">nil?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-name'>
+                <a name='method-i-name'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.name -> "name"</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Obtain this attribute's name.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-name-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-name-source'>static VALUE rxml_attr_name_get(VALUE self)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;&#x000A;  if (xattr-&gt;name == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_new_cstr((const char*) xattr-&gt;name, NULL);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-namespaces'>
+                <a name='method-i-namespaces'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.namespacess -> XML::Namespaces</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns this node's <a href="Namespaces.html">XML::Namespaces</a> object,
+                  which is used to access the namespaces associated with this node.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-namespaces-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-namespaces-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 56</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">namespaces</span>&#x000A;  <span class="ruby-ivar">@namespaces</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Namespaces</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-next'>
+                <a name='method-i-next'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.next -> node</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Obtain the next attribute.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-next-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-next-source'>static VALUE rxml_attr_next_get(VALUE self)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;  if (xattr-&gt;next == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_attr_wrap(xattr-&gt;next);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-next-3F'>
+                <a name='method-i-next-3F'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.next? -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Determine whether there is a next attribute.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-next-3F-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-next-3F-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 37</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">next?</span>&#x000A;  <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">next</span>.<span class="ruby-identifier">nil?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-node_type'>
+                <a name='method-i-node_type'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.node_type -> num</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Obtain this node's type identifier.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-node_type-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-node_type-source'>static VALUE rxml_attr_node_type(VALUE self)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;  return INT2NUM(xattr-&gt;type);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-node_type_name'>
+                <a name='method-i-node_type_name'></a>
+                <div class='synopsis'>
+                  <span class='name'>node_type_name</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns this node's type name</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-node_type_name-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-node_type_name-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 78</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_type_name</span>&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node_type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">ATTRIBUTE_NODE</span>&#x000A;    <span class="ruby-string">'attribute'</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">UnknownType</span>, <span class="ruby-string">&quot;Unknown node type: %n&quot;</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">node_type</span>);&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-ns'>
+                <a name='method-i-ns'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.ns -> namespace</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Obtain this attribute's associated XML::NS, if any.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-ns-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-ns-source'>static VALUE rxml_attr_ns_get(VALUE self)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;  if (xattr-&gt;ns == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_namespace_wrap(xattr-&gt;ns);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-ns-3F'>
+                <a name='method-i-ns-3F'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.ns? -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Determine whether this attribute has an associated namespace.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-ns-3F-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-ns-3F-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 46</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">ns?</span>&#x000A;  <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ns</span>.<span class="ruby-identifier">nil?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-parent'>
+                <a name='method-i-parent'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.parent -> node</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Obtain this attribute node's parent.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-parent-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-parent-source'>static VALUE rxml_attr_parent_get(VALUE self)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;  if (xattr-&gt;parent == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_node_wrap(xattr-&gt;parent);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-parent-3F'>
+                <a name='method-i-parent-3F'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.parent? -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Determine whether this attribute has a parent.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-parent-3F-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-parent-3F-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 65</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">parent?</span>&#x000A;  <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">nil?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-prev'>
+                <a name='method-i-prev'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.prev -> node</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Obtain the previous attribute.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-prev-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-prev-source'>static VALUE rxml_attr_prev_get(VALUE self)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;  if (xattr-&gt;prev == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_attr_wrap(xattr-&gt;prev);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-prev-3F'>
+                <a name='method-i-prev-3F'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.prev? -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Determine whether there is a previous attribute.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-prev-3F-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-prev-3F-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 73</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">prev?</span>&#x000A;  <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">prev</span>.<span class="ruby-identifier">nil?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-remove-21'>
+                <a name='method-i-remove-21'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.remove! -> nil</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Removes this attribute from it's parent.  Note the attribute and its
+                  content is freed and can no longer be used.  If you try to use it you  will
+                  get a segmentation fault.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-remove-21-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-remove-21-source'>static VALUE rxml_attr_remove_ex(VALUE self)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;  xmlRemoveProp(xattr);&#x000A;&#x000A;  RDATA(self)-&gt;data = NULL;&#x000A;  RDATA(self)-&gt;dfree = NULL;&#x000A;  RDATA(self)-&gt;dmark = NULL;&#x000A;&#x000A;  return Qnil;&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-siblings'>
+                <a name='method-i-siblings'></a>
+                <div class='synopsis'>
+                  <span class='name'>siblings</span>
+                  <span class='arguments'>(node, &blk)</span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Iterates nodes and attributes</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-siblings-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-siblings-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 87</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">siblings</span>(<span class="ruby-identifier">node</span>, &amp;<span class="ruby-identifier">blk</span>)&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> = <span class="ruby-identifier">node</span>&#x000A;    <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>&#x000A;      <span class="ruby-identifier">blk</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">n</span>)&#x000A;      <span class="ruby-keyword">break</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">n</span> = <span class="ruby-identifier">n</span>.<span class="ruby-identifier">next</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-to_a'>
+                <a name='method-i-to_a'></a>
+                <div class='synopsis'>
+                  <span class='name'>to_a</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-to_a-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-to_a-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 110</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_a</span>&#x000A;  <span class="ruby-identifier">inject</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ary</span>,<span class="ruby-identifier">a</span><span class="ruby-operator">|</span> &#x000A;    <span class="ruby-identifier">ary</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">a</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">value</span>]&#x000A;    <span class="ruby-identifier">ary</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-to_h'>
+                <a name='method-i-to_h'></a>
+                <div class='synopsis'>
+                  <span class='name'>to_h</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-to_h-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-to_h-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 103</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_h</span>&#x000A;  <span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">a</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">h</span>[<span class="ruby-identifier">a</span>.<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">value</span>&#x000A;    <span class="ruby-identifier">h</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-to_s'>
+                <a name='method-i-to_s'></a>
+                <div class='synopsis'>
+                  <span class='name'>to_s</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-to_s-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-to_s-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 117</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>&#x000A;  <span class="ruby-node">&quot;#{name} = #{value}&quot;</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-value'>
+                <a name='method-i-value'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.value -> "value"</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Obtain the value of this attribute.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-value-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-value-source'>VALUE rxml_attr_value_get(VALUE self)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;  xmlChar *value;&#x000A;  VALUE result = Qnil;&#x000A;&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;  value = xmlNodeGetContent((xmlNodePtr)xattr);&#x000A;&#x000A;  if (value != NULL)&#x000A;  {&#x000A;    result = rxml_new_cstr((const char*) value, NULL);&#x000A;    xmlFree(value);&#x000A;  }&#x000A;  return result;&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-value-3D'>
+                <a name='method-i-value-3D'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>attr.value = "value"</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Sets the value of this attribute.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-value-3D-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-value-3D-source'>VALUE rxml_attr_value_set(VALUE self, VALUE val)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;&#x000A;  Check_Type(val, T_STRING);&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;&#x000A;  if (xattr-&gt;ns)&#x000A;    xmlSetNsProp(xattr-&gt;parent, xattr-&gt;ns, xattr-&gt;name,&#x000A;        (xmlChar*) StringValuePtr(val));&#x000A;  else&#x000A;    xmlSetProp(xattr-&gt;parent, xattr-&gt;name, (xmlChar*) StringValuePtr(val));&#x000A;&#x000A;  return (self);&#x000A;}</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>
