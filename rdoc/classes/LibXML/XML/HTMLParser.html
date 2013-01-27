@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: LibXML::XML::HTMLParser [LibXML]</title>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-    <link href='../../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <title>LibXML::XML::HTMLParser</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
         function popupCode(url) {
@@ -26,15 +26,15 @@
     <div class='class' id='wrapper'>
       <div class='header'>
         <h1 class='name'>
-          <span class='type'>Class</span>
+          <span class='type'>class</span>
           LibXML::XML::HTMLParser
         </h1>
         <ol class='paths'>
           <li>
-            <a href="../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
+            <a target="docwin" href="../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
           </li>
           <li class='other'>
-            <a href="../../../files/lib/libxml/html_parser_rb.html">lib/libxml/html_parser.rb</a>
+            <a target="docwin" href="../../../files/lib/libxml/html_parser_rb.html">lib/libxml/html_parser.rb</a>
           </li>
           <li>
             <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
@@ -42,58 +42,53 @@
         </ol>
         <div class='parent'>
           Parent:
-          <strong>Object</strong>
+          <strong><a target="docwin" href="../XML.html">XML</a></strong>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
-            <p>
-            The HTML parser implements an HTML 4.0 non-verifying parser with an API
-            compatible with the <a href="Parser.html">XML::Parser</a>. In contrast with
-            the <a href="Parser.html">XML::Parser</a>, it can parse &#8220;real
-            world&#8221; HTML, even if it severely broken from a specification point of
-            view.
-            </p>
-            <p>
-            The HTML parser creates an in-memory document object that consist of any
-            number of <a href="Node.html">XML::Node</a> instances. This is simple and
+            
+            <p>The HTML parser implements an HTML 4.0 non-verifying parser with an API
+            compatible with the <a href="Parser.html">XML::Parser</a>.  In contrast
+            with the <a href="Parser.html">XML::Parser</a>, it can parse "real world"
+            HTML, even if it severely broken from a specification point of view.</p>
+            
+            <p>The HTML parser creates an in-memory document object that consist of any
+            number of <a href="Node.html">XML::Node</a> instances.  This is simple and
             powerful model, but has the major limitation that the size of the document
-            that can be processed is limited by the amount of memory available.
-            </p>
-            <p>
-            Using the html parser is simple:
-            </p>
+            that can be processed is limited by the amount of memory available.</p>
+            
+            <p>Using the html parser is simple:</p>
+            
             <pre>parser = XML::HTMLParser.file('my_file')&#x000A;doc = parser.parse</pre>
-            <p>
-            You can also parse documents (see XML::HTMLParser.document), strings (see
-            <a href="HTMLParser.html#M000109">XML::HTMLParser.string</a>) and io
-            objects (see <a href="HTMLParser.html#M000108">XML::HTMLParser.io</a>).
-            </p>
+            
+            <p>You can also parse documents (see XML::HTMLParser.document),  strings (see
+            <a href="HTMLParser.html#method-c-string">::string</a>) and io objects (see
+            <a href="HTMLParser.html#method-c-io">::io</a>).</p>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
-            <h3>public class</h3>
+            <h3>Public Class</h3>
             <ol>
-              <li>
-                <a href="#M000107">file<br />
-                :options</a>
-              </li>
-              <li>
-                <a href="#M000108">io<br />
-                :options<br />
-                :base_uri="http://libxml.org")</a>
-              </li>
-              <li><a href="#M000105">initialize</a></li>
-              <li>
-                <a href="#M000109">string<br />
-                :options<br />
-                :base_uri="http://libxml.org")</a>
-              </li>
+              <li><a target="docwin" href="#method-c-file">file</a></li>
+              <li><a target="docwin" href="#method-c-io">io</a></li>
+              <li><a target="docwin" href="#method-c-new">new</a></li>
+              <li><a target="docwin" href="#method-c-string">string</a></li>
             </ol>
-            <h3>public instance</h3>
+            <h3>Public Instance</h3>
             <ol>
-              <li><a href="#M000106">parse</a></li>
+              <li><a target="docwin" href="#attribute-i-input">input</a></li>
+              <li><a target="docwin" href="#method-i-parse">parse</a></li>
+            </ol>
+          </div>
+          <div id='context'>
+          </div>
+          <div id='class-list'>
+            <h2>Classes and Modules</h2>
+            <ol>
+              <li><a target="docwin" href="HTMLParser/Options.html">LibXML::XML::HTMLParser::Options</a></li>
+              <li><a target="docwin" href="HTMLParser/Context.html">LibXML::XML::HTMLParser::Context</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -102,132 +97,133 @@
               <div class='name-list'>
                 <table>
                   <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>input</td>
+                    <td class='context-item-name'>
+                      <a name='attribute-i-input'>input</a>
+                    </td>
                     <td class='context-item-value'>[R]</td>
                     <td class='context-item-desc'>
                       
-                      Atributes
+                      <p>Atributes</p>
                     </td>
                   </tr>
                 </table>
               </div>
             </div>
             <div id='methods'>
-              <h2>Public class methods</h2>
-              <div class='method public-class' id='method-M000107'>
-                <a name='M000107'></a>
+              <h2>Public Class methods</h2>
+              <div class='method public-class' id='method-method-c-file'>
+                <a name='method-c-file'></a>
                 <div class='synopsis'>
                   <span class='name'>
-                    XML::HTMLParser.file(path) &rarr; XML::HTMLParser<br />
-                    XML::HTMLParser.file(path, :encoding => XML::Encoding::UTF_8,<br />
-                    :options => XML::HTMLParser::Options::NOENT) &rarr; XML::HTMLParser<br />
+                    <div>XML::HTMLParser.file(path) -> XML::HTMLParser</div>
+                    <div>XML::HTMLParser.file(path, :encoding => XML::Encoding::UTF_8,</div>
+                    <div>:options => XML::HTMLParser::Options::NOENT) -> XML::HTMLParser</div>
                   </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Creates a new parser by parsing the specified file or uri.
-                  </p>
-                  <p>
-                  You may provide an optional hash table to control how the parsing is
-                  performed. Valid options are:
-                  </p>
+                  
+                  <p>Creates a new parser by parsing the specified file or uri.</p>
+                  
+                  <p>You may provide an optional hash table to control how the parsing is
+                  performed.  Valid options are:</p>
+                  
                   <pre>encoding - The document encoding, defaults to nil. Valid values&#x000A;           are the encoding constants defined on XML::Encoding.&#x000A;options - Parser options.  Valid values are the constants defined on&#x000A;          XML::HTMLParser::Options.  Mutliple options can be combined&#x000A;          by using Bitwise OR (|).</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000107-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-file-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000107-source'>    <span class="ruby-comment cmt"># File lib/libxml/html_parser.rb, line 21</span>&#x000A;21:       <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span> = {})&#x000A;22:         <span class="ruby-identifier">context</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">HTMLParser</span><span class="ruby-operator">::</span><span class="ruby-constant">Context</span>.<span class="ruby-identifier">file</span>(<span class="ruby-identifier">path</span>)&#x000A;23:         <span class="ruby-identifier">context</span>.<span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:encoding</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:encoding</span>]&#x000A;24:         <span class="ruby-identifier">context</span>.<span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:options</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:options</span>]&#x000A;25:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">context</span>)&#x000A;26:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-c-file-source'><span class="ruby-comment"># File lib/libxml/html_parser.rb, line 20</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span> = {})&#x000A;  <span class="ruby-identifier">context</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">HTMLParser</span><span class="ruby-operator">::</span><span class="ruby-constant">Context</span>.<span class="ruby-identifier">file</span>(<span class="ruby-identifier">path</span>)&#x000A;  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:encoding</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:encoding</span>]&#x000A;  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>]&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">context</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <div class='method public-class' id='method-M000108'>
-                <a name='M000108'></a>
+              <div class='method public-class' id='method-method-c-io'>
+                <a name='method-c-io'></a>
                 <div class='synopsis'>
                   <span class='name'>
-                    XML::HTMLParser.io(io) &rarr; XML::HTMLParser<br />
-                    XML::HTMLParser.io(io, :encoding => XML::Encoding::UTF_8,<br />
-                    :options => XML::HTMLParser::Options::NOENT<br />
-                    :base_uri="http://libxml.org") &rarr; XML::HTMLParser<br />
+                    <div>XML::HTMLParser.io(io) -> XML::HTMLParser</div>
+                    <div>XML::HTMLParser.io(io, :encoding => XML::Encoding::UTF_8,</div>
+                    <div>:options => XML::HTMLParser::Options::NOENT</div>
+                    <div>:base_uri="http://libxml.org") -> XML::HTMLParser</div>
                   </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Creates a new reader by parsing the specified io object.
-                  </p>
-                  <p>
-                  Parameters:
-                  </p>
+                  
+                  <p>Creates a new reader by parsing the specified io object.</p>
+                  
+                  <p>Parameters:</p>
+                  
                   <pre>io - io object that contains the xml to parser&#x000A;base_uri - The base url for the parsed document.&#x000A;encoding - The document encoding, defaults to nil. Valid values&#x000A;           are the encoding constants defined on XML::Encoding.&#x000A;options - Parser options.  Valid values are the constants defined on&#x000A;          XML::HTMLParser::Options.  Mutliple options can be combined&#x000A;          by using Bitwise OR (|).</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000108-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-io-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000108-source'>    <span class="ruby-comment cmt"># File lib/libxml/html_parser.rb, line 45</span>&#x000A;45:       <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span> = {})&#x000A;46:         <span class="ruby-identifier">context</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">HTMLParser</span><span class="ruby-operator">::</span><span class="ruby-constant">Context</span>.<span class="ruby-identifier">io</span>(<span class="ruby-identifier">io</span>)&#x000A;47:         <span class="ruby-identifier">context</span>.<span class="ruby-identifier">base_uri</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:base_uri</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:base_uri</span>]&#x000A;48:         <span class="ruby-identifier">context</span>.<span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:encoding</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:encoding</span>]&#x000A;49:         <span class="ruby-identifier">context</span>.<span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:options</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:options</span>]&#x000A;50:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">context</span>)&#x000A;51:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-c-io-source'><span class="ruby-comment"># File lib/libxml/html_parser.rb, line 44</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">io</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">options</span> = {})&#x000A;  <span class="ruby-identifier">context</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">HTMLParser</span><span class="ruby-operator">::</span><span class="ruby-constant">Context</span>.<span class="ruby-identifier">io</span>(<span class="ruby-identifier">io</span>)&#x000A;  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">base_uri</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:base_uri</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:base_uri</span>]&#x000A;  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:encoding</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:encoding</span>]&#x000A;  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>]&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">context</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <div class='method public-class' id='method-M000105'>
-                <a name='M000105'></a>
-                <div class='synopsis'>
-                  <span class='name'>XML::HTMLParser.initialize &rarr; parser<br /></span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Initializes a new parser instance with no pre-determined source.
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000105-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000105-source'>static VALUE rxml_html_parser_initialize(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;  VALUE context = Qnil;&#x000A;&#x000A;  rb_scan_args(argc, argv, &quot;01&quot;, &amp;context);&#x000A;&#x000A;  if (context == Qnil)&#x000A;  {&#x000A;    rb_warn(&quot;Passing no parameters to XML::HTMLParser.new is deprecated.  Pass an instance of XML::Parser::Context instead.&quot;);&#x000A;    context = rb_class_new_instance(0, NULL, cXMLParserContext);&#x000A;  }&#x000A;&#x000A;  rb_ivar_set(self, CONTEXT_ATTR, context);&#x000A;  return self;&#x000A;}</pre>
-                </div>
-              </div>
-              <div class='method public-class' id='method-M000109'>
-                <a name='M000109'></a>
+              <div class='method public-class' id='method-method-c-new'>
+                <a name='method-c-new'></a>
                 <div class='synopsis'>
                   <span class='name'>
-                    XML::HTMLParser.string(string)<br />
-                    XML::HTMLParser.string(string, :encoding => XML::Encoding::UTF_8,<br />
-                    :options => XML::HTMLParser::Options::NOENT<br />
-                    :base_uri="http://libxml.org") &rarr; XML::HTMLParser<br />
+                    <div>XML::HTMLParser.initialize -> parser</div>
                   </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Creates a new parser by parsing the specified string.
-                  </p>
-                  <p>
-                  You may provide an optional hash table to control how the parsing is
-                  performed. Valid options are:
-                  </p>
+                  
+                  <p>Initializes a new parser instance with no pre-determined source.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-new-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-c-new-source'>static VALUE rxml_html_parser_initialize(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;  VALUE context = Qnil;&#x000A;&#x000A;  rb_scan_args(argc, argv, &quot;01&quot;, &amp;context);&#x000A;&#x000A;  if (context == Qnil)&#x000A;  {&#x000A;    rb_warn(&quot;Passing no parameters to XML::HTMLParser.new is deprecated.  Pass an instance of XML::Parser::Context instead.&quot;);&#x000A;    context = rb_class_new_instance(0, NULL, cXMLParserContext);&#x000A;  }&#x000A;&#x000A;  rb_ivar_set(self, CONTEXT_ATTR, context);&#x000A;  return self;&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-class' id='method-method-c-string'>
+                <a name='method-c-string'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>XML::HTMLParser.string(string)</div>
+                    <div>XML::HTMLParser.string(string, :encoding => XML::Encoding::UTF_8,</div>
+                    <div>:options => XML::HTMLParser::Options::NOENT</div>
+                    <div>:base_uri="http://libxml.org") -> XML::HTMLParser</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Creates a new parser by parsing the specified string.</p>
+                  
+                  <p>You may provide an optional hash table to control how the parsing is
+                  performed.  Valid options are:</p>
+                  
                   <pre>base_uri - The base url for the parsed document.&#x000A;encoding - The document encoding, defaults to nil. Valid values&#x000A;           are the encoding constants defined on XML::Encoding.&#x000A;options - Parser options.  Valid values are the constants defined on&#x000A;          XML::HTMLParser::Options.  Mutliple options can be combined&#x000A;          by using Bitwise OR (|).</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000109-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-string-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000109-source'>    <span class="ruby-comment cmt"># File lib/libxml/html_parser.rb, line 70</span>&#x000A;70:       <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">string</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">options</span> = {})&#x000A;71:         <span class="ruby-identifier">context</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">HTMLParser</span><span class="ruby-operator">::</span><span class="ruby-constant">Context</span>.<span class="ruby-identifier">string</span>(<span class="ruby-identifier">string</span>)&#x000A;72:         <span class="ruby-identifier">context</span>.<span class="ruby-identifier">base_uri</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:base_uri</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:base_uri</span>]&#x000A;73:         <span class="ruby-identifier">context</span>.<span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:encoding</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:encoding</span>]&#x000A;74:         <span class="ruby-identifier">context</span>.<span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:options</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:options</span>]&#x000A;75:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">context</span>)&#x000A;76:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-c-string-source'><span class="ruby-comment"># File lib/libxml/html_parser.rb, line 69</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">string</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">options</span> = {})&#x000A;  <span class="ruby-identifier">context</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">HTMLParser</span><span class="ruby-operator">::</span><span class="ruby-constant">Context</span>.<span class="ruby-identifier">string</span>(<span class="ruby-identifier">string</span>)&#x000A;  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">base_uri</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:base_uri</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:base_uri</span>]&#x000A;  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:encoding</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:encoding</span>]&#x000A;  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>]&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">context</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <h2>Public instance methods</h2>
-              <div class='method public-instance' id='method-M000106'>
-                <a name='M000106'></a>
+              <h2>Public Instance methods</h2>
+              <div class='method public-instance' id='method-method-i-parse'>
+                <a name='method-i-parse'></a>
                 <div class='synopsis'>
-                  <span class='name'>parser.parse &rarr; XML::Document<br /></span>
+                  <span class='name'>
+                    <div>parser.parse -> XML::Document</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Parse the input <a href="../XML.html">XML</a> and create an <a
-                  href="Document.html">XML::Document</a> with it&#8217;s content. If an error
-                  occurs, XML::Parser::ParseError is thrown.
-                  </p>
+                  
+                  <p>Parse the input <a href="../XML.html">XML</a> and create an <a
+                  href="Document.html">XML::Document</a> with it's content. If an error
+                  occurs, XML::Parser::ParseError is thrown.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000106-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-parse-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000106-source'>static VALUE rxml_html_parser_parse(VALUE self)&#x000A;{&#x000A;  xmlParserCtxtPtr ctxt;&#x000A;  VALUE context = rb_ivar_get(self, CONTEXT_ATTR);&#x000A;  &#x000A;  Data_Get_Struct(context, xmlParserCtxt, ctxt);&#x000A;&#x000A;  if (htmlParseDocument(ctxt) == -1 &amp;&amp; ! ctxt-&gt;recovery)&#x000A;  {&#x000A;    if (ctxt-&gt;myDoc)&#x000A;      xmlFreeDoc(ctxt-&gt;myDoc);&#x000A;    rxml_raise(&amp;ctxt-&gt;lastError);&#x000A;  }&#x000A;&#x000A;  return rxml_document_wrap(ctxt-&gt;myDoc);&#x000A;}</pre>
+                  <pre id='method-i-parse-source'>static VALUE rxml_html_parser_parse(VALUE self)&#x000A;{&#x000A;  xmlParserCtxtPtr ctxt;&#x000A;  VALUE context = rb_ivar_get(self, CONTEXT_ATTR);&#x000A;  &#x000A;  Data_Get_Struct(context, xmlParserCtxt, ctxt);&#x000A;&#x000A;  if (htmlParseDocument(ctxt) == -1 &amp;&amp; ! ctxt-&gt;recovery)&#x000A;  {&#x000A;    if (ctxt-&gt;myDoc)&#x000A;      xmlFreeDoc(ctxt-&gt;myDoc);&#x000A;    rxml_raise(&amp;ctxt-&gt;lastError);&#x000A;  }&#x000A;&#x000A;  rb_funcall(context, rb_intern(&quot;close&quot;), 0);&#x000A;&#x000A;  return rxml_document_wrap(ctxt-&gt;myDoc);&#x000A;}</pre>
                 </div>
               </div>
             </div>
@@ -237,7 +233,7 @@
       <div id='footer-push'></div>
     </div>
     <div id='footer'>
-      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
     </div>
   </body>
 </html>

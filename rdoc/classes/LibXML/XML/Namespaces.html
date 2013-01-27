@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: LibXML::XML::Namespaces [LibXML]</title>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-    <link href='../../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <title>LibXML::XML::Namespaces</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
         function popupCode(url) {
@@ -26,15 +26,15 @@
     <div class='class' id='wrapper'>
       <div class='header'>
         <h1 class='name'>
-          <span class='type'>Class</span>
+          <span class='type'>class</span>
           LibXML::XML::Namespaces
         </h1>
         <ol class='paths'>
           <li>
-            <a href="../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
+            <a target="docwin" href="../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
           </li>
           <li class='other'>
-            <a href="../../../files/lib/libxml/namespaces_rb.html">lib/libxml/namespaces.rb</a>
+            <a target="docwin" href="../../../files/lib/libxml/namespaces_rb.html">lib/libxml/namespaces.rb</a>
           </li>
           <li>
             <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
@@ -42,65 +42,56 @@
         </ol>
         <div class='parent'>
           Parent:
-          <strong>Object</strong>
+          <strong><a target="docwin" href="../XML.html">XML</a></strong>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
-            <p>
-            The <a href="Namespaces.html">XML::Namespaces</a> class is used to access
-            information about a node&#8217;s namespaces. For each node, libxml
-            maintains:
-            </p>
-            <ul>
-            <li>The node&#8217;s namespace (<a
-            href="Namespaces.html#M000133">namespace</a>)
             
-            </li>
-            <li>Which namespaces are defined on the node (definnitions)
+            <p>The <a href="Namespaces.html">XML::Namespaces</a> class is used to access
+            information about a node's namespaces.  For each node, libxml maintains:</p>
+            <ul><li>
+            <p>The node's namespace (<a
+            href="Namespaces.html#method-i-namespace">namespace</a>)</p>
+            </li><li>
+            <p>Which namespaces are defined on the node (definnitions)</p>
+            </li><li>
+            <p>Which namespaces are in scope for the node (<a
+            href="Namespaces.html#method-i-each">each</a>)</p>
+            </li></ul>
             
-            </li>
-            <li>Which namespaces are in scope for the node (<a
-            href="Namespaces.html#M000130">each</a>)
+            <p>Let's look at an example:</p>
             
-            </li>
-            </ul>
-            <p>
-            Let&#8217;s look at an example:
-            </p>
             <pre>&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&#x000A;               xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#x000A;  &lt;soap:Body&gt;&#x000A;    &lt;order xmlns=&quot;http://mynamespace.com&quot;/&gt;&#x000A;  &lt;/soap:Body&gt;&#x000A;&lt;/soap&gt;</pre>
-            <p>
-            The Envelope node is in the soap namespace. It contains two namespace
-            definitions, one for soap and one for xsd.
-            </p>
-            <p>
-            The Body node is also in the soap namespace and does not contain any
-            namespaces. However, the soap and xsd namespaces are both in context.
-            </p>
-            <p>
-            The order node is in its default namespace and contains one namespace
-            definition (<a href="http://mynamespace.com">mynamespace.com</a>). There
-            are three namespaces in context soap, xsd and the default namespace.
-            </p>
+            
+            <p>The Envelope node is in the soap namespace.  It contains two namespace
+            definitions, one for soap and one for xsd.</p>
+            
+            <p>The Body node is also in the soap namespace and does not contain any
+            namespaces.  However, the soap and xsd namespaces are both in context.</p>
+            
+            <p>The order node is in its default namespace and contains one namespace
+            definition (<a target="_top" href="http://mynamespace.com">mynamespace.com</a>).  There
+            are three namespaces in context soap, xsd and the  default namespace.</p>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
-            <h3>public class</h3>
+            <h3>Public Class</h3>
             <ol>
-              <li><a href="#M000128">initialize</a></li>
+              <li><a target="docwin" href="#method-c-new">new</a></li>
             </ol>
-            <h3>public instance</h3>
+            <h3>Public Instance</h3>
             <ol>
-              <li><a href="#M000136">default</a></li>
-              <li><a href="#M000137">default_prefix=</a></li>
-              <li><a href="#M000129">definitions</a></li>
-              <li><a href="#M000130">each</a></li>
-              <li><a href="#M000131">find_by_href</a></li>
-              <li><a href="#M000132">find_by_prefix</a></li>
-              <li><a href="#M000133">namespace</a></li>
-              <li><a href="#M000134">namespace=</a></li>
-              <li><a href="#M000135">node</a></li>
+              <li><a target="docwin" href="#method-i-default">default</a></li>
+              <li><a target="docwin" href="#method-i-default_prefix-3D">default_prefix=</a></li>
+              <li><a target="docwin" href="#method-i-definitions">definitions</a></li>
+              <li><a target="docwin" href="#method-i-each">each</a></li>
+              <li><a target="docwin" href="#method-i-find_by_href">find_by_href</a></li>
+              <li><a target="docwin" href="#method-i-find_by_prefix">find_by_prefix</a></li>
+              <li><a target="docwin" href="#method-i-namespace">namespace</a></li>
+              <li><a target="docwin" href="#method-i-namespace-3D">namespace=</a></li>
+              <li><a target="docwin" href="#method-i-node">node</a></li>
             </ol>
           </div>
           <div id='context'>
@@ -113,222 +104,232 @@
           </div>
           <div id='section'>
             <div id='methods'>
-              <h2>Public class methods</h2>
-              <div class='method public-class' id='method-M000128'>
-                <a name='M000128'></a>
+              <h2>Public Class methods</h2>
+              <div class='method public-class' id='method-method-c-new'>
+                <a name='method-c-new'></a>
                 <div class='synopsis'>
-                  <span class='name'>initialize(XML::Node) &rarr; XML::Namespaces<br /></span>
+                  <span class='name'>
+                    <div>initialize(XML::Node) -> XML::Namespaces</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Creates a new namespaces object. Generally you do not call this method
+                  
+                  <p>Creates a new namespaces object.  Generally you do not call this method
                   directly, but instead access a namespaces object via <a
-                  href="Node.html#M000194">XML::Node#namespaces</a>.
-                  </p>
-                  <p>
-                  Usage:
-                  </p>
+                  href="Node.html#method-i-namespaces">LibXML::XML::Node#namespaces</a>.</p>
+                  
+                  <p>Usage:</p>
+                  
                   <pre>doc = XML::Document.string('&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;')&#x000A;namespaces = new XML::Namespaces(doc.root)</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000128-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-new-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000128-source'>static VALUE rxml_namespaces_initialize(VALUE self, VALUE node)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;&#x000A;  Check_Type(node, T_DATA);&#x000A;  Data_Get_Struct(node, xmlNode, xnode);&#x000A;&#x000A;  DATA_PTR(self) = xnode;&#x000A;  return self;&#x000A;}</pre>
+                  <pre id='method-c-new-source'>static VALUE rxml_namespaces_initialize(VALUE self, VALUE node)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;&#x000A;  Check_Type(node, T_DATA);&#x000A;  Data_Get_Struct(node, xmlNode, xnode);&#x000A;&#x000A;  DATA_PTR(self) = xnode;&#x000A;  return self;&#x000A;}</pre>
                 </div>
               </div>
-              <h2>Public instance methods</h2>
-              <div class='method public-instance' id='method-M000136'>
-                <a name='M000136'></a>
+              <h2>Public Instance methods</h2>
+              <div class='method public-instance' id='method-method-i-default'>
+                <a name='method-i-default'></a>
                 <div class='synopsis'>
-                  <span class='name'>namespace.default &rarr; XML::Namespace<br /></span>
+                  <span class='name'>
+                    <div>namespace.default -> XML::Namespace</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Returns the default namespace for this node or nil.
-                  </p>
-                  <p>
-                  Usage:
-                  </p>
+                  
+                  <p>Returns the default namespace for this node or nil.</p>
+                  
+                  <p>Usage:</p>
+                  
                   <pre>doc = XML::Document.string('&lt;Envelope xmlns=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;')&#x000A;ns = doc.root.namespaces.default_namespace&#x000A;assert_equal(ns.href, 'http://schemas.xmlsoap.org/soap/envelope/')</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000136-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-default-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000136-source'>    <span class="ruby-comment cmt"># File lib/libxml/namespaces.rb, line 15</span>&#x000A;15:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default</span>&#x000A;16:         <span class="ruby-identifier">find_by_prefix</span>(<span class="ruby-keyword kw">nil</span>)&#x000A;17:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-i-default-source'><span class="ruby-comment"># File lib/libxml/namespaces.rb, line 14</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">default</span>&#x000A;  <span class="ruby-identifier">find_by_prefix</span>(<span class="ruby-keyword">nil</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000137'>
-                <a name='M000137'></a>
+              <div class='method public-instance' id='method-method-i-default_prefix-3D'>
+                <a name='method-i-default_prefix-3D'></a>
                 <div class='synopsis'>
-                  <span class='name'>namespace.default_prefix = "string"<br /></span>
+                  <span class='name'>
+                    <div>namespace.default_prefix = "string"</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Assigns a name (prefix) to the default namespace. This makes it much easier
-                  to perform <a href="XPath.html">XML::XPath</a> searches.
-                  </p>
-                  <p>
-                  Usage:
-                  </p>
+                  
+                  <p>Assigns a name (prefix) to the default namespace. This makes it much easier
+                  to perform <a href="XPath.html">XML::XPath</a> searches.</p>
+                  
+                  <p>Usage:</p>
+                  
                   <pre>doc = XML::Document.string('&lt;Envelope xmlns=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;')&#x000A;doc.root.namespaces.default_prefix = 'soap'&#x000A;node = doc.root.find_first('soap:Envelope')</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000137-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-default_prefix-3D-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000137-source'>    <span class="ruby-comment cmt"># File lib/libxml/namespaces.rb, line 30</span>&#x000A;30:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">default_prefix=</span>(<span class="ruby-identifier">prefix</span>)&#x000A;31:         <span class="ruby-comment cmt"># Find default prefix</span>&#x000A;32:         <span class="ruby-identifier">ns</span> = <span class="ruby-identifier">find_by_prefix</span>(<span class="ruby-keyword kw">nil</span>)&#x000A;33:         <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;No default namespace was found&quot;</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">ns</span>&#x000A;34:         <span class="ruby-constant">Namespace</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">node</span>, <span class="ruby-identifier">prefix</span>, <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">href</span>)&#x000A;35:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-i-default_prefix-3D-source'><span class="ruby-comment"># File lib/libxml/namespaces.rb, line 29</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_prefix=</span>(<span class="ruby-identifier">prefix</span>)&#x000A;  <span class="ruby-comment"># Find default prefix</span>&#x000A;  <span class="ruby-identifier">ns</span> = <span class="ruby-identifier">find_by_prefix</span>(<span class="ruby-keyword">nil</span>)&#x000A;  <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;No default namespace was found&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ns</span>&#x000A;  <span class="ruby-constant">Namespace</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">node</span>, <span class="ruby-identifier">prefix</span>, <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">href</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000129'>
-                <a name='M000129'></a>
+              <div class='method public-instance' id='method-method-i-definitions'>
+                <a name='method-i-definitions'></a>
                 <div class='synopsis'>
-                  <span class='name'>namespaces.definitions &rarr; [XML::Namespace, XML::Namespace]<br /></span>
+                  <span class='name'>
+                    <div>namespaces.definitions -> [XML::Namespace, XML::Namespace]</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Returns an array of <a href="Namespace.html">XML::Namespace</a> objects
-                  that are defined on this node.
-                  </p>
-                  <p>
-                  Usage:
-                  </p>
+                  
+                  <p>Returns an array of <a href="Namespace.html">XML::Namespace</a> objects
+                  that are  defined on this node.</p>
+                  
+                  <p>Usage:</p>
+                  
                   <pre>doc = XML::Document.string('&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;')&#x000A;defs = doc.root.namespaces.definitions</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000129-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-definitions-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000129-source'>static VALUE rxml_namespaces_definitions(VALUE self)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  xmlNsPtr xns;&#x000A;  VALUE arr;&#x000A;&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;&#x000A;  arr = rb_ary_new();&#x000A;  xns = xnode-&gt;nsDef;&#x000A;&#x000A;  while (xns)&#x000A;  {&#x000A;    VALUE anamespace = rxml_namespace_wrap(xns, NULL);&#x000A;    rb_ary_push(arr, anamespace);&#x000A;    xns = xns-&gt;next;&#x000A;  }&#x000A;&#x000A;  return arr;&#x000A;}</pre>
+                  <pre id='method-i-definitions-source'>static VALUE rxml_namespaces_definitions(VALUE self)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  xmlNsPtr xns;&#x000A;  VALUE arr;&#x000A;&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;&#x000A;  arr = rb_ary_new();&#x000A;  xns = xnode-&gt;nsDef;&#x000A;&#x000A;  while (xns)&#x000A;  {&#x000A;    VALUE anamespace = rxml_namespace_wrap(xns);&#x000A;    rb_ary_push(arr, anamespace);&#x000A;    xns = xns-&gt;next;&#x000A;  }&#x000A;&#x000A;  return arr;&#x000A;}</pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000130'>
-                <a name='M000130'></a>
+              <div class='method public-instance' id='method-method-i-each'>
+                <a name='method-i-each'></a>
                 <div class='synopsis'>
-                  <span class='name'>namespaces.each {|XML::Namespace|}<br /></span>
+                  <span class='name'>
+                    <div>namespaces.each {|XML::Namespace|}</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Iterates over the namespace objects that are in context for this node.
-                  </p>
-                  <p>
-                  Usage:
-                  </p>
-                  <pre>doc = XML::Document.string('&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;')&#x000A;doc.root.namespaces.each do |ns|&#x000A;  ..&#x000A;end</pre>
+                  
+                  <p>Iterates over the namespace objects that are in context for this node.</p>
+                  
+                  <p>Usage:</p>
+                  
+                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">string</span>(<span class="ruby-string">'&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;'</span>)&#x000A;<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">namespaces</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ns</span><span class="ruby-operator">|</span>&#x000A;  <span class="ruby-operator">..</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000130-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-each-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000130-source'>static VALUE rxml_namespaces_each(VALUE self)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  xmlNsPtr *nsList, *xns;&#x000A;&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;&#x000A;  nsList = xmlGetNsList(xnode-&gt;doc, xnode);&#x000A;&#x000A;  if (nsList == NULL)&#x000A;    return (Qnil);&#x000A;&#x000A;  for (xns = nsList; *xns != NULL; xns++)&#x000A;  {&#x000A;    VALUE ns = rxml_namespace_wrap(*xns, NULL);&#x000A;    rb_yield(ns);&#x000A;  }&#x000A;  xmlFree(nsList);&#x000A;&#x000A;  return Qnil;&#x000A;}</pre>
+                  <pre id='method-i-each-source'>static VALUE rxml_namespaces_each(VALUE self)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  xmlNsPtr *nsList, *xns;&#x000A;&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;&#x000A;  nsList = xmlGetNsList(xnode-&gt;doc, xnode);&#x000A;&#x000A;  if (nsList == NULL)&#x000A;    return (Qnil);&#x000A;&#x000A;  for (xns = nsList; *xns != NULL; xns++)&#x000A;  {&#x000A;    VALUE ns = rxml_namespace_wrap(*xns);&#x000A;    rb_yield(ns);&#x000A;  }&#x000A;  xmlFree(nsList);&#x000A;&#x000A;  return Qnil;&#x000A;}</pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000131'>
-                <a name='M000131'></a>
+              <div class='method public-instance' id='method-method-i-find_by_href'>
+                <a name='method-i-find_by_href'></a>
                 <div class='synopsis'>
-                  <span class='name'>namespaces.find_by_href(href) &rarr; XML::Namespace<br /></span>
+                  <span class='name'>
+                    <div>namespaces.find_by_href(href) -> XML::Namespace</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Searches for a namespace that has the specified href. The search starts at
-                  the current node and works upward through the node&#8217;s parents. If a
+                  
+                  <p>Searches for a namespace that has the specified href. The search starts at
+                  the current node and works upward through the node's parents.  If a
                   namespace is found, then an <a href="Namespace.html">XML::Namespace</a>
-                  instance is returned, otherwise nil is returned.
-                  </p>
-                  <p>
-                  Usage:
-                  </p>
+                  instance is returned, otherwise nil is returned.</p>
+                  
+                  <p>Usage:</p>
+                  
                   <pre>doc = XML::Document.string('&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;')&#x000A;ns = doc.root.namespaces.find_by_href('http://schemas.xmlsoap.org/soap/envelope/')&#x000A;assert_equal('soap', ns.prefix)&#x000A;assert_equal('http://schemas.xmlsoap.org/soap/envelope/', ns.href)</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000131-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-find_by_href-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000131-source'>static VALUE rxml_namespaces_find_by_href(VALUE self, VALUE href)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  xmlNsPtr xns;&#x000A;&#x000A;  Check_Type(href, T_STRING);&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;&#x000A;  xns = xmlSearchNsByHref(xnode-&gt;doc, xnode, (xmlChar*) StringValuePtr(href));&#x000A;  if (xns)&#x000A;    return rxml_namespace_wrap(xns, NULL);&#x000A;  else&#x000A;    return Qnil;&#x000A;}</pre>
+                  <pre id='method-i-find_by_href-source'>static VALUE rxml_namespaces_find_by_href(VALUE self, VALUE href)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  xmlNsPtr xns;&#x000A;&#x000A;  Check_Type(href, T_STRING);&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;&#x000A;  xns = xmlSearchNsByHref(xnode-&gt;doc, xnode, (xmlChar*) StringValuePtr(href));&#x000A;  if (xns)&#x000A;    return rxml_namespace_wrap(xns);&#x000A;  else&#x000A;    return Qnil;&#x000A;}</pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000132'>
-                <a name='M000132'></a>
+              <div class='method public-instance' id='method-method-i-find_by_prefix'>
+                <a name='method-i-find_by_prefix'></a>
                 <div class='synopsis'>
-                  <span class='name'>namespaces.find_by_prefix(prefix=nil) &rarr; XML::Namespace<br /></span>
+                  <span class='name'>
+                    <div>namespaces.find_by_prefix(prefix=nil) -> XML::Namespace</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Searches for a namespace that has the specified prefix. The search starts
-                  at the current node and works upward through the node&#8217;s parents. If a
+                  
+                  <p>Searches for a namespace that has the specified prefix. The search starts
+                  at the current node and works upward through the node's parents.  If a
                   namespace is found, then an <a href="Namespace.html">XML::Namespace</a>
-                  instance is returned, otherwise nil is returned.
-                  </p>
-                  <p>
-                  Usage:
-                  </p>
+                  instance is returned, otherwise nil is returned.</p>
+                  
+                  <p>Usage:</p>
+                  
                   <pre>doc = XML::Document.string('&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;')&#x000A;ns = doc.root.namespaces.find_by_prefix('soap')&#x000A;assert_equal('soap', ns.prefix)&#x000A;assert_equal('http://schemas.xmlsoap.org/soap/envelope/', ns.href)</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000132-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-find_by_prefix-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000132-source'>static VALUE rxml_namespaces_find_by_prefix(VALUE self, VALUE prefix)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  xmlNsPtr xns;&#x000A;  xmlChar* xprefix = NULL;&#x000A;&#x000A;  &#x000A;  if (!NIL_P(prefix))&#x000A;  {&#x000A;    Check_Type(prefix, T_STRING);&#x000A;    xprefix = (xmlChar*) StringValuePtr(prefix);&#x000A;  }&#x000A;&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;  &#x000A;  xns = xmlSearchNs(xnode-&gt;doc, xnode, xprefix);&#x000A;  if (xns)&#x000A;    return rxml_namespace_wrap(xns, NULL);&#x000A;  else&#x000A;    return Qnil;&#x000A;}</pre>
+                  <pre id='method-i-find_by_prefix-source'>static VALUE rxml_namespaces_find_by_prefix(VALUE self, VALUE prefix)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  xmlNsPtr xns;&#x000A;  xmlChar* xprefix = NULL;&#x000A;&#x000A;  &#x000A;  if (!NIL_P(prefix))&#x000A;  {&#x000A;    Check_Type(prefix, T_STRING);&#x000A;    xprefix = (xmlChar*) StringValuePtr(prefix);&#x000A;  }&#x000A;&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;  &#x000A;  xns = xmlSearchNs(xnode-&gt;doc, xnode, xprefix);&#x000A;  if (xns)&#x000A;    return rxml_namespace_wrap(xns);&#x000A;  else&#x000A;    return Qnil;&#x000A;}</pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000133'>
-                <a name='M000133'></a>
+              <div class='method public-instance' id='method-method-i-namespace'>
+                <a name='method-i-namespace'></a>
                 <div class='synopsis'>
-                  <span class='name'>namespaces.namespace &rarr; XML::Namespace<br /></span>
+                  <span class='name'>
+                    <div>namespaces.namespace -> XML::Namespace</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Returns the current node&#8217;s namespace.
-                  </p>
-                  <p>
-                  Usage:
-                  </p>
+                  
+                  <p>Returns the current node's namespace.</p>
+                  
+                  <p>Usage:</p>
+                  
                   <pre>doc = XML::Document.string('&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;')&#x000A;ns = doc.root.namespaces.namespace&#x000A;assert_equal('soap', ns.prefix)&#x000A;assert_equal('http://schemas.xmlsoap.org/soap/envelope/', ns.href)</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000133-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-namespace-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000133-source'>static VALUE rxml_namespaces_namespace_get(VALUE self)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;&#x000A;  if (xnode-&gt;ns)&#x000A;    return rxml_namespace_wrap(xnode-&gt;ns, NULL);&#x000A;  else&#x000A;    return Qnil;&#x000A;}</pre>
+                  <pre id='method-i-namespace-source'>static VALUE rxml_namespaces_namespace_get(VALUE self)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;&#x000A;  if (xnode-&gt;ns)&#x000A;    return rxml_namespace_wrap(xnode-&gt;ns);&#x000A;  else&#x000A;    return Qnil;&#x000A;}</pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000134'>
-                <a name='M000134'></a>
+              <div class='method public-instance' id='method-method-i-namespace-3D'>
+                <a name='method-i-namespace-3D'></a>
                 <div class='synopsis'>
-                  <span class='name'>namespaces.namespace = XML::Namespace<br /></span>
+                  <span class='name'>
+                    <div>namespaces.namespace = XML::Namespace</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Sets the current node&#8217;s namespace.
-                  </p>
-                  <p>
-                  Basic usage:
-                  </p>
-                  <pre># Create a node&#x000A;node = XML::Node.new('Envelope')&#x000A;&#x000A;# Define the soap namespace - this does *not* put the node in the namespace&#x000A;ns = XML::Namespace.new(node, 'soap', 'http://schemas.xmlsoap.org/soap/envelope/')&#x000A;assert_equal(&quot;&lt;Envelope xmlns:soap=\&quot;http://schemas.xmlsoap.org/soap/envelope/\&quot;/&gt;&quot;, node.to_s)&#x000A;&#x000A;# Now put the node in the soap namespace, not how the string representation changes&#x000A;node.namespaces.namespace = ns&#x000A;assert_equal(&quot;&lt;soap:Envelope xmlns:soap=\&quot;http://schemas.xmlsoap.org/soap/envelope/\&quot;/&gt;&quot;, node.to_s)</pre>
+                  
+                  <p>Sets the current node's namespace.</p>
+                  
+                  <p>Basic usage:</p>
+                  
+                  <pre># Create a node&#x000A;node = XML::Node.new('Envelope')&#x000A;# Define the soap namespace - this does *not* put the node in the namespace&#x000A;ns = XML::Namespace.new(node, 'soap', 'http://schemas.xmlsoap.org/soap/envelope/')&#x000A;assert_equal(&quot;&lt;Envelope xmlns:soap=\&quot;http://schemas.xmlsoap.org/soap/envelope/\&quot;/&gt;&quot;, node.to_s)&#x000A;&#x000A;# Now put the node in the soap namespace, not how the string representation changes&#x000A;node.namespaces.namespace = ns&#x000A;assert_equal(&quot;&lt;soap:Envelope xmlns:soap=\&quot;http://schemas.xmlsoap.org/soap/envelope/\&quot;/&gt;&quot;, node.to_s)</pre>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000134-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-namespace-3D-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000134-source'>static VALUE rxml_namespaces_namespace_set(VALUE self, VALUE ns)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  xmlNsPtr xns;&#x000A;&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;&#x000A;  Check_Type(ns, T_DATA);&#x000A;  Data_Get_Struct(ns, xmlNs, xns);&#x000A;&#x000A;  xmlSetNs(xnode, xns);&#x000A;  return self;&#x000A;}</pre>
+                  <pre id='method-i-namespace-3D-source'>static VALUE rxml_namespaces_namespace_set(VALUE self, VALUE ns)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  xmlNsPtr xns;&#x000A;&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;&#x000A;  Check_Type(ns, T_DATA);&#x000A;  Data_Get_Struct(ns, xmlNs, xns);&#x000A;&#x000A;  xmlSetNs(xnode, xns);&#x000A;  return self;&#x000A;}</pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000135'>
-                <a name='M000135'></a>
+              <div class='method public-instance' id='method-method-i-node'>
+                <a name='method-i-node'></a>
                 <div class='synopsis'>
-                  <span class='name'>namespaces.node &rarr; XML::Node<br /></span>
+                  <span class='name'>
+                    <div>namespaces.node -> XML::Node</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Returns the current node.
-                  </p>
+                  
+                  <p>Returns the current node.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000135-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-node-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000135-source'>static VALUE rxml_namespaces_node_get(VALUE self)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;  return rxml_node_wrap(xnode);&#x000A;}</pre>
+                  <pre id='method-i-node-source'>static VALUE rxml_namespaces_node_get(VALUE self)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  Data_Get_Struct(self, xmlNode, xnode);&#x000A;  return rxml_node_wrap(xnode);&#x000A;}</pre>
                 </div>
               </div>
             </div>
@@ -338,7 +339,7 @@
       <div id='footer-push'></div>
     </div>
     <div id='footer'>
-      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
     </div>
   </body>
 </html>

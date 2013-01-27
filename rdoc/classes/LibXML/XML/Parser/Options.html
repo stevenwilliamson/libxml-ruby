@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: LibXML::XML::Parser::Options [LibXML]</title>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-    <link href='../../../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <title>LibXML::XML::Parser::Options</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../../../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
         function popupCode(url) {
@@ -26,27 +26,33 @@
     <div class='class' id='wrapper'>
       <div class='header'>
         <h1 class='name'>
-          <span class='type'>Module</span>
+          <span class='type'>module</span>
           LibXML::XML::Parser::Options
         </h1>
         <ol class='paths'>
           <li>
-            <a href="../../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
+            <a target="docwin" href="../../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
           </li>
         </ol>
+        <div class='parent'>
+          Parent:
+          <strong><a target="docwin" href="../Parser.html">Parser</a></strong>
+        </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
-            <p>
-            <a href="Options.html">Options</a> that control the operation of the <a
-            href="../HTMLParser.html">HTMLParser</a>. The easiest way to set a
-            parser&#8217;s options is to use the methods <a
-            href="../Parser.html#M000101">XML::Parser.file</a>, <a
-            href="../Parser.html#M000102">XML::Parser.io</a> or <a
-            href="../Parser.html#M000103">XML::Parser.string</a>. For additional
-            control, see XML::Parser::Context#options=.
-            </p>
+            
+            <p><a href="Options.html">Options</a> that control the operation of the <a
+            href="../HTMLParser.html">HTMLParser</a>.  The easiest way to set a
+            parser's options is to use the methods <a
+            href="../Parser.html#method-c-file">LibXML::XML::Parser.file</a>, <a
+            href="../Parser.html#method-c-io">LibXML::XML::Parser.io</a> or <a
+            href="../Parser.html#method-c-string">LibXML::XML::Parser.string</a>. For
+            additional control, see <a
+            href="Context.html#method-i-options-3D">LibXML::XML::Parser::Context#options=</a>.</p>
+          </div>
+          <div id='context'>
           </div>
           <div id='section'>
             <div id='constants-list'>
@@ -54,33 +60,13 @@
               <div class='name-list'>
                 <table summary='Constants'>
                   <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>RECOVER</td>
+                    <td class='context-item-name'>COMPACT</td>
                     <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_RECOVER)</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_COMPACT)</td>
                     <td>&nbsp;</td>
                     <td class='context-item-desc'>
                       
-                      recover on errors
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>NOENT</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_NOENT)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      substitute entities
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>DTDLOAD</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_DTDLOAD)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      load the external subset
+                      <p>compact small text nodes</p>
                     </td>
                   </tr>
                   <tr class='top-aligned-row context-row'>
@@ -90,7 +76,17 @@
                     <td>&nbsp;</td>
                     <td class='context-item-desc'>
                       
-                      default DTD attributes
+                      <p>default DTD attributes</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>DTDLOAD</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_DTDLOAD)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>load the external subset</p>
                     </td>
                   </tr>
                   <tr class='top-aligned-row context-row'>
@@ -100,147 +96,7 @@
                     <td>&nbsp;</td>
                     <td class='context-item-desc'>
                       
-                      validate with the DTD
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>NOERROR</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_NOERROR)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      suppress error reports
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>NOWARNING</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_NOWARNING)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      suppress warning reports
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>PEDANTIC</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_PEDANTIC)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      pedantic error reporting
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>NOBLANKS</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_NOBLANKS)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      remove blank nodes
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>SAX1</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_SAX1)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      use the SAX1 interface internally
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>XINCLUDE</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_XINCLUDE)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      Implement <a href="../XInclude.html">XInclude</a> substitition
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>NONET</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_NONET)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      Forbid network access
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>NODICT</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_NODICT)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      Do not reuse the context dictionnary
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>NSCLEAN</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_NSCLEAN)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      remove redundant namespaces declarations
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>NOCDATA</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_NOCDATA)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      merge CDATA as text nodes
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>NOXINCNODE</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_NOXINCNODE)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      do not generate XINCLUDE START/END nodes
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>COMPACT</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_COMPACT)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      compact small text nodes
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>PARSE_OLD10</td>
-                    <td>=</td>
-                    <td class='context-item-value'>INT2NUM(XML_PARSE_OLD10)</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      parse using XML-1.0 before update 5
-                    </td>
-                  </tr>
-                  <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>NOBASEFIX</td>
-                    <td>=</td>
-                    <td class='context-item-value'>do not fixup XINCLUDE xml</td>
-                    <td>&nbsp;</td>
-                    <td class='context-item-desc'>
-                      
-                      base uris
+                      <p>validate with the DTD</p>
                     </td>
                   </tr>
                   <tr class='top-aligned-row context-row'>
@@ -250,7 +106,158 @@
                     <td>&nbsp;</td>
                     <td class='context-item-desc'>
                       
-                      relax any hardcoded limit from the parser
+                      <p>relax any hardcoded limit from the parser</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>NOBASEFIX</td>
+                    <td>=</td>
+                    <td class='context-item-value'>do not fixup XINCLUDE xml</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>base uris</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>NOBLANKS</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_NOBLANKS)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>remove blank nodes</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>NOCDATA</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_NOCDATA)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>merge CDATA as text nodes</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>NODICT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_NODICT)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Do not reuse the context dictionnary</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>NOENT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_NOENT)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>substitute entities</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>NOERROR</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_NOERROR)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>suppress error reports</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>NONET</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_NONET)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Forbid network access</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>NOWARNING</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_NOWARNING)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>suppress warning reports</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>NOXINCNODE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_NOXINCNODE)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>do not generate <a href="Options.html#XINCLUDE">XINCLUDE</a> START/END
+                      nodes</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>NSCLEAN</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_NSCLEAN)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>remove redundant namespaces declarations</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PARSE_OLD10</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_OLD10)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>parse using XML-1.0 before update 5</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>PEDANTIC</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_PEDANTIC)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>pedantic error reporting</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>RECOVER</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_RECOVER)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>recover on errors</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>SAX1</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_SAX1)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>use the <a href="Options.html#SAX1">SAX1</a> interface internally</p>
+                    </td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>XINCLUDE</td>
+                    <td>=</td>
+                    <td class='context-item-value'>INT2NUM(XML_PARSE_XINCLUDE)</td>
+                    <td>&nbsp;</td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Implement <a href="../XInclude.html">XInclude</a> substitition</p>
                     </td>
                   </tr>
                 </table>
@@ -262,7 +269,7 @@
       <div id='footer-push'></div>
     </div>
     <div id='footer'>
-      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
     </div>
   </body>
 </html>

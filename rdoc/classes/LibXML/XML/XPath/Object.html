@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: LibXML::XML::XPath::Object [LibXML]</title>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-    <link href='../../../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <title>LibXML::XML::XPath::Object</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../../../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
         function popupCode(url) {
@@ -26,54 +26,307 @@
     <div class='class' id='wrapper'>
       <div class='header'>
         <h1 class='name'>
-          <span class='type'>Class</span>
+          <span class='type'>class</span>
           LibXML::XML::XPath::Object
         </h1>
         <ol class='paths'>
           <li>
-            <a href="../../../../files/lib/libxml/xpath_object_rb.html">lib/libxml/xpath_object.rb</a>
+            <a target="docwin" href="../../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
+          </li>
+          <li class='other'>
+            <a target="docwin" href="../../../../files/lib/libxml/xpath_object_rb.html">lib/libxml/xpath_object.rb</a>
+          </li>
+          <li>
+            <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
           </li>
         </ol>
         <div class='parent'>
           Parent:
-          <strong><a href="Object.html">LibXML::XML::XPath::Object</a></strong>
+          <strong><a target="docwin" href="../XPath.html">XPath</a></strong>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
+          <div id='description'>
+            
+            <p>A collection of nodes returned from the evaluation of an <a
+            href="../XPath.html">XML::XPath</a> or <a
+            href="../XPointer.html">XML::XPointer</a> expression.</p>
+          </div>
           <div id='method-list'>
             <h2>Methods</h2>
-            <h3>public instance</h3>
+            <h3>Public Instance</h3>
             <ol>
-              <li><a href="#M000095">set</a></li>
+              <li><a target="docwin" href="#method-i-5B-5D">[]</a></li>
+              <li><a target="docwin" href="#attribute-i-context">context</a></li>
+              <li><a target="docwin" href="#method-i-debug">debug</a></li>
+              <li><a target="docwin" href="#method-i-each">each</a></li>
+              <li><a target="docwin" href="#method-i-empty-3F">empty?</a></li>
+              <li><a target="docwin" href="#method-i-first">first</a></li>
+              <li><a target="docwin" href="#method-i-last">last</a></li>
+              <li><a target="docwin" href="#method-i-length">length</a></li>
+              <li><a target="docwin" href="#method-i-set">set</a></li>
+              <li><a target="docwin" href="#method-i-string">string</a></li>
+              <li><a target="docwin" href="#method-i-to_a">to_a</a></li>
+              <li><a target="docwin" href="#method-i-xpath_type">xpath_type</a></li>
             </ol>
+          </div>
+          <div id='context'>
+            <div id='includes'>
+              <h2>Included modules</h2>
+              <ol>
+                <li>Enumerable</li>
+              </ol>
+            </div>
           </div>
           <div id='section'>
             <div id='aliases-list'>
-              <h2>External Aliases</h2>
+              <h2>Public Instance Aliases</h2>
               <div class='name-list'>
-                <table summary='External aliases'>
+                <table summary='Public Instance Aliases'>
                   <tr class='top-aligned-row context-row'>
-                    <td class='context-item-name'>length</td>
+                    <td class='context-item-name'>size</td>
                     <td>-&gt;</td>
-                    <td class='context-item-value'>size</td>
+                    <td class='context-item-value'><a target="docwin" href="#method-i-length">length</a></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id='attribute-list'>
+              <h2 class='section-bar'>Attributes</h2>
+              <div class='name-list'>
+                <table>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>
+                      <a name='attribute-i-context'>context</a>
+                    </td>
+                    <td class='context-item-value'>[R]</td>
+                    <td class='context-item-desc'></td>
                   </tr>
                 </table>
               </div>
             </div>
             <div id='methods'>
-              <h2>Public instance methods</h2>
-              <div class='method public-instance' id='method-M000095'>
-                <a name='M000095'></a>
+              <h2>Public Instance methods</h2>
+              <div class='method public-instance' id='method-method-i-5B-5D'>
+                <a name='method-i-5B-5D'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>xpath_object[i] -> node</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>array index into set of nodes</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-5B-5D-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-5B-5D-source'>static VALUE rxml_xpath_object_aref(VALUE self, VALUE aref)&#x000A;{&#x000A;  rxml_xpath_object *rxpop;&#x000A;&#x000A;  if (rxml_xpath_object_empty_q(self) == Qtrue)&#x000A;    return Qnil;&#x000A;&#x000A;  Data_Get_Struct(self, rxml_xpath_object, rxpop);&#x000A;  return rxml_xpath_object_tabref(rxpop-&gt;xpop, NUM2INT(aref));&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-debug'>
+                <a name='method-i-debug'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>nodes.debug -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Dump libxml debugging information to stdout. Requires Libxml be compiled
+                  with debugging enabled.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-debug-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-debug-source'>static VALUE rxml_xpath_object_debug(VALUE self)&#x000A;{&#x000A;#ifdef LIBXML_DEBUG_ENABLED&#x000A;  rxml_xpath_object *rxpop;&#x000A;  Data_Get_Struct(self, rxml_xpath_object, rxpop);&#x000A;  xmlXPathDebugDumpObject(stdout, rxpop-&gt;xpop, 0);&#x000A;  return Qtrue;&#x000A;#else&#x000A;  rb_warn(&quot;libxml was compiled without debugging support.&quot;)&#x000A;  return Qfalse;&#x000A;#endif&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-each'>
+                <a name='method-i-each'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>xpath_object.each { |node| ... } -> self</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Call the supplied block for each node in this set.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-each-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-each-source'>static VALUE rxml_xpath_object_each(VALUE self)&#x000A;{&#x000A;  rxml_xpath_object *rxpop;&#x000A;  int i;&#x000A;&#x000A;  if (rxml_xpath_object_empty_q(self) == Qtrue)&#x000A;    return Qnil;&#x000A;&#x000A;  Data_Get_Struct(self, rxml_xpath_object, rxpop);&#x000A;&#x000A;  for (i = 0; i &lt; rxpop-&gt;xpop-&gt;nodesetval-&gt;nodeNr; i++)&#x000A;  {&#x000A;    rb_yield(rxml_xpath_object_tabref(rxpop-&gt;xpop, i));&#x000A;  }&#x000A;  return (self);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-empty-3F'>
+                <a name='method-i-empty-3F'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>xpath_object.empty? -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Determine whether this nodeset is empty (contains no nodes).</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-empty-3F-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-empty-3F-source'>static VALUE rxml_xpath_object_empty_q(VALUE self)&#x000A;{&#x000A;  rxml_xpath_object *rxpop;&#x000A;  Data_Get_Struct(self, rxml_xpath_object, rxpop);&#x000A;&#x000A;  if (rxpop-&gt;xpop-&gt;type != XPATH_NODESET)&#x000A;    return Qnil;&#x000A;&#x000A;  return (rxpop-&gt;xpop-&gt;nodesetval == NULL || rxpop-&gt;xpop-&gt;nodesetval-&gt;nodeNr &lt;= 0) ? Qtrue&#x000A;      : Qfalse;&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-first'>
+                <a name='method-i-first'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>xpath_object.first -> node</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the first node in this node set, or nil if none exist.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-first-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-first-source'>static VALUE rxml_xpath_object_first(VALUE self)&#x000A;{&#x000A;  rxml_xpath_object *rxpop;&#x000A;&#x000A;  if (rxml_xpath_object_empty_q(self) == Qtrue)&#x000A;    return Qnil;&#x000A;&#x000A;  Data_Get_Struct(self, rxml_xpath_object, rxpop);&#x000A;  return rxml_xpath_object_tabref(rxpop-&gt;xpop, 0);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-last'>
+                <a name='method-i-last'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>xpath_object.last -> node</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the last node in this node set, or nil if none exist.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-last-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-last-source'>static VALUE rxml_xpath_object_last(VALUE self)&#x000A;{&#x000A;  rxml_xpath_object *rxpop;&#x000A;&#x000A;  if (rxml_xpath_object_empty_q(self) == Qtrue)&#x000A;    return Qnil;&#x000A;&#x000A;  Data_Get_Struct(self, rxml_xpath_object, rxpop);&#x000A;  return rxml_xpath_object_tabref(rxpop-&gt;xpop, -1);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-length'>
+                <a name='method-i-length'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>xpath_object.length -> num</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Obtain the length of the nodesetval node list.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-length-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-length-source'>static VALUE rxml_xpath_object_length(VALUE self)&#x000A;{&#x000A;  rxml_xpath_object *rxpop;&#x000A;&#x000A;  if (rxml_xpath_object_empty_q(self) == Qtrue)&#x000A;    return INT2FIX(0);&#x000A;&#x000A;  Data_Get_Struct(self, rxml_xpath_object, rxpop);&#x000A;  return INT2NUM(rxpop-&gt;xpop-&gt;nodesetval-&gt;nodeNr);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-set'>
+                <a name='method-i-set'></a>
                 <div class='synopsis'>
                   <span class='name'>set</span>
                   <span class='arguments'>()</span>
                 </div>
+                <div class='description'>
+                  
+                </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000095-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-set-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000095-source'>    <span class="ruby-comment cmt"># File lib/libxml/xpath_object.rb, line 9</span>&#x000A; 9:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set</span>&#x000A;10:           <span class="ruby-identifier">warn</span>(<span class="ruby-value str">&quot;XPath::Object#set is deprecated.  Simply use the XPath::Object API instead&quot;</span>)&#x000A;11:           <span class="ruby-keyword kw">self</span>&#x000A;12:         <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-i-set-source'><span class="ruby-comment"># File lib/libxml/xpath_object.rb, line 8</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">set</span>&#x000A;  <span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;XPath::Object#set is deprecated.  Simply use the XPath::Object API instead&quot;</span>)&#x000A;  <span class="ruby-keyword">self</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-string'>
+                <a name='method-i-string'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>xpath_object.string -> String</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the original <a href="../XPath.html">XPath</a> expression as a
+                  string.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-string-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-string-source'>static VALUE rxml_xpath_object_string(VALUE self)&#x000A;{&#x000A;  rxml_xpath_object *rxpop;&#x000A;&#x000A;  Data_Get_Struct(self, rxml_xpath_object, rxpop);&#x000A;&#x000A;  if (rxpop-&gt;xpop-&gt;stringval == NULL)&#x000A;    return Qnil;&#x000A;&#x000A;  return rxml_new_cstr((const char*) rxpop-&gt;xpop-&gt;stringval, rxpop-&gt;xdoc-&gt;encoding);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-to_a'>
+                <a name='method-i-to_a'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>xpath_object.to_a -> [node, ..., node]</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Obtain an array of the nodes in this set.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-to_a-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-to_a-source'>static VALUE rxml_xpath_object_to_a(VALUE self)&#x000A;{&#x000A;  VALUE set_ary, nodeobj;&#x000A;  rxml_xpath_object *rxpop;&#x000A;  xmlXPathObjectPtr xpop;&#x000A;  int i;&#x000A;&#x000A;  Data_Get_Struct(self, rxml_xpath_object, rxpop);&#x000A;  xpop = rxpop-&gt;xpop;&#x000A;&#x000A;  set_ary = rb_ary_new();&#x000A;&#x000A;  if (!((xpop-&gt;nodesetval == NULL) || (xpop-&gt;nodesetval-&gt;nodeNr == 0)))&#x000A;  {&#x000A;    for (i = 0; i &lt; xpop-&gt;nodesetval-&gt;nodeNr; i++)&#x000A;    {&#x000A;      nodeobj = rxml_xpath_object_tabref(xpop, i);&#x000A;      rb_ary_push(set_ary, nodeobj);&#x000A;    }&#x000A;  }&#x000A;&#x000A;  return (set_ary);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-xpath_type'>
+                <a name='method-i-xpath_type'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>xpath_object.xpath_type -> int</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the <a href="../XPath.html">XPath</a> type of the result object.
+                  Possible values are defined as constants on the <a
+                  href="../XPath.html">XML::XPath</a> class and include:</p>
+                  <ul><li>
+                  <p>XML::XPath::UNDEFINED</p>
+                  </li><li>
+                  <p>XML::XPath::NODESET</p>
+                  </li><li>
+                  <p>XML::XPath::BOOLEAN</p>
+                  </li><li>
+                  <p>XML::XPath::NUMBER</p>
+                  </li><li>
+                  <p>XML::XPath::STRING</p>
+                  </li><li>
+                  <p>XML::XPath::POINT</p>
+                  </li><li>
+                  <p>XML::XPath::RANGE</p>
+                  </li><li>
+                  <p>XML::XPath::LOCATIONSET</p>
+                  </li><li>
+                  <p>XML::XPath::USERS</p>
+                  </li><li>
+                  <p>XML::XPath::XSLT_TREE</p>
+                  </li></ul>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-xpath_type-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-xpath_type-source'>static VALUE rxml_xpath_object_get_type(VALUE self)&#x000A;{&#x000A;  rxml_xpath_object *rxpop;&#x000A;  Data_Get_Struct(self, rxml_xpath_object, rxpop);&#x000A;  return INT2FIX(rxpop-&gt;xpop-&gt;type);&#x000A;}</pre>
                 </div>
               </div>
             </div>
@@ -83,7 +336,7 @@
       <div id='footer-push'></div>
     </div>
     <div id='footer'>
-      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
     </div>
   </body>
 </html>

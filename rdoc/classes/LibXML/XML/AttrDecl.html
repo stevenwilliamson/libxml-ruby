@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>: LibXML::XML::AttrDecl [LibXML]</title>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-    <link href='../../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <title>LibXML::XML::AttrDecl</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
         function popupCode(url) {
@@ -26,15 +26,15 @@
     <div class='class' id='wrapper'>
       <div class='header'>
         <h1 class='name'>
-          <span class='type'>Class</span>
+          <span class='type'>class</span>
           LibXML::XML::AttrDecl
         </h1>
         <ol class='paths'>
           <li>
-            <a href="../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
+            <a target="docwin" href="../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
           </li>
           <li class='other'>
-            <a href="../../../files/lib/libxml/attr_decl_rb.html">lib/libxml/attr_decl.rb</a>
+            <a target="docwin" href="../../../files/lib/libxml/attr_decl_rb.html">lib/libxml/attr_decl.rb</a>
           </li>
           <li>
             <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
@@ -42,37 +42,36 @@
         </ol>
         <div class='parent'>
           Parent:
-          <strong>Object</strong>
+          <strong><a target="docwin" href="../XML.html">XML</a></strong>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
-            <p>
-            At attribute declaration is used in XML::Dtds to define what attributes are
-            allowed on an element. An attribute declaration defines an attribues name,
-            data type and default value (if any).
-            </p>
+            
+            <p>At attribute declaration is used in XML::Dtds to define  what attributes
+            are allowed on an element.  An attribute declaration defines an attribues
+            name, data type and default value (if any).</p>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
-            <h3>public instance</h3>
+            <h3>Public Instance</h3>
             <ol>
-              <li><a href="#M000322">child</a></li>
-              <li><a href="#M000323">child?</a></li>
-              <li><a href="#M000315">doc</a></li>
-              <li><a href="#M000324">doc?</a></li>
-              <li><a href="#M000316">name</a></li>
-              <li><a href="#M000317">next</a></li>
-              <li><a href="#M000325">next?</a></li>
-              <li><a href="#M000318">type</a></li>
-              <li><a href="#M000328">node_type_name</a></li>
-              <li><a href="#M000319">parent</a></li>
-              <li><a href="#M000326">parent?</a></li>
-              <li><a href="#M000320">prev</a></li>
-              <li><a href="#M000327">prev?</a></li>
-              <li><a href="#M000329">to_s</a></li>
-              <li><a href="#M000321">value</a></li>
+              <li><a target="docwin" href="#method-i-child">child</a></li>
+              <li><a target="docwin" href="#method-i-child-3F">child?</a></li>
+              <li><a target="docwin" href="#method-i-doc">doc</a></li>
+              <li><a target="docwin" href="#method-i-doc-3F">doc?</a></li>
+              <li><a target="docwin" href="#method-i-name">name</a></li>
+              <li><a target="docwin" href="#method-i-next">next</a></li>
+              <li><a target="docwin" href="#method-i-next-3F">next?</a></li>
+              <li><a target="docwin" href="#method-i-node_type">node_type</a></li>
+              <li><a target="docwin" href="#method-i-node_type_name">node_type_name</a></li>
+              <li><a target="docwin" href="#method-i-parent">parent</a></li>
+              <li><a target="docwin" href="#method-i-parent-3F">parent?</a></li>
+              <li><a target="docwin" href="#method-i-prev">prev</a></li>
+              <li><a target="docwin" href="#method-i-prev-3F">prev?</a></li>
+              <li><a target="docwin" href="#method-i-to_s">to_s</a></li>
+              <li><a target="docwin" href="#method-i-value">value</a></li>
             </ol>
           </div>
           <div id='context'>
@@ -85,264 +84,279 @@
           </div>
           <div id='section'>
             <div id='methods'>
-              <h2>Public instance methods</h2>
-              <div class='method public-instance' id='method-M000322'>
-                <a name='M000322'></a>
+              <h2>Public Instance methods</h2>
+              <div class='method public-instance' id='method-method-i-child'>
+                <a name='method-i-child'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.child &rarr; nil<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.child -> nil</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Obtain this attribute declaration&#8217;s child attribute(s). It will
-                  always be nil.
-                  </p>
+                  
+                  <p>Obtain this attribute declaration's child attribute(s). It will always be
+                  nil.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000322-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-child-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000322-source'>    <span class="ruby-comment cmt"># File lib/libxml/attr_decl.rb, line 13</span>&#x000A;13:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">child</span>&#x000A;14:         <span class="ruby-keyword kw">nil</span>&#x000A;15:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-i-child-source'><span class="ruby-comment"># File lib/libxml/attr_decl.rb, line 12</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">child</span>&#x000A;  <span class="ruby-keyword">nil</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000323'>
-                <a name='M000323'></a>
+              <div class='method public-instance' id='method-method-i-child-3F'>
+                <a name='method-i-child-3F'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.child? &rarr; (true|false)<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.child? -> (true|false)</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Returns whether this attribute declaration has child attributes.
-                  </p>
+                  
+                  <p>Returns whether this attribute declaration has child attributes.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000323-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-child-3F-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000323-source'>    <span class="ruby-comment cmt"># File lib/libxml/attr_decl.rb, line 22</span>&#x000A;22:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">child?</span>&#x000A;23:         <span class="ruby-keyword kw">not</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">nil?</span>&#x000A;24:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-i-child-3F-source'><span class="ruby-comment"># File lib/libxml/attr_decl.rb, line 21</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">child?</span>&#x000A;  <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">nil?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000315'>
-                <a name='M000315'></a>
+              <div class='method public-instance' id='method-method-i-doc'>
+                <a name='method-i-doc'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.doc &rarr; XML::Document<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.doc -> XML::Document</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Returns this attribute declaration&#8217;s document.
-                  </p>
+                  
+                  <p>Returns this attribute declaration's document.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000315-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-doc-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000315-source'>static VALUE rxml_attr_decl_doc_get(VALUE self)&#x000A;{&#x000A;  xmlAttributePtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttribute, xattr);&#x000A;  if (xattr-&gt;doc == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_document_wrap(xattr-&gt;doc);&#x000A;}</pre>
+                  <pre id='method-i-doc-source'>static VALUE rxml_attr_decl_doc_get(VALUE self)&#x000A;{&#x000A;  xmlAttributePtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttribute, xattr);&#x000A;  if (xattr-&gt;doc == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_document_wrap(xattr-&gt;doc);&#x000A;}</pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000324'>
-                <a name='M000324'></a>
+              <div class='method public-instance' id='method-method-i-doc-3F'>
+                <a name='method-i-doc-3F'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.doc? &rarr; (true|false)<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.doc? -> (true|false)</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Determine whether this attribute declaration is associated with an <a
-                  href="Document.html">XML::Document</a>.
-                  </p>
+                  
+                  <p>Determine whether this attribute declaration is associated with an <a
+                  href="Document.html">XML::Document</a>.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000324-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-doc-3F-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000324-source'>    <span class="ruby-comment cmt"># File lib/libxml/attr_decl.rb, line 31</span>&#x000A;31:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">doc?</span>&#x000A;32:         <span class="ruby-keyword kw">not</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">nil?</span>&#x000A;33:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-i-doc-3F-source'><span class="ruby-comment"># File lib/libxml/attr_decl.rb, line 30</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">doc?</span>&#x000A;  <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">nil?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000316'>
-                <a name='M000316'></a>
+              <div class='method public-instance' id='method-method-i-name'>
+                <a name='method-i-name'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.name &rarr; "name"<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.name -> "name"</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Obtain this attribute declaration&#8217;s name.
-                  </p>
+                  
+                  <p>Obtain this attribute declaration's name.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000316-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-name-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000316-source'>static VALUE rxml_attr_decl_name_get(VALUE self)&#x000A;{&#x000A;  xmlAttributePtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttribute, xattr);&#x000A;&#x000A;  if (xattr-&gt;name == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_str_new2((const char*) xattr-&gt;name, xattr-&gt;doc-&gt;encoding);&#x000A;}</pre>
+                  <pre id='method-i-name-source'>static VALUE rxml_attr_decl_name_get(VALUE self)&#x000A;{&#x000A;  xmlAttributePtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttribute, xattr);&#x000A;&#x000A;  if (xattr-&gt;name == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_new_cstr((const char*) xattr-&gt;name, xattr-&gt;doc-&gt;encoding);&#x000A;}</pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000317'>
-                <a name='M000317'></a>
+              <div class='method public-instance' id='method-method-i-next'>
+                <a name='method-i-next'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.next &rarr; XML::AttrDecl<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.next -> XML::AttrDecl</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Obtain the next attribute declaration.
-                  </p>
+                  
+                  <p>Obtain the next attribute declaration.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000317-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-next-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000317-source'>static VALUE rxml_attr_decl_next_get(VALUE self)&#x000A;{&#x000A;  xmlAttributePtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttribute, xattr);&#x000A;  if (xattr-&gt;next == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_attr_decl_wrap((xmlAttributePtr)xattr-&gt;next);&#x000A;}</pre>
+                  <pre id='method-i-next-source'>static VALUE rxml_attr_decl_next_get(VALUE self)&#x000A;{&#x000A;  xmlAttributePtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttribute, xattr);&#x000A;  if (xattr-&gt;next == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_attr_decl_wrap((xmlAttributePtr)xattr-&gt;next);&#x000A;}</pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000325'>
-                <a name='M000325'></a>
+              <div class='method public-instance' id='method-method-i-next-3F'>
+                <a name='method-i-next-3F'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.next? &rarr; (true|false)<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.next? -> (true|false)</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Determine whether there is a next attribute declaration.
-                  </p>
+                  
+                  <p>Determine whether there is a next attribute declaration.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000325-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-next-3F-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000325-source'>    <span class="ruby-comment cmt"># File lib/libxml/attr_decl.rb, line 39</span>&#x000A;39:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">next?</span>&#x000A;40:         <span class="ruby-keyword kw">not</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">next</span>.<span class="ruby-identifier">nil?</span>&#x000A;41:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-i-next-3F-source'><span class="ruby-comment"># File lib/libxml/attr_decl.rb, line 38</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">next?</span>&#x000A;  <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">next</span>.<span class="ruby-identifier">nil?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000318'>
-                <a name='M000318'></a>
+              <div class='method public-instance' id='method-method-i-node_type'>
+                <a name='method-i-node_type'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.type &rarr; num<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.type -> num</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Obtain this attribute declaration&#8217;s type node type.
-                  </p>
+                  
+                  <p>Obtain this attribute declaration's type node type.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000318-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-node_type-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000318-source'>static VALUE rxml_attr_decl_node_type(VALUE self)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;  return INT2NUM(xattr-&gt;type);&#x000A;}</pre>
+                  <pre id='method-i-node_type-source'>static VALUE rxml_attr_decl_node_type(VALUE self)&#x000A;{&#x000A;  xmlAttrPtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttr, xattr);&#x000A;  return INT2NUM(xattr-&gt;type);&#x000A;}</pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000328'>
-                <a name='M000328'></a>
+              <div class='method public-instance' id='method-method-i-node_type_name'>
+                <a name='method-i-node_type_name'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.node_type_name &rarr; 'attribute declaration'<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.node_type_name -> 'attribute declaration'</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Returns this attribute declaration&#8217;s node type name.
-                  </p>
+                  
+                  <p>Returns this attribute declaration's node type name.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000328-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-node_type_name-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000328-source'>    <span class="ruby-comment cmt"># File lib/libxml/attr_decl.rb, line 63</span>&#x000A;63:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">node_type_name</span>&#x000A;64:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">ATTRIBUTE_DECL</span>&#x000A;65:           <span class="ruby-value str">'attribute declaration'</span>&#x000A;66:         <span class="ruby-keyword kw">else</span>&#x000A;67:           <span class="ruby-identifier">raise</span>(<span class="ruby-constant">UnknownType</span>, <span class="ruby-value str">&quot;Unknown node type: %n&quot;</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">node_type</span>);&#x000A;68:         <span class="ruby-keyword kw">end</span>&#x000A;69:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-i-node_type_name-source'><span class="ruby-comment"># File lib/libxml/attr_decl.rb, line 62</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_type_name</span>&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node_type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">ATTRIBUTE_DECL</span>&#x000A;    <span class="ruby-string">'attribute declaration'</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">UnknownType</span>, <span class="ruby-string">&quot;Unknown node type: %n&quot;</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">node_type</span>);&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000319'>
-                <a name='M000319'></a>
+              <div class='method public-instance' id='method-method-i-parent'>
+                <a name='method-i-parent'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.parent &rarr; XML::Dtd<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.parent -> XML::Dtd</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Obtain this attribute declaration&#8217;s parent which is an instance of a
-                  XML::DTD.
-                  </p>
+                  
+                  <p>Obtain this attribute declaration's parent which is an instance of a
+                  XML::DTD.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000319-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-parent-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000319-source'>static VALUE rxml_attr_decl_parent_get(VALUE self)&#x000A;{&#x000A;  xmlAttributePtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttribute, xattr);&#x000A;&#x000A;  if (xattr-&gt;parent == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_dtd_wrap(xattr-&gt;parent);&#x000A;}</pre>
+                  <pre id='method-i-parent-source'>static VALUE rxml_attr_decl_parent_get(VALUE self)&#x000A;{&#x000A;  xmlAttributePtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttribute, xattr);&#x000A;&#x000A;  if (xattr-&gt;parent == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_dtd_wrap(xattr-&gt;parent);&#x000A;}</pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000326'>
-                <a name='M000326'></a>
+              <div class='method public-instance' id='method-method-i-parent-3F'>
+                <a name='method-i-parent-3F'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.parent? &rarr; (true|false)<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.parent? -> (true|false)</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Determine whether this attribute declaration has a parent .
-                  </p>
+                  
+                  <p>Determine whether this attribute declaration has a parent .</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000326-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-parent-3F-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000326-source'>    <span class="ruby-comment cmt"># File lib/libxml/attr_decl.rb, line 47</span>&#x000A;47:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parent?</span>&#x000A;48:         <span class="ruby-keyword kw">not</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">nil?</span>&#x000A;49:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-i-parent-3F-source'><span class="ruby-comment"># File lib/libxml/attr_decl.rb, line 46</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">parent?</span>&#x000A;  <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">nil?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000320'>
-                <a name='M000320'></a>
+              <div class='method public-instance' id='method-method-i-prev'>
+                <a name='method-i-prev'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.prev &rarr; (XML::AttrDecl | XML::ElementDecl)<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.prev -> (XML::AttrDecl | XML::ElementDecl)</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Obtain the previous attribute declaration or the owning element declration
-                  (not implemented).
-                  </p>
+                  
+                  <p>Obtain the previous attribute declaration or the owning element declration
+                  (not implemented).</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000320-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-prev-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000320-source'>static VALUE rxml_attr_decl_prev_get(VALUE self)&#x000A;{&#x000A;  xmlAttributePtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttribute, xattr);&#x000A;&#x000A;  if (xattr-&gt;prev == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_attr_decl_wrap((xmlAttributePtr)xattr-&gt;prev);&#x000A;}</pre>
+                  <pre id='method-i-prev-source'>static VALUE rxml_attr_decl_prev_get(VALUE self)&#x000A;{&#x000A;  xmlAttributePtr xattr;&#x000A;  Data_Get_Struct(self, xmlAttribute, xattr);&#x000A;&#x000A;  if (xattr-&gt;prev == NULL)&#x000A;    return Qnil;&#x000A;  else&#x000A;    return rxml_attr_decl_wrap((xmlAttributePtr)xattr-&gt;prev);&#x000A;}</pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000327'>
-                <a name='M000327'></a>
+              <div class='method public-instance' id='method-method-i-prev-3F'>
+                <a name='method-i-prev-3F'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.prev? &rarr; (true|false)<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.prev? -> (true|false)</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Determine whether there is a previous attribute declaration.
-                  </p>
+                  
+                  <p>Determine whether there is a previous attribute declaration.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000327-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-prev-3F-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000327-source'>    <span class="ruby-comment cmt"># File lib/libxml/attr_decl.rb, line 55</span>&#x000A;55:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prev?</span>&#x000A;56:         <span class="ruby-keyword kw">not</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">prev</span>.<span class="ruby-identifier">nil?</span>&#x000A;57:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-i-prev-3F-source'><span class="ruby-comment"># File lib/libxml/attr_decl.rb, line 54</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">prev?</span>&#x000A;  <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">prev</span>.<span class="ruby-identifier">nil?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000329'>
-                <a name='M000329'></a>
+              <div class='method public-instance' id='method-method-i-to_s'>
+                <a name='method-i-to_s'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.to_s &rarr; string<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.to_s -> string</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Returns a string representation of this attribute declaration.
-                  </p>
+                  
+                  <p>Returns a string representation of this attribute declaration.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000329-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-to_s-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000329-source'>    <span class="ruby-comment cmt"># File lib/libxml/attr_decl.rb, line 75</span>&#x000A;75:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>&#x000A;76:         <span class="ruby-node">&quot;#{name} = #{value}&quot;</span>&#x000A;77:       <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='method-i-to_s-source'><span class="ruby-comment"># File lib/libxml/attr_decl.rb, line 74</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>&#x000A;  <span class="ruby-node">&quot;#{name} = #{value}&quot;</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
-              <div class='method public-instance' id='method-M000321'>
-                <a name='M000321'></a>
+              <div class='method public-instance' id='method-method-i-value'>
+                <a name='method-i-value'></a>
                 <div class='synopsis'>
-                  <span class='name'>attr_decl.value &rarr; "value"<br /></span>
+                  <span class='name'>
+                    <div>attr_decl.value -> "value"</div>
+                  </span>
                 </div>
                 <div class='description'>
-                  <p>
-                  Obtain the default value of this attribute declaration.
-                  </p>
+                  
+                  <p>Obtain the default value of this attribute declaration.</p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000321-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-value-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000321-source'>VALUE rxml_attr_decl_value_get(VALUE self)&#x000A;{&#x000A;  xmlAttributePtr xattr;&#x000A;&#x000A;  Data_Get_Struct(self, xmlAttribute, xattr);&#x000A;&#x000A;  if (xattr-&gt;defaultValue)&#x000A;    return rxml_str_new2((const char *)xattr-&gt;defaultValue, xattr-&gt;doc-&gt;encoding);&#x000A;  else&#x000A;    return Qnil;&#x000A;}</pre>
+                  <pre id='method-i-value-source'>VALUE rxml_attr_decl_value_get(VALUE self)&#x000A;{&#x000A;  xmlAttributePtr xattr;&#x000A;&#x000A;  Data_Get_Struct(self, xmlAttribute, xattr);&#x000A;&#x000A;  if (xattr-&gt;defaultValue)&#x000A;    return rxml_new_cstr((const char *)xattr-&gt;defaultValue, NULL);&#x000A;  else&#x000A;    return Qnil;&#x000A;}</pre>
                 </div>
               </div>
             </div>
@@ -352,7 +366,7 @@
       <div id='footer-push'></div>
     </div>
     <div id='footer'>
-      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
     </div>
   </body>
 </html>

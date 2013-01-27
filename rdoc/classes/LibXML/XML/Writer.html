@@ -1,0 +1,1171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>LibXML::XML::Writer</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>
+          <span class='type'>class</span>
+          LibXML::XML::Writer
+        </h1>
+        <ol class='paths'>
+          <li>
+            <a target="docwin" href="../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
+          </li>
+        </ol>
+        <div class='parent'>
+          Parent:
+          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            
+            <p>The <a href="Writer.html">XML::Writer</a> class provides a simpler,
+            alternative way to build a valid <a href="../XML.html">XML</a> document
+            from scratch (forward-only) compared to a DOM approach (based on <a
+            href="Document.html">XML::Document</a> class).</p>
+            
+            <p>For a more in depth tutorial, albeit in C, see <a
+            href="http://xmlsoft.org/xmlwriter.html">xmlsoft.org/xmlwriter.html</a></p>
+          </div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>Public Class</h3>
+            <ol>
+              <li><a target="docwin" href="#method-c-document">document</a></li>
+              <li><a target="docwin" href="#method-c-file">file</a></li>
+              <li><a target="docwin" href="#method-c-io">io</a></li>
+              <li><a target="docwin" href="#method-c-string">string</a></li>
+            </ol>
+            <h3>Public Instance</h3>
+            <ol>
+              <li><a target="docwin" href="#method-i-end_attribute">end_attribute</a></li>
+              <li><a target="docwin" href="#method-i-end_cdata">end_cdata</a></li>
+              <li><a target="docwin" href="#method-i-end_comment">end_comment</a></li>
+              <li><a target="docwin" href="#method-i-end_document">end_document</a></li>
+              <li><a target="docwin" href="#method-i-end_dtd">end_dtd</a></li>
+              <li><a target="docwin" href="#method-i-end_dtd_attlist">end_dtd_attlist</a></li>
+              <li><a target="docwin" href="#method-i-end_dtd_element">end_dtd_element</a></li>
+              <li><a target="docwin" href="#method-i-end_dtd_entity">end_dtd_entity</a></li>
+              <li><a target="docwin" href="#method-i-end_element">end_element</a></li>
+              <li><a target="docwin" href="#method-i-end_pi">end_pi</a></li>
+              <li><a target="docwin" href="#method-i-flush">flush</a></li>
+              <li><a target="docwin" href="#method-i-full_end_element">full_end_element</a></li>
+              <li><a target="docwin" href="#method-i-result">result</a></li>
+              <li><a target="docwin" href="#method-i-set_indent">set_indent</a></li>
+              <li><a target="docwin" href="#method-i-set_indent_string">set_indent_string</a></li>
+              <li><a target="docwin" href="#method-i-set_quote_char">set_quote_char</a></li>
+              <li><a target="docwin" href="#method-i-start_attribute">start_attribute</a></li>
+              <li><a target="docwin" href="#method-i-start_attribute_ns">start_attribute_ns</a></li>
+              <li><a target="docwin" href="#method-i-start_cdata">start_cdata</a></li>
+              <li><a target="docwin" href="#method-i-start_comment">start_comment</a></li>
+              <li><a target="docwin" href="#method-i-start_document">start_document</a></li>
+              <li><a target="docwin" href="#method-i-start_dtd">start_dtd</a></li>
+              <li><a target="docwin" href="#method-i-start_dtd_attlist">start_dtd_attlist</a></li>
+              <li><a target="docwin" href="#method-i-start_dtd_element">start_dtd_element</a></li>
+              <li><a target="docwin" href="#method-i-start_dtd_entity">start_dtd_entity</a></li>
+              <li><a target="docwin" href="#method-i-start_element">start_element</a></li>
+              <li><a target="docwin" href="#method-i-start_element_ns">start_element_ns</a></li>
+              <li><a target="docwin" href="#method-i-start_pi">start_pi</a></li>
+              <li><a target="docwin" href="#method-i-write_attribute">write_attribute</a></li>
+              <li><a target="docwin" href="#method-i-write_attribute_ns">write_attribute_ns</a></li>
+              <li><a target="docwin" href="#method-i-write_cdata">write_cdata</a></li>
+              <li><a target="docwin" href="#method-i-write_comment">write_comment</a></li>
+              <li><a target="docwin" href="#method-i-write_dtd">write_dtd</a></li>
+              <li><a target="docwin" href="#method-i-write_dtd_attlist">write_dtd_attlist</a></li>
+              <li><a target="docwin" href="#method-i-write_dtd_element">write_dtd_element</a></li>
+              <li><a target="docwin" href="#method-i-write_dtd_entity">write_dtd_entity</a></li>
+              <li><a target="docwin" href="#method-i-write_dtd_external_entity">write_dtd_external_entity</a></li>
+              <li><a target="docwin" href="#method-i-write_dtd_external_entity_contents">write_dtd_external_entity_contents</a></li>
+              <li><a target="docwin" href="#method-i-write_dtd_internal_entity">write_dtd_internal_entity</a></li>
+              <li><a target="docwin" href="#method-i-write_dtd_notation">write_dtd_notation</a></li>
+              <li><a target="docwin" href="#method-i-write_element">write_element</a></li>
+              <li><a target="docwin" href="#method-i-write_element_ns">write_element_ns</a></li>
+              <li><a target="docwin" href="#method-i-write_pi">write_pi</a></li>
+              <li><a target="docwin" href="#method-i-write_raw">write_raw</a></li>
+              <li><a target="docwin" href="#method-i-write_string">write_string</a></li>
+            </ol>
+          </div>
+          <div id='context'>
+          </div>
+          <div id='section'>
+            <div id='methods'>
+              <h2>Public Class methods</h2>
+              <div class='method public-class' id='method-method-c-document'>
+                <a name='method-c-document'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>XML::Writer::document -> XML::Writer</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Creates a <a href="Writer.html">XML::Writer</a> which will write into an in
+                  memory <a href="Document.html">XML::Document</a></p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-document-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-c-document-source'>static VALUE rxml_writer_doc(VALUE klass)&#x000A;{&#x000A;    xmlDocPtr doc;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = ALLOC(rxml_writer_object);&#x000A;    rwo-&gt;buffer = NULL;&#x000A;    rwo-&gt;output = Qnil;&#x000A;    rwo-&gt;output_type = RXMLW_OUTPUT_DOC;&#x000A;    if (NULL == (rwo-&gt;writer = xmlNewTextWriterDoc(&amp;doc, 0))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;    rwo-&gt;output = rxml_document_wrap(doc);&#x000A;&#x000A;    return rxml_writer_wrap(rwo);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-class' id='method-method-c-file'>
+                <a name='method-c-file'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>XML::Writer::file(path) -> XML::Writer</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Creates a <a href="Writer.html">XML::Writer</a> object which will write <a
+                  href="../XML.html">XML</a> into the file with the given name.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-file-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-c-file-source'>static VALUE rxml_writer_file(VALUE klass, VALUE filename)&#x000A;{&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = ALLOC(rxml_writer_object);&#x000A;    rwo-&gt;output = Qnil;&#x000A;    rwo-&gt;buffer = NULL;&#x000A;    rwo-&gt;output_type = RXMLW_OUTPUT_NONE;&#x000A;    if (NULL == (rwo-&gt;writer = xmlNewTextWriterFilename(StringValueCStr(filename), 0))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;&#x000A;    return rxml_writer_wrap(rwo);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-class' id='method-method-c-io'>
+                <a name='method-c-io'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>XML::Writer::io(io) -> XML::Writer</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Creates a <a href="Writer.html">XML::Writer</a> which will write <a
+                  href="../XML.html">XML</a> directly into an IO object.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-io-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-c-io-source'>static VALUE rxml_writer_io(VALUE klass, VALUE io)&#x000A;{&#x000A;#if 0&#x000A;typedef int (*xmlOutputCloseCallback)(void * context);&#x000A;typedef int (*xmlOutputWriteCallback)(void * context, const char * buffer, int len);&#x000A;&#x000A;ssize_t rb_io_bufwrite(VALUE io, const void *buf, size_t size);&#x000A;&#x000A;xmlOutputBufferPtr xmlOutputBufferCreateIO(xmlOutputWriteCallback iowrite, xmlOutputCloseCallback ioclose, void * ioctx, xmlCharEncodingHandlerPtr encoder)&#x000A;&#x000A;xmlCharEncodingHandlerPtr xmlFindCharEncodingHandler(const char * name);&#x000A;#endif&#x000A;    xmlOutputBufferPtr out;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = ALLOC(rxml_writer_object);&#x000A;    rwo-&gt;output = io;&#x000A;    rwo-&gt;buffer = NULL;&#x000A;    rwo-&gt;output_type = RXMLW_OUTPUT_IO;&#x000A;    if (NULL == (out = xmlOutputBufferCreateIO(rxml_write_callback, NULL, (void *) io, NULL))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;    if (NULL == (rwo-&gt;writer = xmlNewTextWriter(out))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;&#x000A;    return rxml_writer_wrap(rwo);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-class' id='method-method-c-string'>
+                <a name='method-c-string'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>XML::Writer::string -> XML::Writer</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Creates a <a href="Writer.html">XML::Writer</a> which will write <a
+                  href="../XML.html">XML</a> into memory, as string.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-c-string-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-c-string-source'>static VALUE rxml_writer_string(VALUE klass)&#x000A;{&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = ALLOC(rxml_writer_object);&#x000A;    rwo-&gt;output = Qnil;&#x000A;    rwo-&gt;output_type = RXMLW_OUTPUT_STRING;&#x000A;    if (NULL == (rwo-&gt;buffer = xmlBufferCreate())) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;    if (NULL == (rwo-&gt;writer = xmlNewTextWriterMemory(rwo-&gt;buffer, 0))) {&#x000A;        xmlBufferFree(rwo-&gt;buffer);&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;&#x000A;    return rxml_writer_wrap(rwo);&#x000A;}</pre>
+                </div>
+              </div>
+              <h2>Public Instance methods</h2>
+              <div class='method public-instance' id='method-method-i-end_attribute'>
+                <a name='method-i-end_attribute'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.end_attribute -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Ends an attribute, namespaced or not. Returns <code>false</code> on
+                  failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-end_attribute-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-end_attribute-source'>static VALUE rxml_writer_end_attribute(VALUE self)&#x000A;{&#x000A;    return numeric_rxml_writer_void(self, xmlTextWriterEndAttribute);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-end_cdata'>
+                <a name='method-i-end_cdata'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.end_cdata -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Ends current CDATA section. Returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-end_cdata-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-end_cdata-source'>static VALUE rxml_writer_end_cdata(VALUE self)&#x000A;{&#x000A;    return numeric_rxml_writer_void(self, xmlTextWriterEndCDATA);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-end_comment'>
+                <a name='method-i-end_comment'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.end_comment -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Ends current comment, returns <code>false</code> on failure. Note: libxml2
+                  &gt;= 2.6.7 required</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-end_comment-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-end_comment-source'>static VALUE rxml_writer_end_comment(VALUE self)&#x000A;{&#x000A;    return numeric_rxml_writer_void(self, xmlTextWriterEndComment);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-end_document'>
+                <a name='method-i-end_document'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.end_document -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Ends current document. Returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-end_document-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-end_document-source'>static VALUE rxml_writer_end_document(VALUE self)&#x000A;{&#x000A;    return numeric_rxml_writer_void(self, xmlTextWriterEndDocument);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-end_dtd'>
+                <a name='method-i-end_dtd'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.end_dtd -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Ends current DTD, returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-end_dtd-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-end_dtd-source'>static VALUE rxml_writer_end_dtd(VALUE self)&#x000A;{&#x000A;    return numeric_rxml_writer_void(self, xmlTextWriterEndDTD);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-end_dtd_attlist'>
+                <a name='method-i-end_dtd_attlist'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.end_dtd_attlist -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Ends current DTD attribute list, returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-end_dtd_attlist-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-end_dtd_attlist-source'>static VALUE rxml_writer_end_dtd_attlist(VALUE self)&#x000A;{&#x000A;    return numeric_rxml_writer_void(self, xmlTextWriterEndDTDAttlist);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-end_dtd_element'>
+                <a name='method-i-end_dtd_element'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.end_dtd_element -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Ends current DTD element, returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-end_dtd_element-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-end_dtd_element-source'>static VALUE rxml_writer_end_dtd_element(VALUE self)&#x000A;{&#x000A;    return numeric_rxml_writer_void(self, xmlTextWriterEndDTDElement);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-end_dtd_entity'>
+                <a name='method-i-end_dtd_entity'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.end_dtd_entity -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Ends current DTD entity, returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-end_dtd_entity-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-end_dtd_entity-source'>static VALUE rxml_writer_end_dtd_entity(VALUE self)&#x000A;{&#x000A;    return numeric_rxml_writer_void(self, xmlTextWriterEndDTDEntity);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-end_element'>
+                <a name='method-i-end_element'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.end_element -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Ends current element, namespaced or not. Returns <code>false</code> on
+                  failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-end_element-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-end_element-source'>static VALUE rxml_writer_end_element(VALUE self)&#x000A;{&#x000A;    return numeric_rxml_writer_void(self, xmlTextWriterEndElement);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-end_pi'>
+                <a name='method-i-end_pi'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.end_pi -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Ends current processing instruction. Returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-end_pi-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-end_pi-source'>static VALUE rxml_writer_end_pi(VALUE self)&#x000A;{&#x000A;    return numeric_rxml_writer_void(self, xmlTextWriterEndPI);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-flush'>
+                <a name='method-i-flush'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.flush -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Flushes the output buffer.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-flush-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-flush-source'>static VALUE rxml_writer_flush(VALUE self)&#x000A;{&#x000A;    int ret;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = rxml_textwriter_get(self);&#x000A;    ret = xmlTextWriterFlush(rwo-&gt;writer);&#x000A;&#x000A;    return (-1 == ret ? Qfalse : Qtrue);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-full_end_element'>
+                <a name='method-i-full_end_element'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_full_end_element -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Ends current element, namespaced or not. Returns <code>false</code> on
+                  failure. This method writes an end tag even if the element is empty
+                  (&lt;foo&gt;&lt;/foo&gt;), <a
+                  href="Writer.html#method-i-end_element">#end_element</a> does not
+                  (&lt;foo/&gt;).</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-full_end_element-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-full_end_element-source'>static VALUE rxml_writer_full_end_element(VALUE self)&#x000A;{&#x000A;    return numeric_rxml_writer_void(self, xmlTextWriterFullEndElement);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-result'>
+                <a name='method-i-result'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.result -> (XML::Document|"string"|nil)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Returns the associated result object to the <a
+                  href="Writer.html">XML::Writer</a> creation. A String for a <a
+                  href="Writer.html">XML::Writer</a> object created with <a
+                  href="Writer.html#method-c-string">::string</a>, a <a
+                  href="Document.html">XML::Document</a> with <a
+                  href="Writer.html#method-c-document">::document</a>, etc.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-result-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-result-source'>static VALUE rxml_writer_result(VALUE self)&#x000A;{&#x000A;    VALUE ret;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    ret = Qnil;&#x000A;    rwo = rxml_textwriter_get(self);&#x000A;    switch (rwo-&gt;output_type) {&#x000A;        case RXMLW_OUTPUT_DOC:&#x000A;            ret = rwo-&gt;output;&#x000A;            break;&#x000A;        case RXMLW_OUTPUT_STRING:&#x000A;            ret = rxml_writer_c_to_ruby_string(rwo-&gt;buffer-&gt;content, rwo-&gt;buffer-&gt;use);&#x000A;            break;&#x000A;        case RXMLW_OUTPUT_IO:&#x000A;        case RXMLW_OUTPUT_NONE:&#x000A;            break;&#x000A;        default:&#x000A;            rb_bug(&quot;unexpected output&quot;);&#x000A;            break;&#x000A;    }&#x000A;&#x000A;    return ret;&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-set_indent'>
+                <a name='method-i-set_indent'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.set_indent(indentation) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Toggles indentation on or off. Returns <code>false</code> on failure.</p>
+                  
+                  <p>Availability: libxml2 &gt;= 2.6.5</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-set_indent-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-set_indent-source'>static VALUE rxml_writer_set_indent(VALUE self, VALUE indentation)&#x000A;{&#x000A;    int ret;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = rxml_textwriter_get(self);&#x000A;    ret = xmlTextWriterSetIndent(rwo-&gt;writer, RTEST(indentation));&#x000A;&#x000A;    return (-1 == ret ? Qfalse : Qtrue);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-set_indent_string'>
+                <a name='method-i-set_indent_string'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.set_indent_string(string) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Sets the string to use to indent each element of the document. Don't forget
+                  to enable indentation with set_indent. Returns <code>false</code> on
+                  failure.</p>
+                  
+                  <p>Availability: libxml2 &gt;= 2.6.5</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-set_indent_string-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-set_indent_string-source'>static VALUE rxml_writer_set_indent_string(VALUE self, VALUE indentation)&#x000A;{&#x000A;    return numeric_rxml_writer_string(self, indentation, xmlTextWriterSetIndentString);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-set_quote_char'>
+                <a name='method-i-set_quote_char'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.set_quote_char(...) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Sets the character used to quote attributes. Returns <code>false</code> on
+                  failure.</p>
+                  
+                  <p>Notes:</p>
+                  <ul><li>
+                  <p>only " (default) and ' characters are valid</p>
+                  </li><li>
+                  <p>availability: libxml2 &gt;= 2.9.0</p>
+                  </li></ul>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-set_quote_char-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-set_quote_char-source'>static VALUE rxml_writer_set_quote_char(VALUE self, VALUE quotechar)&#x000A;{&#x000A;    int ret;&#x000A;    const char *xquotechar;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = rxml_textwriter_get(self);&#x000A;    xquotechar = StringValueCStr(quotechar);&#x000A;    ret = xmlTextWriterSetQuoteChar(rwo-&gt;writer, (xmlChar) xquotechar[0]);&#x000A;&#x000A;    return (-1 == ret ? Qfalse : Qtrue);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-start_attribute'>
+                <a name='method-i-start_attribute'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.start_attribute(name) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Starts an attribute. Returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_attribute-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-start_attribute-source'>static VALUE rxml_writer_start_attribute(VALUE self, VALUE name)&#x000A;{&#x000A;    return numeric_rxml_writer_string(self, name, xmlTextWriterStartAttribute);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-start_attribute_ns'>
+                <a name='method-i-start_attribute_ns'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.start_attribute_ns(prefix, name, namespaceURI) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Starts a namespaced attribute. Returns <code>false</code> on failure.</p>
+                  
+                  <p>Note: by default, the xmlns: definition is repeated on every element. If
+                  you want the prefix, but don't want the xmlns: declaration repeated, set
+                  <code>namespaceURI</code> to nil or omit it. Don't forget to declare the
+                  namespace prefix somewhere earlier.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_attribute_ns-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-start_attribute_ns-source'>static VALUE rxml_writer_start_attribute_ns(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE prefix, name, namespaceURI;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;21&quot;, &amp;prefix, &amp;name, &amp;namespaceURI);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 3, xmlTextWriterStartAttributeNS, prefix, name, namespaceURI);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-start_cdata'>
+                <a name='method-i-start_cdata'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.start_cdata -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Starts a new CDATA section. Returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_cdata-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-start_cdata-source'>static VALUE rxml_writer_start_cdata(VALUE self)&#x000A;{&#x000A;    return numeric_rxml_writer_void(self, xmlTextWriterStartCDATA);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-start_comment'>
+                <a name='method-i-start_comment'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.start_comment -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Starts a comment. Returns <code>false</code> on failure. Note: libxml2
+                  &gt;= 2.6.7 required</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_comment-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-start_comment-source'>static VALUE rxml_writer_start_comment(VALUE self)&#x000A;{&#x000A;    return numeric_rxml_writer_void(self, xmlTextWriterStartComment);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-start_document'>
+                <a name='method-i-start_document'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.start_document -> (true|false)</div>
+                    <div>writer.start_document(:encoding => XML::Encoding::UTF_8,</div>
+                    <div>:standalone => true) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Starts a new document. Returns <code>false</code> on failure.</p>
+                  
+                  <p>You may provide an optional hash table to control <a
+                  href="../XML.html">XML</a> header that will be generated. Valid options
+                  are:</p>
+                  <ul><li>
+                  <p>encoding: the output document encoding, defaults to nil (= UTF-8). Valid</p>
+                  </li></ul>
+                  
+                  <p>values are the encoding constants defined on <a
+                  href="Encoding.html">XML::Encoding</a></p>
+                  <ul><li>
+                  <p>standalone: nil (default) or a boolean to indicate if the document is</p>
+                  </li></ul>
+                  
+                  <p>standalone or not</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_document-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-start_document-source'>static VALUE rxml_writer_start_document(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    int ret;&#x000A;    VALUE options;&#x000A;    rxml_writer_object *rwo;&#x000A;    const char *xencoding, *xstandalone;&#x000A;&#x000A;    options = Qnil;&#x000A;    xstandalone = xencoding = NULL;&#x000A;    rb_scan_args(argc, argv, &quot;01&quot;, &amp;options);&#x000A;    if (!NIL_P(options)) {&#x000A;        VALUE encoding, standalone;&#x000A;&#x000A;        encoding = standalone = Qnil;&#x000A;        Check_Type(options, T_HASH);&#x000A;        encoding = rb_hash_aref(options, sEncoding);&#x000A;        xencoding = NIL_P(encoding) ? NULL : xmlGetCharEncodingName(NUM2INT(encoding));&#x000A;        standalone = rb_hash_aref(options, sStandalone);&#x000A;        if (NIL_P(standalone)) {&#x000A;            xstandalone = NULL;&#x000A;        } else {&#x000A;            xstandalone = RTEST(standalone) ? &quot;yes&quot; : &quot;no&quot;;&#x000A;        }&#x000A;    }&#x000A;    rwo = rxml_textwriter_get(self);&#x000A;    ret = xmlTextWriterStartDocument(rwo-&gt;writer, NULL, xencoding, xstandalone);&#x000A;&#x000A;    return (-1 == ret ? Qfalse : Qtrue);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-start_dtd'>
+                <a name='method-i-start_dtd'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.start_dtd(qualifiedName, publicId, systemId) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Starts a DTD. Returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_dtd-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-start_dtd-source'>static VALUE rxml_writer_start_dtd(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE name, pubid, sysid;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;12&quot;, &amp;name, &amp;pubid, &amp;sysid);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 3, xmlTextWriterStartDTD, name, pubid, sysid);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-start_dtd_attlist'>
+                <a name='method-i-start_dtd_attlist'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.start_dtd_attlist(name) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Starts a DTD attribute list (&lt;!ATTLIST ... &gt;). Returns
+                  <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_dtd_attlist-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-start_dtd_attlist-source'>static VALUE rxml_writer_start_dtd_attlist(VALUE self, VALUE name)&#x000A;{&#x000A;    return numeric_rxml_writer_string(self, name, xmlTextWriterStartDTDAttlist);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-start_dtd_element'>
+                <a name='method-i-start_dtd_element'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.start_dtd_element(qualifiedName) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Starts a DTD element (&lt;!ELEMENT ... &gt;). Returns <code>false</code> on
+                  failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_dtd_element-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-start_dtd_element-source'>static VALUE rxml_writer_start_dtd_element(VALUE self, VALUE name)&#x000A;{&#x000A;    return numeric_rxml_writer_string(self, name, xmlTextWriterStartDTDElement);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-start_dtd_entity'>
+                <a name='method-i-start_dtd_entity'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.start_dtd_entity(name, pe = false) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Starts a DTD entity (&lt;!ENTITY ... &gt;). Returns <code>false</code> on
+                  failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_dtd_entity-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-start_dtd_entity-source'>static VALUE rxml_writer_start_dtd_entity(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE name, pe;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;11&quot;, &amp;name, &amp;pe);&#x000A;    if (NIL_P(pe)) {&#x000A;        pe = Qfalse;&#x000A;    }&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, pe, 1, xmlTextWriterStartDTDEntity, name);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-start_element'>
+                <a name='method-i-start_element'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.start_element(name) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Starts a new element. Returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_element-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-start_element-source'>static VALUE rxml_writer_start_element(VALUE self, VALUE name)&#x000A;{&#x000A;    return numeric_rxml_writer_string(self, name, xmlTextWriterStartElement);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-start_element_ns'>
+                <a name='method-i-start_element_ns'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.start_element_ns(prefix, name, namespaceURI) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Starts a new namespaced element. Returns <code>false</code> on failure.</p>
+                  
+                  <p>Note: by default, the xmlns: definition is repeated on every element. If
+                  you want the prefix, but don't want the xmlns: declaration repeated, set
+                  <code>namespaceURI</code> to nil or omit it. Don't forget to declare the
+                  namespace prefix somewhere earlier.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_element_ns-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-start_element_ns-source'>static VALUE rxml_writer_start_element_ns(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE prefix, name, namespaceURI;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;21&quot;, &amp;prefix, &amp;name, &amp;namespaceURI);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 3, xmlTextWriterStartElementNS, prefix, name, namespaceURI);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-start_pi'>
+                <a name='method-i-start_pi'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.start_pi(target) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Starts a new processing instruction. Returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_pi-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-start_pi-source'>static VALUE rxml_writer_start_pi(VALUE self, VALUE target)&#x000A;{&#x000A;    return numeric_rxml_writer_string(self, target, xmlTextWriterStartPI);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_attribute'>
+                <a name='method-i-write_attribute'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_attribute(name, content) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a full attribute, all at once. Returns <code>false</code> on
+                  failure. Same as <a
+                  href="Writer.html#method-i-start_attribute">#start_attribute</a>(name) + <a
+                  href="Writer.html#method-i-write_string">#write_string</a>(content) +
+                  end_attribute.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_attribute-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_attribute-source'>static VALUE rxml_writer_write_attribute(VALUE self, VALUE name, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 2, xmlTextWriterWriteAttribute, name, content);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_attribute_ns'>
+                <a name='method-i-write_attribute_ns'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_attribute_ns(prefix, name, namespaceURI, content) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a full namespaced attribute, all at once. Returns <code>false</code>
+                  on failure. Same as <a
+                  href="Writer.html#method-i-start_attribute_ns">#start_attribute_ns</a>(prefix,
+                  name, namespaceURI) + <a
+                  href="Writer.html#method-i-write_string">#write_string</a>(content) +
+                  end_attribute.</p>
+                  
+                  <p>Notes:</p>
+                  <ul><li>
+                  <p>by default, the xmlns: definition is repeated on every element. If you want</p>
+                  </li></ul>
+                  
+                  <p>the prefix, but don't want the xmlns: declaration repeated, set
+                  <code>namespaceURI</code> to nil or omit it. Don't forget to declare the
+                  namespace prefix somewhere earlier.</p>
+                  <ul><li>
+                  <p><code>content</code> can be omitted too for an empty attribute</p>
+                  </li></ul>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_attribute_ns-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_attribute_ns-source'>static VALUE rxml_writer_write_attribute_ns(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE prefix, name, namespaceURI, content;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;22&quot;, &amp;prefix, &amp;name, &amp;namespaceURI, &amp;content);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 4, xmlTextWriterWriteAttributeNS, prefix, name, namespaceURI, content);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_cdata'>
+                <a name='method-i-write_cdata'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_cdata(content) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a full CDATA section, all at once. Returns <code>false</code> on
+                  failure. This is equivalent to <a
+                  href="Writer.html#method-i-start_cdata">#start_cdata</a> + <a
+                  href="Writer.html#method-i-write_string">#write_string</a>(content) +
+                  end_cdata.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_cdata-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_cdata-source'>static VALUE rxml_writer_write_cdata(VALUE self, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_string(self, content, xmlTextWriterWriteCDATA);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_comment'>
+                <a name='method-i-write_comment'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_comment(content) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a full comment tag, all at once. Returns <code>false</code> on
+                  failure. This is equivalent to <a
+                  href="Writer.html#method-i-start_comment">#start_comment</a> + <a
+                  href="Writer.html#method-i-write_string">#write_string</a>(content) +
+                  end_comment.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_comment-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_comment-source'>static VALUE rxml_writer_write_comment(VALUE self, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_string(self, content, xmlTextWriterWriteComment);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_dtd'>
+                <a name='method-i-write_dtd'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_dtd(name [ [ [, publicId ], systemId ], subset ]) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a DTD, all at once. Returns <code>false</code> on failure.</p>
+                  <ul><li>
+                  <p>name: dtd name</p>
+                  </li><li>
+                  <p>publicId: external subset public identifier, use nil for a SYSTEM doctype</p>
+                  </li><li>
+                  <p>systemId: external subset system identifier</p>
+                  </li><li>
+                  <p>subset: content</p>
+                  </li></ul>
+                  
+                  <p>Examples:</p>
+                  
+                  <pre class="ruby"><span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd</span> <span class="ruby-string">'html'</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!DOCTYPE html&gt;</span>&#x000A;<span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd</span> <span class="ruby-string">'docbook'</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-string">'http://www.docbook.org/xml/5.0/dtd/docbook.dtd'</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!DOCTYPE docbook SYSTEM &quot;http://www.docbook.org/xml/5.0/dtd/docbook.dtd&quot;&gt;</span>&#x000A;<span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd</span> <span class="ruby-string">'html'</span>, <span class="ruby-string">'-//W3C//DTD XHTML 1.1//EN'</span>, <span class="ruby-string">'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.1//EN&quot; &quot;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&quot;&gt;</span>&#x000A;<span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd</span> <span class="ruby-string">'person'</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-string">'&lt;!ELEMENT person (firstname,lastname)&gt;&lt;!ELEMENT firstname (#PCDATA)&gt;&lt;!ELEMENT lastname (#PCDATA)&gt;'</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!DOCTYPE person [&lt;!ELEMENT person (firstname,lastname)&gt;&lt;!ELEMENT firstname (#PCDATA)&gt;&lt;!ELEMENT lastname (#PCDATA)&gt;]&gt;</span></pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_dtd-source'>static VALUE rxml_writer_write_dtd(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE name, pubid, sysid, subset;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;13&quot;, &amp;name, &amp;pubid, &amp;sysid, &amp;subset);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 4, xmlTextWriterWriteDTD, name, pubid, sysid, subset);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_dtd_attlist'>
+                <a name='method-i-write_dtd_attlist'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_dtd_attlist(name, content) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a DTD attribute list, all at once. Returns <code>false</code> on
+                  failure.</p>
+                  
+                  <pre class="ruby"><span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd_attlist</span> <span class="ruby-string">'id'</span>, <span class="ruby-string">'ID #IMPLIED'</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!ATTLIST id ID #IMPLIED&gt;</span></pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd_attlist-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_dtd_attlist-source'>static VALUE rxml_writer_write_dtd_attlist(VALUE self, VALUE name, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 2, xmlTextWriterWriteDTDAttlist, name, content);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_dtd_element'>
+                <a name='method-i-write_dtd_element'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_dtd_element(name, content) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a full DTD element, all at once. Returns <code>false</code> on
+                  failure.</p>
+                  
+                  <pre class="ruby"><span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd_element</span> <span class="ruby-string">'person'</span>, <span class="ruby-string">'(firstname,lastname)'</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!ELEMENT person (firstname,lastname)&gt;</span></pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd_element-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_dtd_element-source'>static VALUE rxml_writer_write_dtd_element(VALUE self, VALUE name, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 2, xmlTextWriterWriteDTDElement, name, content);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_dtd_entity'>
+                <a name='method-i-write_dtd_entity'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_dtd_entity(name, publicId, systemId, ndataid, content, pe) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a DTD entity, all at once. Returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd_entity-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_dtd_entity-source'>static VALUE rxml_writer_write_dtd_entity(VALUE self, VALUE name, VALUE pubid, VALUE sysid, VALUE ndataid, VALUE content, VALUE pe)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, pe, 5, xmlTextWriterWriteDTDEntity, name, pubid, sysid, ndataid, content);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_dtd_external_entity'>
+                <a name='method-i-write_dtd_external_entity'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_dtd_external_entity(name, publicId, systemId, ndataid, pe) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a DTD external entity. The entity must have been started with
+                  start_dtd_entity. Returns <code>false</code> on failure.</p>
+                  <ul><li>
+                  <p>name: the name of the DTD entity</p>
+                  </li><li>
+                  <p>publicId: the public identifier, which is an alternative to the system
+                  identifier</p>
+                  </li><li>
+                  <p>systemId: the system identifier, which is the URI of the DTD</p>
+                  </li><li>
+                  <p>ndataid: the xml notation name</p>
+                  </li><li>
+                  <p>pe: <code>true</code> if this is a parameter entity (to be used only in the
+                  DTD</p>
+                  </li></ul>
+                  
+                  <p>itself), <code>false</code> if not</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd_external_entity-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_dtd_external_entity-source'>static VALUE rxml_writer_write_dtd_external_entity(VALUE self, VALUE name, VALUE pubid, VALUE sysid, VALUE ndataid, VALUE pe)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, pe, 4, xmlTextWriterWriteDTDExternalEntity, name, pubid, sysid, ndataid);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_dtd_external_entity_contents'>
+                <a name='method-i-write_dtd_external_entity_contents'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_dtd_external_entity_contents(publicId, systemId, ndataid) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes the contents of a DTD external entity, all at once. Returns
+                  <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd_external_entity_contents-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_dtd_external_entity_contents-source'>static VALUE rxml_writer_write_dtd_external_entity_contents(VALUE self, VALUE pubid, VALUE sysid, VALUE ndataid)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 3, xmlTextWriterWriteDTDExternalEntityContents, pubid, sysid, ndataid);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_dtd_internal_entity'>
+                <a name='method-i-write_dtd_internal_entity'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_dtd_internal_entity(name, content, pe) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a DTD internal entity, all at once. Returns <code>false</code> on
+                  failure.</p>
+                  
+                  <p>Examples:</p>
+                  
+                  <pre class="ruby"><span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd_entity</span> <span class="ruby-string">'Shape'</span>, <span class="ruby-string">'(rect|circle|poly|default)'</span>, <span class="ruby-keyword">true</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!ENTITY % Shape &quot;(rect|circle|poly|default)&quot;&gt;</span>&#x000A;<span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd_entity</span> <span class="ruby-string">'delta'</span>, <span class="ruby-string">'&amp;#948;'</span>, <span class="ruby-keyword">false</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!ENTITY delta &quot;&amp;#948;&quot;&gt;</span></pre>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd_internal_entity-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_dtd_internal_entity-source'>static VALUE rxml_writer_write_dtd_internal_entity(VALUE self, VALUE name, VALUE content, VALUE pe)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, pe, 2, xmlTextWriterWriteDTDInternalEntity, name, content);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_dtd_notation'>
+                <a name='method-i-write_dtd_notation'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_dtd_notation(name, publicId, systemId) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a DTD entity, all at once. Returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd_notation-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_dtd_notation-source'>static VALUE rxml_writer_write_dtd_notation(VALUE self, VALUE name, VALUE pubid, VALUE sysid)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 3, xmlTextWriterWriteDTDNotation, name, pubid, sysid);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_element'>
+                <a name='method-i-write_element'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_element(name, content) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a full element tag, all at once. Returns <code>false</code> on
+                  failure. This is equivalent to <a
+                  href="Writer.html#method-i-start_element">#start_element</a>(name) + <a
+                  href="Writer.html#method-i-write_string">#write_string</a>(content) +
+                  end_element.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_element-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_element-source'>static VALUE rxml_writer_write_element(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE name, content;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;11&quot;, &amp;name, &amp;content);&#x000A;    if (Qnil == content) {&#x000A;        if (Qfalse == rxml_writer_start_element(self, name)) {&#x000A;            return Qfalse;&#x000A;        }&#x000A;        return rxml_writer_end_element(self);&#x000A;    } else {&#x000A;        return numeric_rxml_writer_va_strings(self, Qnil, 2, xmlTextWriterWriteElement, name, content);&#x000A;    }&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_element_ns'>
+                <a name='method-i-write_element_ns'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_element_ns(prefix, name, namespaceURI, content) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a full namespaced element tag, all at once. Returns
+                  <code>false</code> on failure. This is a shortcut for <a
+                  href="Writer.html#method-i-start_element_ns">#start_element_ns</a>(prefix,
+                  name, namespaceURI) + <a
+                  href="Writer.html#method-i-write_string">#write_string</a>(content) +
+                  end_element.</p>
+                  
+                  <p>Notes:</p>
+                  <ul><li>
+                  <p>by default, the xmlns: definition is repeated on every element. If you want</p>
+                  </li></ul>
+                  
+                  <p>the prefix, but don't want the xmlns: declaration repeated, set
+                  <code>namespaceURI</code> to nil or omit it. Don't forget to declare the
+                  namespace prefix somewhere earlier.</p>
+                  <ul><li>
+                  <p><code>content</code> can be omitted for an empty tag</p>
+                  </li></ul>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_element_ns-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_element_ns-source'>static VALUE rxml_writer_write_element_ns(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE prefix, name, namespaceURI, content;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;22&quot;, &amp;prefix, &amp;name, &amp;namespaceURI, &amp;content);&#x000A;    if (Qnil == content) {&#x000A;        VALUE argv[3] = { prefix, name, namespaceURI };&#x000A;&#x000A;        if (Qfalse == rxml_writer_start_element_ns(ARRAY_SIZE(argv), argv, self)) {&#x000A;            return Qfalse;&#x000A;        }&#x000A;        return rxml_writer_end_element(self);&#x000A;    } else {&#x000A;        return numeric_rxml_writer_va_strings(self, Qnil, 4, xmlTextWriterWriteElementNS, prefix, name, namespaceURI, content);&#x000A;    }&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_pi'>
+                <a name='method-i-write_pi'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_pi(target, content) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes a full CDATA tag, all at once. Returns <code>false</code> on
+                  failure. This is a shortcut for <a
+                  href="Writer.html#method-i-start_pi">#start_pi</a>(target) + <a
+                  href="Writer.html#method-i-write_string">#write_string</a>(content) +
+                  end_pi.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_pi-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_pi-source'>static VALUE rxml_writer_write_pi(VALUE self, VALUE target, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 2, xmlTextWriterWritePI, target, content);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_raw'>
+                <a name='method-i-write_raw'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_raw(content) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Writes the string <code>content</code> as is, reserved characters are not
+                  translated to their associated entities. Returns <code>false</code> on
+                  failure. Consider <a
+                  href="Writer.html#method-i-write_string">#write_string</a> to handle them.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_raw-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_raw-source'>static VALUE rxml_writer_write_raw(VALUE self, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_string(self, content, xmlTextWriterWriteRaw);&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-write_string'>
+                <a name='method-i-write_string'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>writer.write_string(content) -> (true|false)</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Safely (problematic characters are internally translated to their
+                  associated named entities) writes a string into the current node
+                  (attribute, element, comment, ...). Returns <code>false</code> on failure.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_string-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-write_string-source'>static VALUE rxml_writer_write_string(VALUE self, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_string(self, content, xmlTextWriterWriteString);&#x000A;}</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

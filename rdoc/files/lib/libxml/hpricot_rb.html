@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang='en'>
   <head>
-    <title>File: hpricot.rb [LibXML]</title>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-    <link href='../../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <title>hpricot.rb</title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <link href='../../../css/style.css' media='screen' rel='stylesheet' type='text/css'>
     <script type='text/javascript'>
       //<![CDATA[
         function popupCode(url) {
@@ -31,24 +31,35 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>Sun Apr 17 16:40:13 +0530 2011</span>
+          <span class='datetime'>2013-01-27 00:41:33 -0700</span>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
-            <p>
-            encoding: UTF-8
-            </p>
+            
+            <pre>Provide hpricot API for libxml.  Provided by Michael Guterl,&#x000A;inspired by http://thebogles.com/blog/an-hpricot-style-interface-to-libxml</pre>
+            
+            <p>class String</p>
+            
+            <pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">to_libxml_doc</span>&#x000A;  <span class="ruby-identifier">xp</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>&#x000A;  <span class="ruby-identifier">xp</span>.<span class="ruby-identifier">string</span> = <span class="ruby-keyword">self</span>&#x000A;  <span class="ruby-identifier">xp</span>.<span class="ruby-identifier">parse</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+            
+            <p>end</p>
+            
+            <p>module <a href="../../../classes/LibXML.html">LibXML</a></p>
+            
+            <pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">XML</span>&#x000A;  <span class="ruby-keyword">class</span> <span class="ruby-constant">Document</span>&#x000A;    <span class="ruby-keyword">alias</span> :<span class="ruby-identifier">search</span> <span class="ruby-operator">:</span><span class="ruby-identifier">find</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;&#x000A;  <span class="ruby-keyword">class</span> <span class="ruby-constant">Node</span>&#x000A;    <span class="ruby-comment"># find the child node with the given xpath</span>&#x000A;    <span class="ruby-keyword">def</span> <span class="ruby-identifier">at</span>(<span class="ruby-identifier">xpath</span>)&#x000A;      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_first</span>(<span class="ruby-identifier">xpath</span>)&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-comment"># find the array of child nodes matching the given xpath</span>&#x000A;    <span class="ruby-keyword">def</span> <span class="ruby-identifier">search</span>(<span class="ruby-identifier">xpath</span>)&#x000A;      <span class="ruby-identifier">results</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">xpath</span>).<span class="ruby-identifier">to_a</span>&#x000A;      <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>&#x000A;        <span class="ruby-identifier">results</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span><span class="ruby-operator">|</span>&#x000A;          <span class="ruby-keyword">yield</span> <span class="ruby-identifier">result</span>&#x000A;        <span class="ruby-keyword">end</span>&#x000A;      <span class="ruby-keyword">end</span>&#x000A;      <span class="ruby-keyword">return</span> <span class="ruby-identifier">results</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-keyword">def</span> <span class="ruby-operator">/</span>(<span class="ruby-identifier">xpath</span>)&#x000A;      <span class="ruby-identifier">search</span>(<span class="ruby-identifier">xpath</span>)&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-comment"># return the inner contents of this node as a string</span>&#x000A;    <span class="ruby-keyword">def</span> <span class="ruby-identifier">inner_xml</span>&#x000A;      <span class="ruby-identifier">child</span>.<span class="ruby-identifier">to_s</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-comment"># alias for inner_xml</span>&#x000A;    <span class="ruby-keyword">def</span> <span class="ruby-identifier">inner_html</span>&#x000A;      <span class="ruby-identifier">inner_xml</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-comment"># return this node and its contents as an xml string</span>&#x000A;    <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_xml</span>&#x000A;      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-comment"># alias for path</span>&#x000A;    <span class="ruby-keyword">def</span> <span class="ruby-identifier">xpath</span>&#x000A;      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">path</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-keyword">def</span> <span class="ruby-identifier">find_with_default_ns</span>(<span class="ruby-identifier">xpath_expr</span>, <span class="ruby-identifier">namespace</span>=<span class="ruby-keyword">nil</span>)&#x000A;      <span class="ruby-identifier">find_base</span>(<span class="ruby-identifier">xpath_expr</span>, <span class="ruby-identifier">namespace</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">default_namespaces</span>)&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;    <span class="ruby-keyword">def</span> <span class="ruby-identifier">find_first_with_default_ns</span>(<span class="ruby-identifier">xpath_expr</span>, <span class="ruby-identifier">namespace</span>=<span class="ruby-keyword">nil</span>)&#x000A;      <span class="ruby-identifier">find_first_base</span>(<span class="ruby-identifier">xpath_expr</span>, <span class="ruby-identifier">namespace</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">default_namespaces</span>)&#x000A;    <span class="ruby-keyword">end</span>&#x000A;&#x000A;     <span class="ruby-identifier">alias_method</span> :<span class="ruby-identifier">find_base</span>, :<span class="ruby-identifier">find</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">method_defined?</span>(:<span class="ruby-identifier">find_base</span>)&#x000A;     <span class="ruby-identifier">alias_method</span> :<span class="ruby-identifier">find</span>, :<span class="ruby-identifier">find_with_default_ns</span>&#x000A;     <span class="ruby-identifier">alias_method</span> :<span class="ruby-identifier">find_first_base</span>, :<span class="ruby-identifier">find_first</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">method_defined?</span>(:<span class="ruby-identifier">find_first_base</span>)&#x000A;     <span class="ruby-identifier">alias_method</span> :<span class="ruby-identifier">find_first</span>, :<span class="ruby-identifier">find_first_with_default_ns</span>&#x000A;     <span class="ruby-keyword">alias</span> :<span class="ruby-identifier">child?</span> <span class="ruby-operator">:</span><span class="ruby-identifier">first?</span>&#x000A;     <span class="ruby-keyword">alias</span> :<span class="ruby-identifier">children?</span> <span class="ruby-operator">:</span><span class="ruby-identifier">first?</span>&#x000A;     <span class="ruby-keyword">alias</span> :<span class="ruby-identifier">child</span> <span class="ruby-operator">:</span><span class="ruby-identifier">first</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+            
+            <p>end</p>
           </div>
-          <div id='section'>
+          <div id='context'>
           </div>
         </div>
       </div>
       <div id='footer-push'></div>
     </div>
     <div id='footer'>
-      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+      <a target="docwin" href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
     </div>
   </body>
 </html>
