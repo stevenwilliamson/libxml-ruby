@@ -41,24 +41,23 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
             
-            <p>Provides access to an element's attributes (<a
-            href="Attr.html">XML::Attr</a>).</p>
+            <p>Provides access to an element&#39;s attributes (XML::Attr).</p>
             
             <p>Basic Usage:</p>
             
-            <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'test_helper'</span>&#x000A;&#x000A;<span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">&lt;</span><span class="ruby-identifier">some_file</span><span class="ruby-operator">&gt;</span>)&#x000A;<span class="ruby-identifier">attributes</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">attributes</span>&#x000A;&#x000A;<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">attribute</span><span class="ruby-operator">|</span>&#x000A;  <span class="ruby-operator">..</span>&#x000A;<span class="ruby-keyword">end</span>&#x000A;&#x000A;<span class="ruby-identifier">attributes</span>[<span class="ruby-string">'foo'</span>] = <span class="ruby-string">'bar'</span>&#x000A;<span class="ruby-identifier">attribute</span> = <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">get_attribute</span>[<span class="ruby-string">'foo'</span>]&#x000A;<span class="ruby-identifier">attribute</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-string">'foo'</span></pre>
+            <pre>require &#39;test_helper&#39;&#x000A;doc = XML::Document.new(&lt;some_file&gt;)&#x000A;attributes = doc.root.attributes&#x000A;&#x000A;attributes.each do |attribute|&#x000A;  ..&#x000A;end&#x000A;&#x000A;attributes[&#39;foo&#39;] = &#39;bar&#39;&#x000A;attribute = attributes.get_attribute[&#39;foo&#39;]&#x000A;attribute.value == &#39;foo&#39;</pre>
             
             <p>To access a namespaced attribute:</p>
             
-            <pre>XLINK_URI = 'http://www.w3.org/1999/xlink'&#x000A;attribute = attributes.get_attribute_ns(XLINK_URI, 'title')&#x000A;attribute.value = 'My title'</pre>
+            <pre class="ruby"><span class="ruby-constant">XLINK_URI</span> = <span class="ruby-string">&#39;http://www.w3.org/1999/xlink&#39;</span>&#x000A;&#x000A;<span class="ruby-identifier">attribute</span> = <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">get_attribute_ns</span>(<span class="ruby-constant">XLINK_URI</span>, <span class="ruby-string">&#39;title&#39;</span>)&#x000A;<span class="ruby-identifier">attribute</span>.<span class="ruby-identifier">value</span> = <span class="ruby-string">&#39;My title&#39;</span></pre>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
@@ -100,7 +99,7 @@
                   
                   <p>name: The name of the attribute, not including any namespaces.</p>
                   
-                  <pre>doc.root.attributes['att'] -&gt; 'some value'</pre>
+                  <pre>doc.root.attributes[&#39;att&#39;] -&gt; &#39;some value&#39;</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-5B-5D-source'); return false">
@@ -124,7 +123,7 @@
                   <p>name: The name of the attribute, not including any namespaces. value: The
                   new value of the namespace.</p>
                   
-                  <pre>doc.root.attributes['att'] = 'some value'</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">attributes</span>[<span class="ruby-string">&#39;att&#39;</span>] = <span class="ruby-string">&#39;some value&#39;</span></pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-5B-5D-3D-source'); return false">
@@ -164,7 +163,7 @@
                   
                   <p>Returns the first attribute.</p>
                   
-                  <pre>doc.root.attributes.first</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">first</span></pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-first-source'); return false">
@@ -188,7 +187,7 @@
                   
                   <p>name: The name of the attribute, not including a namespace.</p>
                   
-                  <pre>doc.root.attributes.get_attribute(&quot;foo&quot;)</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">get_attribute</span>(<span class="ruby-string">&quot;foo&quot;</span>)</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-get_attribute-source'); return false">
@@ -210,10 +209,10 @@
                   document has an associated DTD that defines a default value for the
                   attribute, then a <a href="AttrDecl.html">XML::AttrDecl</a> is returned.</p>
                   
-                  <p>namespace: The URI of the attribute's namespace. name: The name of the
+                  <p>namespace: The URI of the attribute&#39;s namespace. name: The name of the
                   attribute, not including a namespace.</p>
                   
-                  <pre>doc.root.attributes.get_attribute_ns('http://www.w3.org/1999/xlink', 'href')</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">get_attribute_ns</span>(<span class="ruby-string">&#39;http://www.w3.org/1999/xlink&#39;</span>, <span class="ruby-string">&#39;href&#39;</span>)</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-get_attribute_ns-source'); return false">
@@ -233,7 +232,7 @@
                   
                   <p>Returns the number of attributes.</p>
                   
-                  <pre>doc.root.attributes.length</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">length</span></pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-length-source'); return false">
@@ -253,7 +252,7 @@
                   
                   <p>Return the node that owns this attributes list.</p>
                   
-                  <pre>doc.root.attributes.node == doc.root</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">node</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span></pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-node-source'); return false">

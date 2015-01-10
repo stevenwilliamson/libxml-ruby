@@ -35,8 +35,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../Parser.html">Parser</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -170,7 +170,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-io-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-io-source'>static VALUE rxml_parser_context_io(VALUE klass, VALUE io)&#x000A;{&#x000A;  VALUE result;&#x000A;  xmlParserCtxtPtr ctxt;&#x000A;  xmlParserInputBufferPtr input;&#x000A;  xmlParserInputPtr stream;&#x000A;&#x000A;  if (NIL_P(io))&#x000A;    rb_raise(rb_eTypeError, &quot;Must pass in an IO object&quot;);&#x000A;&#x000A;  input = xmlParserInputBufferCreateIO((xmlInputReadCallback) rxml_read_callback, NULL,&#x000A;                                       (void*)io, XML_CHAR_ENCODING_NONE);&#x000A;    &#x000A;  ctxt = xmlNewParserCtxt();&#x000A;&#x000A;  if (!ctxt)&#x000A;  {&#x000A;    xmlFreeParserInputBuffer(input);&#x000A;    rxml_raise(&amp;xmlLastError);&#x000A;  }&#x000A;&#x000A;  /* This is annoying, but xmlInitParserCtxt (called indirectly above) and &#x000A;     xmlCtxtUseOptionsInternal (called below) initialize slightly different&#x000A;     context options, in particular XML_PARSE_NODICT which xmlInitParserCtxt&#x000A;     sets to 0 and xmlCtxtUseOptionsInternal sets to 1.  So we have to call both. */&#x000A;  xmlCtxtUseOptions(ctxt, rxml_libxml_default_options());&#x000A;&#x000A;  stream = xmlNewIOInputStream(ctxt, input, XML_CHAR_ENCODING_NONE);&#x000A;&#x000A;  if (!stream)&#x000A;  {&#x000A;    xmlFreeParserInputBuffer(input);&#x000A;    xmlFreeParserCtxt(ctxt);&#x000A;    rxml_raise(&amp;xmlLastError);&#x000A;  }&#x000A;  inputPush(ctxt, stream);&#x000A;  result = rxml_parser_context_wrap(ctxt);&#x000A;&#x000A;  /* Attach io object to parser so it won't get freed.*/&#x000A;  rb_ivar_set(result, IO_ATTR, io);&#x000A;&#x000A;  return result;&#x000A;}</pre>
+                  <pre id='method-c-io-source'>static VALUE rxml_parser_context_io(VALUE klass, VALUE io)&#x000A;{&#x000A;  VALUE result;&#x000A;  xmlParserCtxtPtr ctxt;&#x000A;  xmlParserInputBufferPtr input;&#x000A;  xmlParserInputPtr stream;&#x000A;&#x000A;  if (NIL_P(io))&#x000A;    rb_raise(rb_eTypeError, &quot;Must pass in an IO object&quot;);&#x000A;&#x000A;  input = xmlParserInputBufferCreateIO((xmlInputReadCallback) rxml_read_callback, NULL,&#x000A;                                       (void*)io, XML_CHAR_ENCODING_NONE);&#x000A;    &#x000A;  ctxt = xmlNewParserCtxt();&#x000A;&#x000A;  if (!ctxt)&#x000A;  {&#x000A;    xmlFreeParserInputBuffer(input);&#x000A;    rxml_raise(&amp;xmlLastError);&#x000A;  }&#x000A;&#x000A;  /* This is annoying, but xmlInitParserCtxt (called indirectly above) and &#x000A;     xmlCtxtUseOptionsInternal (called below) initialize slightly different&#x000A;     context options, in particular XML_PARSE_NODICT which xmlInitParserCtxt&#x000A;     sets to 0 and xmlCtxtUseOptionsInternal sets to 1.  So we have to call both. */&#x000A;  xmlCtxtUseOptions(ctxt, rxml_libxml_default_options());&#x000A;&#x000A;  stream = xmlNewIOInputStream(ctxt, input, XML_CHAR_ENCODING_NONE);&#x000A;&#x000A;  if (!stream)&#x000A;  {&#x000A;    xmlFreeParserInputBuffer(input);&#x000A;    xmlFreeParserCtxt(ctxt);&#x000A;    rxml_raise(&amp;xmlLastError);&#x000A;  }&#x000A;  inputPush(ctxt, stream);&#x000A;  result = rxml_parser_context_wrap(ctxt);&#x000A;&#x000A;  /* Attach io object to parser so it won&#39;t get freed.*/&#x000A;  rb_ivar_set(result, IO_ATTR, io);&#x000A;&#x000A;  return result;&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-class' id='method-method-c-string'>
@@ -242,8 +242,8 @@
                 <div class='description'>
                   
                   <p>Closes the underlying input streams.  This is useful when parsing a large
-                  amount of files and you want to close the files without relying on Ruby's
-                  garbage collector to run.</p>
+                  amount of files and you want to close the files without relying on
+                  Ruby&#39;s garbage collector to run.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-close-source'); return false">
@@ -841,7 +841,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this context's external subset system identifier. (valid only if
+                  <p>Obtain this context&#39;s external subset system identifier. (valid only if
                   either of subset_external? or subset_internal? is true).</p>
                 </div>
                 <div class='source'>
@@ -860,7 +860,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this context's external subset URI. (valid only if either of
+                  <p>Obtain this context&#39;s external subset URI. (valid only if either of
                   subset_external? or subset_internal? is true).</p>
                 </div>
                 <div class='source'>
@@ -897,8 +897,8 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this context's subset name (valid only if either of subset_external?
-                  or subset_internal? is true).</p>
+                  <p>Obtain this context&#39;s subset name (valid only if either of
+                  subset_external? or subset_internal? is true).</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-subset_internal_name-source'); return false">
@@ -952,7 +952,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this context's version identifier.</p>
+                  <p>Obtain this context&#39;s version identifier.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-version-source'); return false">

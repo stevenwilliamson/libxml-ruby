@@ -35,8 +35,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XPath.html">XPath</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -49,7 +49,7 @@
             href="../Document.html#method-i-find">LibXML::XML::Document#find</a> and <a
             href="../Node.html#method-i-find">LibXML::XML::Node#find</a> methods.</p>
             
-            <pre>doc = XML::Document.string('&lt;header&gt;content&lt;/header&gt;')&#x000A;context = XPath::Context.new(doc)&#x000A;context.node = doc.root&#x000A;context.register_namespaces_from_node(doc.root)&#x000A;nodes = context.find('/header')</pre>
+            <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">string</span>(<span class="ruby-string">&#39;&lt;header&gt;content&lt;/header&gt;&#39;</span>)&#x000A;<span class="ruby-identifier">context</span> = <span class="ruby-constant">XPath</span><span class="ruby-operator">::</span><span class="ruby-constant">Context</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">doc</span>)&#x000A;<span class="ruby-identifier">context</span>.<span class="ruby-identifier">node</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>&#x000A;<span class="ruby-identifier">context</span>.<span class="ruby-identifier">register_namespaces_from_node</span>(<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>)&#x000A;<span class="ruby-identifier">nodes</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">&#39;/header&#39;</span>)</pre>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
@@ -87,7 +87,7 @@
                   document.  The context can then be used to evaluate an <a
                   href="../XPath.html">XPath</a> expression.</p>
                   
-                  <pre>doc = XML::Document.string('&lt;header&gt;&lt;first&gt;hi&lt;/first&gt;&lt;/header&gt;')&#x000A;context = XPath::Context.new(doc)&#x000A;nodes = XPath::Object.new('//first', context)&#x000A;nodes.length == 1</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">string</span>(<span class="ruby-string">&#39;&lt;header&gt;&lt;first&gt;hi&lt;/first&gt;&lt;/header&gt;&#39;</span>)&#x000A;<span class="ruby-identifier">context</span> = <span class="ruby-constant">XPath</span><span class="ruby-operator">::</span><span class="ruby-constant">Context</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">doc</span>)&#x000A;<span class="ruby-identifier">nodes</span> = <span class="ruby-constant">XPath</span><span class="ruby-operator">::</span><span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;//first&#39;</span>, <span class="ruby-identifier">context</span>)&#x000A;<span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span></pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-new-source'); return false">
@@ -106,7 +106,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Disables an XPath::Context's built-in cache.</p>
+                  <p>Disables an XPath::Context&#39;s built-in cache.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-disable_cache-source'); return false">
@@ -143,9 +143,9 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Enables an XPath::Context's built-in cache.  If the cache is enabled then
-                  <a href="../XPath.html">XPath</a> objects will be cached internally for
-                  reuse. The size parameter controls sets the maximum number of <a
+                  <p>Enables an XPath::Context&#39;s built-in cache.  If the cache is enabled
+                  then <a href="../XPath.html">XPath</a> objects will be cached internally
+                  for reuse. The size parameter controls sets the maximum number of <a
                   href="../XPath.html">XPath</a> objects  that will be cached per <a
                   href="../XPath.html">XPath</a> object type (node-set, string, number,
                   boolean, and misc objects).  Set size to nil to use the default cache size
@@ -189,7 +189,7 @@
                   
                   <p>Set the current node used by the <a href="../XPath.html">XPath</a> engine</p>
                   
-                  <pre>doc = XML::Document.string('&lt;header&gt;&lt;first&gt;hi&lt;/first&gt;&lt;/header&gt;')&#x000A;context.node = doc.root.first</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">string</span>(<span class="ruby-string">&#39;&lt;header&gt;&lt;first&gt;hi&lt;/first&gt;&lt;/header&gt;&#39;</span>)&#x000A;<span class="ruby-identifier">context</span>.<span class="ruby-identifier">node</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">first</span></pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-node-3D-source'); return false">
@@ -210,7 +210,7 @@
                   <p>Register the specified namespace URI with the specified prefix in this
                   context.</p>
                   
-                  <pre>context.register_namespace('xi', 'http://www.w3.org/2001/XInclude')</pre>
+                  <pre class="ruby"><span class="ruby-identifier">context</span>.<span class="ruby-identifier">register_namespace</span>(<span class="ruby-string">&#39;xi&#39;</span>, <span class="ruby-string">&#39;http://www.w3.org/2001/XInclude&#39;</span>)</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-register_namespace-source'); return false">
@@ -232,13 +232,13 @@
                   different forms that libxml accepts.  These include a string, an array of
                   strings, or a hash table:</p>
                   
-                  <pre class="ruby"><span class="ruby-identifier">context</span>.<span class="ruby-identifier">register_namespaces</span>(<span class="ruby-string">'xi:http://www.w3.org/2001/XInclude'</span>)&#x000A;<span class="ruby-identifier">context</span>.<span class="ruby-identifier">register_namespaces</span>([<span class="ruby-string">'xlink:http://www.w3.org/1999/xlink'</span>,&#x000A;                             <span class="ruby-string">'xi:http://www.w3.org/2001/XInclude'</span>)&#x000A;<span class="ruby-identifier">context</span>.<span class="ruby-identifier">register_namespaces</span>(<span class="ruby-string">'xlink'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'http://www.w3.org/1999/xlink'</span>,&#x000A;                               <span class="ruby-string">'xi'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'http://www.w3.org/2001/XInclude'</span>)</pre>
+                  <pre>context.register_namespaces(&#39;xi:http://www.w3.org/2001/XInclude&#39;)&#x000A;context.register_namespaces([&#39;xlink:http://www.w3.org/1999/xlink&#39;,&#x000A;                             &#39;xi:http://www.w3.org/2001/XInclude&#39;)&#x000A;context.register_namespaces(&#39;xlink&#39; =&gt; &#39;http://www.w3.org/1999/xlink&#39;,&#x000A;                               &#39;xi&#39; =&gt; &#39;http://www.w3.org/2001/XInclude&#39;)</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-register_namespaces-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-register_namespaces-source'>static VALUE rxml_xpath_context_register_namespaces(VALUE self, VALUE nslist)&#x000A;{&#x000A;  char *cp;&#x000A;  long i;&#x000A;  VALUE rprefix, ruri;&#x000A;  xmlXPathContextPtr xctxt;&#x000A;&#x000A;  Data_Get_Struct(self, xmlXPathContext, xctxt);&#x000A;&#x000A;  /* Need to loop through the 2nd argument and iterate through the&#x000A;   * list of namespaces that we want to allow */&#x000A;  switch (TYPE(nslist))&#x000A;  {&#x000A;  case T_STRING:&#x000A;    cp = strchr(StringValuePtr(nslist), (int) ':');&#x000A;    if (cp == NULL)&#x000A;    {&#x000A;      rprefix = nslist;&#x000A;      ruri = Qnil;&#x000A;    }&#x000A;    else&#x000A;    {&#x000A;      rprefix = rb_str_new(StringValuePtr(nslist), (int) ((long) cp&#x000A;          - (long) StringValuePtr(nslist)));&#x000A;      ruri = rxml_new_cstr(&amp;cp[1], xctxt-&gt;doc-&gt;encoding);&#x000A;    }&#x000A;    /* Should test the results of this */&#x000A;    rxml_xpath_context_register_namespace(self, rprefix, ruri);&#x000A;    break;&#x000A;  case T_ARRAY:&#x000A;    for (i = 0; i &lt; RARRAY_LEN(nslist); i++)&#x000A;    {&#x000A;      rxml_xpath_context_register_namespaces(self, RARRAY_PTR(nslist)[i]);&#x000A;    }&#x000A;    break;&#x000A;  case T_HASH:&#x000A;    rb_hash_foreach(nslist, iterate_ns_hash, self);&#x000A;    break;&#x000A;  default:&#x000A;    rb_raise(&#x000A;        rb_eArgError,&#x000A;        &quot;Invalid argument type, only accept string, array of strings, or an array of arrays&quot;);&#x000A;  }&#x000A;  return self;&#x000A;}</pre>
+                  <pre id='method-i-register_namespaces-source'>static VALUE rxml_xpath_context_register_namespaces(VALUE self, VALUE nslist)&#x000A;{&#x000A;  char *cp;&#x000A;  long i;&#x000A;  VALUE rprefix, ruri;&#x000A;  xmlXPathContextPtr xctxt;&#x000A;&#x000A;  Data_Get_Struct(self, xmlXPathContext, xctxt);&#x000A;&#x000A;  /* Need to loop through the 2nd argument and iterate through the&#x000A;   * list of namespaces that we want to allow */&#x000A;  switch (TYPE(nslist))&#x000A;  {&#x000A;  case T_STRING:&#x000A;    cp = strchr(StringValuePtr(nslist), (int) &#39;:&#39;);&#x000A;    if (cp == NULL)&#x000A;    {&#x000A;      rprefix = nslist;&#x000A;      ruri = Qnil;&#x000A;    }&#x000A;    else&#x000A;    {&#x000A;      rprefix = rb_str_new(StringValuePtr(nslist), (int) ((long) cp&#x000A;          - (long) StringValuePtr(nslist)));&#x000A;      ruri = rxml_new_cstr(&amp;cp[1], xctxt-&gt;doc-&gt;encoding);&#x000A;    }&#x000A;    /* Should test the results of this */&#x000A;    rxml_xpath_context_register_namespace(self, rprefix, ruri);&#x000A;    break;&#x000A;  case T_ARRAY:&#x000A;    for (i = 0; i &lt; RARRAY_LEN(nslist); i++)&#x000A;    {&#x000A;      rxml_xpath_context_register_namespaces(self, RARRAY_PTR(nslist)[i]);&#x000A;    }&#x000A;    break;&#x000A;  case T_HASH:&#x000A;    rb_hash_foreach(nslist, iterate_ns_hash, self);&#x000A;    break;&#x000A;  default:&#x000A;    rb_raise(&#x000A;        rb_eArgError,&#x000A;        &quot;Invalid argument type, only accept string, array of strings, or an array of arrays&quot;);&#x000A;  }&#x000A;  return self;&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-register_namespaces_from_node'>
@@ -252,7 +252,7 @@
                   
                   <p>Helper method to read in namespaces defined on a node.</p>
                   
-                  <pre>doc = XML::Document.string('&lt;header&gt;&lt;first&gt;hi&lt;/first&gt;&lt;/header&gt;')&#x000A;context = XPath::Context.new(doc)&#x000A;context.register_namespaces_from_node(doc.root)</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">string</span>(<span class="ruby-string">&#39;&lt;header&gt;&lt;first&gt;hi&lt;/first&gt;&lt;/header&gt;&#39;</span>)&#x000A;<span class="ruby-identifier">context</span> = <span class="ruby-constant">XPath</span><span class="ruby-operator">::</span><span class="ruby-constant">Context</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">doc</span>)&#x000A;<span class="ruby-identifier">context</span>.<span class="ruby-identifier">register_namespaces_from_node</span>(<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>)</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-register_namespaces_from_node-source'); return false">

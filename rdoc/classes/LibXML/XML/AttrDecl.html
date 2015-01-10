@@ -41,8 +41,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -94,8 +94,8 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this attribute declaration's child attribute(s). It will always be
-                  nil.</p>
+                  <p>Obtain this attribute declaration&#39;s child attribute(s). It will always
+                  be nil.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-child-source'); return false">
@@ -131,7 +131,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Returns this attribute declaration's document.</p>
+                  <p>Returns this attribute declaration&#39;s document.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-doc-source'); return false">
@@ -168,7 +168,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this attribute declaration's name.</p>
+                  <p>Obtain this attribute declaration&#39;s name.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-name-source'); return false">
@@ -222,7 +222,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this attribute declaration's type node type.</p>
+                  <p>Obtain this attribute declaration&#39;s type node type.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-node_type-source'); return false">
@@ -240,13 +240,13 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Returns this attribute declaration's node type name.</p>
+                  <p>Returns this attribute declaration&#39;s node type name.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-node_type_name-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-node_type_name-source'><span class="ruby-comment"># File lib/libxml/attr_decl.rb, line 62</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_type_name</span>&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node_type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">ATTRIBUTE_DECL</span>&#x000A;    <span class="ruby-string">'attribute declaration'</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">UnknownType</span>, <span class="ruby-string">&quot;Unknown node type: %n&quot;</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">node_type</span>);&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-node_type_name-source'><span class="ruby-comment"># File lib/libxml/attr_decl.rb, line 62</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_type_name</span>&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node_type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">ATTRIBUTE_DECL</span>&#x000A;    <span class="ruby-string">&#39;attribute declaration&#39;</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">UnknownType</span>, <span class="ruby-string">&quot;Unknown node type: %n&quot;</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">node_type</span>);&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-parent'>
@@ -258,7 +258,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this attribute declaration's parent which is an instance of a
+                  <p>Obtain this attribute declaration&#39;s parent which is an instance of a
                   XML::DTD.</p>
                 </div>
                 <div class='source'>

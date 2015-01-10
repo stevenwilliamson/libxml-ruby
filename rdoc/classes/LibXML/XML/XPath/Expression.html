@@ -35,8 +35,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XPath.html">XPath</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -47,7 +47,7 @@
             compile <a href="../XPath.html">XPath</a> expressions so they can be parsed
             only once but reused multiple times.</p>
             
-            <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">string</span>(<span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">'some xml file'</span>))&#x000A;<span class="ruby-identifier">expr</span> = <span class="ruby-constant">XPath</span><span class="ruby-operator">::</span><span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'//first'</span>)&#x000A;<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>&#x000A; <span class="ruby-identifier">result</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">expr</span>) <span class="ruby-comment"># many, many, many times</span>&#x000A; <span class="ruby-comment"># ...</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+            <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">string</span>(<span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">&#39;some xml file&#39;</span>))&#x000A;<span class="ruby-identifier">expr</span> = <span class="ruby-constant">XPath</span><span class="ruby-operator">::</span><span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;//first&#39;</span>)&#x000A;<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>&#x000A; <span class="ruby-identifier">result</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">expr</span>) <span class="ruby-comment"># many, many, many times</span>&#x000A; <span class="ruby-comment"># ...</span>&#x000A;<span class="ruby-keyword">end</span></pre>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
@@ -74,7 +74,7 @@
                   <p>Compiles an XPatch expression. This improves performance when an <a
                   href="../XPath.html">XPath</a> expression is called multiple times.</p>
                   
-                  <pre>doc = XML::Document.string('&lt;header&gt;&lt;first&gt;hi&lt;/first&gt;&lt;/header&gt;')&#x000A;expr = XPath::Expression.new('//first')&#x000A;nodes = doc.find(expr)</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">string</span>(<span class="ruby-string">&#39;&lt;header&gt;&lt;first&gt;hi&lt;/first&gt;&lt;/header&gt;&#39;</span>)&#x000A;<span class="ruby-identifier">expr</span> = <span class="ruby-constant">XPath</span><span class="ruby-operator">::</span><span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;//first&#39;</span>)&#x000A;<span class="ruby-identifier">nodes</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">expr</span>)</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-compile-source'); return false">
@@ -95,7 +95,7 @@
                   <p>Compiles an XPatch expression. This improves performance when an <a
                   href="../XPath.html">XPath</a> expression is called multiple times.</p>
                   
-                  <pre>doc = XML::Document.string('&lt;header&gt;&lt;first&gt;hi&lt;/first&gt;&lt;/header&gt;')&#x000A;expr = XPath::Expression.new('//first')&#x000A;nodes = doc.find(expr)</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">string</span>(<span class="ruby-string">&#39;&lt;header&gt;&lt;first&gt;hi&lt;/first&gt;&lt;/header&gt;&#39;</span>)&#x000A;<span class="ruby-identifier">expr</span> = <span class="ruby-constant">XPath</span><span class="ruby-operator">::</span><span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;//first&#39;</span>)&#x000A;<span class="ruby-identifier">nodes</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">expr</span>)</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-new-source'); return false">

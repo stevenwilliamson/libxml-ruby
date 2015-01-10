@@ -41,8 +41,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -68,7 +68,7 @@
             
             <p>Example:</p>
             
-            <pre class="ruby"><span class="ruby-identifier">reader</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Reader</span>.<span class="ruby-identifier">string</span>(<span class="ruby-string">&quot;&lt;foo&gt;&lt;bar&gt;1&lt;/bar&gt;&lt;bar&gt;2&lt;/bar&gt;&lt;bar&gt;3&lt;/bar&gt;&lt;/foo&gt;&quot;</span>)&#x000A;<span class="ruby-identifier">reader</span>.<span class="ruby-identifier">read</span>&#x000A;<span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">'foo'</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">name</span>)&#x000A;<span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">value</span>)&#x000A;&#x000A;<span class="ruby-value">3</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>&#x000A;  <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">read</span>&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Reader</span><span class="ruby-operator">::</span><span class="ruby-constant">TYPE_ELEMENT</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">node_type</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">'bar'</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">name</span>)&#x000A;  <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">read</span>&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Reader</span><span class="ruby-operator">::</span><span class="ruby-constant">TYPE_TEXT</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">node_type</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span>((<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">read</span>&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Reader</span><span class="ruby-operator">::</span><span class="ruby-constant">TYPE_END_ELEMENT</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">node_type</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+            <pre class="ruby"><span class="ruby-identifier">reader</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Reader</span>.<span class="ruby-identifier">string</span>(<span class="ruby-string">&quot;&lt;foo&gt;&lt;bar&gt;1&lt;/bar&gt;&lt;bar&gt;2&lt;/bar&gt;&lt;bar&gt;3&lt;/bar&gt;&lt;/foo&gt;&quot;</span>)&#x000A;<span class="ruby-identifier">reader</span>.<span class="ruby-identifier">read</span>&#x000A;<span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&#39;foo&#39;</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">name</span>)&#x000A;<span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">value</span>)&#x000A;&#x000A;<span class="ruby-value">3</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>&#x000A;  <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">read</span>&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Reader</span><span class="ruby-operator">::</span><span class="ruby-constant">TYPE_ELEMENT</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">node_type</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&#39;bar&#39;</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">name</span>)&#x000A;  <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">read</span>&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Reader</span><span class="ruby-operator">::</span><span class="ruby-constant">TYPE_TEXT</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">node_type</span>)&#x000A;  <span class="ruby-identifier">assert_equal</span>((<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">value</span>)&#x000A;  <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">read</span>&#x000A;  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Reader</span><span class="ruby-operator">::</span><span class="ruby-constant">TYPE_END_ELEMENT</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">node_type</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
             
             <p>You can also parse documents (see <a
             href="Reader.html#method-c-document">::document</a>),  strings (see <a
@@ -76,7 +76,7 @@
             objects (see <a href="Parser.html#method-c-io">LibXML::XML::Parser.io</a>).</p>
             
             <p>For a more in depth tutorial, albeit in C, see <a
-            href="http://xmlsoft.org/xmlreader.html.">xmlsoft.org/xmlreader.html.</a></p>
+            href="http://xmlsoft.org/xmlreader.html">xmlsoft.org/xmlreader.html</a>.</p>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
@@ -448,7 +448,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-io-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-io-source'>static VALUE rxml_reader_io(int argc, VALUE *argv, VALUE klass)&#x000A;{&#x000A;  xmlTextReaderPtr xreader;&#x000A;  VALUE result;&#x000A;  VALUE io;&#x000A;  VALUE options;&#x000A;  char *xbaseurl = NULL;&#x000A;  const char *xencoding = NULL;&#x000A;  int xoptions = 0;&#x000A;&#x000A;  rb_scan_args(argc, argv, &quot;11&quot;, &amp;io, &amp;options);&#x000A;&#x000A;  if (!NIL_P(options))&#x000A;  {&#x000A;    VALUE baseurl = Qnil;&#x000A;    VALUE encoding = Qnil;&#x000A;    VALUE parserOptions = Qnil;&#x000A;&#x000A;    Check_Type(options, T_HASH);&#x000A;&#x000A;    baseurl = rb_hash_aref(options, BASE_URI_SYMBOL);&#x000A;    xbaseurl = NIL_P(baseurl) ? NULL : StringValueCStr(baseurl);&#x000A;&#x000A;    encoding = rb_hash_aref(options, ENCODING_SYMBOL);&#x000A;    xencoding = NIL_P(encoding) ? NULL : xmlGetCharEncodingName(NUM2INT(encoding));&#x000A;&#x000A;    parserOptions = rb_hash_aref(options, OPTIONS_SYMBOL);&#x000A;    xoptions = NIL_P(parserOptions) ? 0 : NUM2INT(parserOptions);&#x000A;  }&#x000A;  &#x000A;  xreader = xmlReaderForIO((xmlInputReadCallback) rxml_read_callback, NULL,&#x000A;                           (void *) io, &#x000A;                           xbaseurl, xencoding, xoptions);&#x000A;&#x000A;  if (xreader == NULL)&#x000A;    rxml_raise(&amp;xmlLastError);&#x000A;&#x000A;  result = rxml_reader_wrap(xreader);&#x000A;&#x000A;  /* Attach io object to parser so it won't get freed.*/&#x000A;  rb_ivar_set(result, IO_ATTR, io);&#x000A;&#x000A;  return result;&#x000A;}</pre>
+                  <pre id='method-c-io-source'>static VALUE rxml_reader_io(int argc, VALUE *argv, VALUE klass)&#x000A;{&#x000A;  xmlTextReaderPtr xreader;&#x000A;  VALUE result;&#x000A;  VALUE io;&#x000A;  VALUE options;&#x000A;  char *xbaseurl = NULL;&#x000A;  const char *xencoding = NULL;&#x000A;  int xoptions = 0;&#x000A;&#x000A;  rb_scan_args(argc, argv, &quot;11&quot;, &amp;io, &amp;options);&#x000A;&#x000A;  if (!NIL_P(options))&#x000A;  {&#x000A;    VALUE baseurl = Qnil;&#x000A;    VALUE encoding = Qnil;&#x000A;    VALUE parserOptions = Qnil;&#x000A;&#x000A;    Check_Type(options, T_HASH);&#x000A;&#x000A;    baseurl = rb_hash_aref(options, BASE_URI_SYMBOL);&#x000A;    xbaseurl = NIL_P(baseurl) ? NULL : StringValueCStr(baseurl);&#x000A;&#x000A;    encoding = rb_hash_aref(options, ENCODING_SYMBOL);&#x000A;    xencoding = NIL_P(encoding) ? NULL : xmlGetCharEncodingName(NUM2INT(encoding));&#x000A;&#x000A;    parserOptions = rb_hash_aref(options, OPTIONS_SYMBOL);&#x000A;    xoptions = NIL_P(parserOptions) ? 0 : NUM2INT(parserOptions);&#x000A;  }&#x000A;  &#x000A;  xreader = xmlReaderForIO((xmlInputReadCallback) rxml_read_callback, NULL,&#x000A;                           (void *) io, &#x000A;                           xbaseurl, xencoding, xoptions);&#x000A;&#x000A;  if (xreader == NULL)&#x000A;    rxml_raise(&amp;xmlLastError);&#x000A;&#x000A;  result = rxml_reader_wrap(xreader);&#x000A;&#x000A;  /* Attach io object to parser so it won&#39;t get freed.*/&#x000A;  rb_ivar_set(result, IO_ATTR, io);&#x000A;&#x000A;  return result;&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-class' id='method-method-c-string'>
@@ -657,7 +657,7 @@
                   <p>Returns the encoding of the document being read.  Note you first have to
                   read data from the reader for encoding to return a value</p>
                   
-                  <pre>reader = XML::Reader.file(XML_FILE)&#x000A;assert_nil(reader.encoding)&#x000A;reader.read&#x000A;assert_equal(XML::Encoding::UTF_8, reader.encoding)</pre>
+                  <pre class="ruby"><span class="ruby-identifier">reader</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Reader</span>.<span class="ruby-identifier">file</span>(<span class="ruby-constant">XML_FILE</span>)&#x000A;<span class="ruby-identifier">assert_nil</span>(<span class="ruby-identifier">reader</span>.<span class="ruby-identifier">encoding</span>)&#x000A;<span class="ruby-identifier">reader</span>.<span class="ruby-identifier">read</span>&#x000A;<span class="ruby-identifier">assert_equal</span>(<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>, <span class="ruby-identifier">reader</span>.<span class="ruby-identifier">encoding</span>)</pre>
                   
                   <p>In addition, libxml always appears to return nil for the encoding when
                   parsing strings.</p>
@@ -685,7 +685,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-expand-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-expand-source'>static VALUE rxml_reader_expand(VALUE self)&#x000A;{&#x000A;  xmlTextReaderPtr xreader = rxml_text_reader_get(self);&#x000A;  xmlNodePtr xnode = NULL;&#x000A;&#x000A;  /* At this point we need to wrap the reader's document as explained above. */&#x000A;  xmlDocPtr xdoc = xmlTextReaderCurrentDoc(xreader);&#x000A;&#x000A;  if (!xdoc)&#x000A;    rb_raise(rb_eRuntimeError, &quot;The reader does not have a document.  Did you forget to call read?&quot;);&#x000A;&#x000A;  rxml_document_wrap(xdoc);&#x000A;&#x000A;  /* And now hook in a mark function */&#x000A;  RDATA(self)-&gt;dmark = (RUBY_DATA_FUNC)rxml_reader_mark;&#x000A;&#x000A;  xnode = xmlTextReaderExpand(xreader);&#x000A;  &#x000A;  if (!xnode)&#x000A;  {&#x000A;    return Qnil;&#x000A;  }&#x000A;  else&#x000A;  {&#x000A;    return rxml_node_wrap(xnode);&#x000A;  }&#x000A;}</pre>
+                  <pre id='method-i-expand-source'>static VALUE rxml_reader_expand(VALUE self)&#x000A;{&#x000A;  xmlTextReaderPtr xreader = rxml_text_reader_get(self);&#x000A;  xmlNodePtr xnode = NULL;&#x000A;&#x000A;  /* At this point we need to wrap the reader&#39;s document as explained above. */&#x000A;  xmlDocPtr xdoc = xmlTextReaderCurrentDoc(xreader);&#x000A;&#x000A;  if (!xdoc)&#x000A;    rb_raise(rb_eRuntimeError, &quot;The reader does not have a document.  Did you forget to call read?&quot;);&#x000A;&#x000A;  rxml_document_wrap(xdoc);&#x000A;&#x000A;  /* And now hook in a mark function */&#x000A;  RDATA(self)-&gt;dmark = (RUBY_DATA_FUNC)rxml_reader_mark;&#x000A;&#x000A;  xnode = xmlTextReaderExpand(xreader);&#x000A;  &#x000A;  if (!xnode)&#x000A;  {&#x000A;    return Qnil;&#x000A;  }&#x000A;  else&#x000A;  {&#x000A;    return rxml_node_wrap(xnode);&#x000A;  }&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-get_attribute'>
@@ -1050,7 +1050,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Returns the reader's current node.  It will return nil if <a
+                  <p>Returns the reader&#39;s current node.  It will return nil if <a
                   href="Reader.html#method-i-read">#read</a> has not yet been called. WARNING
                   - Using this method is dangerous because the the node may be destroyed on
                   the next <a href="Reader.html#method-i-read">read</a>.</p>
@@ -1306,7 +1306,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-reset_error_handler-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-reset_error_handler-source'><span class="ruby-comment"># File lib/libxml/reader.rb, line 5</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset_error_handler</span>&#x000A;  <span class="ruby-identifier">warn</span>(<span class="ruby-string">'reset_error_handler is deprecated.  Use Error.reset_handler instead'</span>)&#x000A;  <span class="ruby-constant">Error</span>.<span class="ruby-identifier">reset_handler</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-reset_error_handler-source'><span class="ruby-comment"># File lib/libxml/reader.rb, line 5</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset_error_handler</span>&#x000A;  <span class="ruby-identifier">warn</span>(<span class="ruby-string">&#39;reset_error_handler is deprecated.  Use Error.reset_handler instead&#39;</span>)&#x000A;  <span class="ruby-constant">Error</span>.<span class="ruby-identifier">reset_handler</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-schema_validate'>
@@ -1323,8 +1323,8 @@
                   <a href="../XML.html">XML</a> <a href="Schema.html">Schema</a> validation
                   is deactivated.</p>
                   
-                  <p>Return false if if the schema's validation could be (de)activated and true
-                  otherwise.</p>
+                  <p>Return false if if the schema&#39;s validation could be (de)activated and
+                  true otherwise.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-schema_validate-source'); return false">
@@ -1346,7 +1346,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-set_error_handler-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-set_error_handler-source'><span class="ruby-comment"># File lib/libxml/reader.rb, line 10</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_error_handler</span>(&amp;<span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">warn</span>(<span class="ruby-string">'set_error_handler is deprecated.  Use Error.set_handler instead'</span>)&#x000A;  <span class="ruby-constant">Error</span>.<span class="ruby-identifier">set_handler</span>(&amp;<span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-set_error_handler-source'><span class="ruby-comment"># File lib/libxml/reader.rb, line 10</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_error_handler</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;  <span class="ruby-identifier">warn</span>(<span class="ruby-string">&#39;set_error_handler is deprecated.  Use Error.set_handler instead&#39;</span>)&#x000A;  <span class="ruby-constant">Error</span>.<span class="ruby-identifier">set_handler</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-standalone'>

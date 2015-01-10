@@ -34,6 +34,15 @@
             <a target="docwin" href="../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
           </li>
           <li class='other'>
+            <a target="docwin" href="../../../files/lib/libxml/attr_rb.html">lib/libxml/attr.rb</a>
+          </li>
+          <li class='other'>
+            <a target="docwin" href="../../../files/lib/libxml/attr_decl_rb.html">lib/libxml/attr_decl.rb</a>
+          </li>
+          <li class='other'>
+            <a target="docwin" href="../../../files/lib/libxml/document_rb.html">lib/libxml/document.rb</a>
+          </li>
+          <li class='other'>
             <a target="docwin" href="../../../files/lib/libxml/node_rb.html">lib/libxml/node.rb</a>
           </li>
           <li class='other'>
@@ -44,8 +53,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -56,10 +65,10 @@
             document. The node class represents most node types that are found in an <a
             href="../XML.html">XML</a> document (but not <a
             href="Attributes.html">LibXML::XML::Attributes</a>, see <a
-            href="Attr.html">LibXML::XML::Attr</a>). It exposes libxml's full API for
-            creating, querying moving and deleting node objects.  Many of these methods
-            are documented in the DOM Level 3 specification found at: <a
-            href="http://www.w3.org/TR/DOM-Level-3-Core/.">www.w3.org/TR/DOM-Level-3-Core/.</a></p>
+            href="Attr.html">LibXML::XML::Attr</a>). It exposes libxml&#39;s full API
+            for creating, querying moving and deleting node objects.  Many of these
+            methods are documented in the DOM Level 3 specification found at: <a
+            href="http://www.w3.org/TR/DOM-Level-3-Core">www.w3.org/TR/DOM-Level-3-Core</a>/.</p>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
@@ -479,7 +488,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Create a new #CDATA node, optionally setting the node's content.</p>
+                  <p>Create a new #CDATA node, optionally setting the node&#39;s content.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-new_cdata-source'); return false">
@@ -497,7 +506,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Create a new comment node, optionally setting the node's content.</p>
+                  <p>Create a new comment node, optionally setting the node&#39;s content.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-new_comment-source'); return false">
@@ -515,7 +524,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Create a new pi node, optionally setting the node's content.</p>
+                  <p>Create a new pi node, optionally setting the node&#39;s content.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-new_pi-source'); return false">
@@ -684,7 +693,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this node's base URI.</p>
+                  <p>Obtain this node&#39;s base URI.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-base_uri-source'); return false">
@@ -702,7 +711,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Set this node's base URI.</p>
+                  <p>Set this node&#39;s base URI.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-base_uri-3D-source'); return false">
@@ -754,7 +763,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Returns this node's children as an array.</p>
+                  <p>Returns this node&#39;s children as an array.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-children-source'); return false">
@@ -807,7 +816,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this node's content as a string.</p>
+                  <p>Obtain this node&#39;s content as a string.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-content-source'); return false">
@@ -825,7 +834,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Set this node's content to the specified string.</p>
+                  <p>Set this node&#39;s content to the specified string.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-content-3D-source'); return false">
@@ -843,7 +852,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this node's stripped content.</p>
+                  <p>Obtain this node&#39;s stripped content.</p>
                   
                   <p><strong>Deprecated</strong>: Stripped content can be obtained via the
                   <code>content</code> method.</p>
@@ -911,7 +920,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-debug-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-debug-source'>static VALUE rxml_node_debug(VALUE self)&#x000A;{&#x000A;#ifdef LIBXML_DEBUG_ENABLED&#x000A;  xmlNodePtr xnode;&#x000A;  xnode = rxml_get_xnode(self);&#x000A;  xmlDebugDumpNode(NULL, xnode, 2);&#x000A;  return Qtrue;&#x000A;#else&#x000A;  rb_warn(&quot;libxml was compiled without debugging support.&quot;)&#x000A;  return Qfalse;&#x000A;#endif&#x000A;}</pre>
+                  <pre id='method-i-debug-source'>static VALUE rxml_node_debug(VALUE self)&#x000A;{&#x000A;#ifdef LIBXML_DEBUG_ENABLED&#x000A;  xmlNodePtr xnode;&#x000A;  xnode = rxml_get_xnode(self);&#x000A;  xmlDebugDumpNode(NULL, xnode, 2);&#x000A;  return Qtrue;&#x000A;#else&#x000A;  rb_warn(&quot;libxml was compiled without debugging support.&quot;);&#x000A;  return Qfalse;&#x000A;#endif&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-doc'>
@@ -1028,11 +1037,11 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Iterates over this node's children, including text nodes, element nodes,
-                  etc.  If you wish to iterate only over child elements, use <a
+                  <p>Iterates over this node&#39;s children, including text nodes, element
+                  nodes, etc.  If you wish to iterate only over child elements, use <a
                   href="Node.html#method-i-each_element">#each_element</a>.</p>
                   
-                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'model/books.xml'</span>)&#x000A;<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">node</span>}</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;model/books.xml&#39;</span>)&#x000A;<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">node</span>}</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-each-source'); return false">
@@ -1049,9 +1058,9 @@
                 </div>
                 <div class='description'>
                   
-                  <p>-------  Traversal  ---------------- Iterates over this node's attributes.</p>
+                  <p>——-  Traversal  —————- Iterates over this node&#39;s attributes.</p>
                   
-                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'model/books.xml'</span>)&#x000A;<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">each_attr</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">attr</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">attr</span>}</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;model/books.xml&#39;</span>)&#x000A;<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">each_attr</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">attr</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">attr</span>}</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-each_attr-source'); return false">
@@ -1068,11 +1077,11 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Iterates over this node's child elements (nodes that have a <a
+                  <p>Iterates over this node&#39;s child elements (nodes that have a <a
                   href="Node.html#method-i-node_type">#node_type</a> == <a
                   href="Node.html#ELEMENT_NODE">ELEMENT_NODE</a>).</p>
                   
-                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'model/books.xml'</span>)&#x000A;<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">each_element</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">element</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">element</span>}</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;model/books.xml&#39;</span>)&#x000A;<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">each_element</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">element</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">element</span>}</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-each_element-source'); return false">
@@ -1238,7 +1247,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Returns this node's first child node if any.</p>
+                  <p>Returns this node&#39;s first child node if any.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-first-source'); return false">
@@ -1308,7 +1317,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Converts a node's children, to a string representation.  To include the
+                  <p>Converts a node&#39;s children, to a string representation.  To include the
                   node, use <a href="Node.html#method-i-to_s">#to_s</a>.  For more
                   information about the supported options, see <a
                   href="Node.html#method-i-to_s">#to_s</a>.</p>
@@ -1422,7 +1431,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this node's name.</p>
+                  <p>Obtain this node&#39;s name.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-name-source'); return false">
@@ -1440,7 +1449,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Set this node's name.</p>
+                  <p>Set this node&#39;s name.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-name-3D-source'); return false">
@@ -1475,8 +1484,8 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Returns this node's <a href="Namespaces.html">XML::Namespaces</a> object,
-                  which is used to access the namespaces associated with this node.</p>
+                  <p>Returns this node&#39;s <a href="Namespaces.html">XML::Namespaces</a>
+                  object, which is used to access the namespaces associated with this node.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-namespaces-source'); return false">
@@ -1550,7 +1559,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this node's type identifier.</p>
+                  <p>Obtain this node&#39;s type identifier.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-node_type-source'); return false">
@@ -1567,13 +1576,13 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Returns this node's type name</p>
+                  <p>Returns this node&#39;s type name</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-node_type_name-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-node_type_name-source'><span class="ruby-comment"># File lib/libxml/node.rb, line 153</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_type_name</span>&#x000A;  <span class="ruby-keyword">case</span> <span class="ruby-identifier">node_type</span>&#x000A;    <span class="ruby-comment"># Most common choices first</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ATTRIBUTE_NODE</span>&#x000A;      <span class="ruby-string">'attribute'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">DOCUMENT_NODE</span>&#x000A;      <span class="ruby-string">'document_xml'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ELEMENT_NODE</span>&#x000A;      <span class="ruby-string">'element'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">TEXT_NODE</span>&#x000A;      <span class="ruby-string">'text'</span>&#x000A;    &#x000A;    <span class="ruby-comment"># Now the rest  </span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ATTRIBUTE_DECL</span>&#x000A;      <span class="ruby-string">'attribute_decl'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">CDATA_SECTION_NODE</span>&#x000A;      <span class="ruby-string">'cdata'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">COMMENT_NODE</span>&#x000A;      <span class="ruby-string">'comment'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">DOCB_DOCUMENT_NODE</span>&#x000A;      <span class="ruby-string">'document_docbook'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">DOCUMENT_FRAG_NODE</span>&#x000A;      <span class="ruby-string">'fragment'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">DOCUMENT_TYPE_NODE</span>&#x000A;      <span class="ruby-string">'doctype'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">DTD_NODE</span>&#x000A;      <span class="ruby-string">'dtd'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ELEMENT_DECL</span>&#x000A;      <span class="ruby-string">'elem_decl'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ENTITY_DECL</span>&#x000A;      <span class="ruby-string">'entity_decl'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ENTITY_NODE</span>&#x000A;      <span class="ruby-string">'entity'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ENTITY_REF_NODE</span>&#x000A;      <span class="ruby-string">'entity_ref'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">HTML_DOCUMENT_NODE</span>&#x000A;      <span class="ruby-string">'document_html'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">NAMESPACE_DECL</span>&#x000A;      <span class="ruby-string">'namespace'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">NOTATION_NODE</span>&#x000A;      <span class="ruby-string">'notation'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">PI_NODE</span>&#x000A;      <span class="ruby-string">'pi'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">XINCLUDE_START</span>&#x000A;      <span class="ruby-string">'xinclude_start'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">XINCLUDE_END</span>&#x000A;      <span class="ruby-string">'xinclude_end'</span>&#x000A;    <span class="ruby-keyword">else</span>&#x000A;      <span class="ruby-identifier">raise</span>(<span class="ruby-constant">UnknownType</span>, <span class="ruby-string">&quot;Unknown node type: %n&quot;</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">node_type</span>);&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-node_type_name-source'><span class="ruby-comment"># File lib/libxml/node.rb, line 153</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_type_name</span>&#x000A;  <span class="ruby-keyword">case</span> <span class="ruby-identifier">node_type</span>&#x000A;    <span class="ruby-comment"># Most common choices first</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ATTRIBUTE_NODE</span>&#x000A;      <span class="ruby-string">&#39;attribute&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">DOCUMENT_NODE</span>&#x000A;      <span class="ruby-string">&#39;document_xml&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ELEMENT_NODE</span>&#x000A;      <span class="ruby-string">&#39;element&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">TEXT_NODE</span>&#x000A;      <span class="ruby-string">&#39;text&#39;</span>&#x000A;    &#x000A;    <span class="ruby-comment"># Now the rest  </span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ATTRIBUTE_DECL</span>&#x000A;      <span class="ruby-string">&#39;attribute_decl&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">CDATA_SECTION_NODE</span>&#x000A;      <span class="ruby-string">&#39;cdata&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">COMMENT_NODE</span>&#x000A;      <span class="ruby-string">&#39;comment&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">DOCB_DOCUMENT_NODE</span>&#x000A;      <span class="ruby-string">&#39;document_docbook&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">DOCUMENT_FRAG_NODE</span>&#x000A;      <span class="ruby-string">&#39;fragment&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">DOCUMENT_TYPE_NODE</span>&#x000A;      <span class="ruby-string">&#39;doctype&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">DTD_NODE</span>&#x000A;      <span class="ruby-string">&#39;dtd&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ELEMENT_DECL</span>&#x000A;      <span class="ruby-string">&#39;elem_decl&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ENTITY_DECL</span>&#x000A;      <span class="ruby-string">&#39;entity_decl&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ENTITY_NODE</span>&#x000A;      <span class="ruby-string">&#39;entity&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ENTITY_REF_NODE</span>&#x000A;      <span class="ruby-string">&#39;entity_ref&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">HTML_DOCUMENT_NODE</span>&#x000A;      <span class="ruby-string">&#39;document_html&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">NAMESPACE_DECL</span>&#x000A;      <span class="ruby-string">&#39;namespace&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">NOTATION_NODE</span>&#x000A;      <span class="ruby-string">&#39;notation&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">PI_NODE</span>&#x000A;      <span class="ruby-string">&#39;pi&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">XINCLUDE_START</span>&#x000A;      <span class="ruby-string">&#39;xinclude_start&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">XINCLUDE_END</span>&#x000A;      <span class="ruby-string">&#39;xinclude_end&#39;</span>&#x000A;    <span class="ruby-keyword">else</span>&#x000A;      <span class="ruby-identifier">raise</span>(<span class="ruby-constant">UnknownType</span>, <span class="ruby-string">&quot;Unknown node type: %n&quot;</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">node_type</span>);&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-notation-3F'>
@@ -1630,7 +1639,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Determine whether this node escapes it's output or not.</p>
+                  <p>Determine whether this node escapes it&#39;s output or not.</p>
                   
                   <p>Text nodes return only <code>true</code> or <code>false</code>.  Element
                   and attribute nodes examine their immediate text node children to determine
@@ -1645,7 +1654,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-output_escaping-3F-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-output_escaping-3F-source'>static VALUE rxml_node_output_escaping_q(VALUE self)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  xnode = rxml_get_xnode(self);&#x000A;&#x000A;  switch (xnode-&gt;type) {&#x000A;  case XML_TEXT_NODE:&#x000A;    return xnode-&gt;name==xmlStringTextNoenc ? Qfalse : Qtrue;&#x000A;  case XML_ELEMENT_NODE:&#x000A;  case XML_ATTRIBUTE_NODE:&#x000A;    {&#x000A;      xmlNodePtr tmp = xnode-&gt;children;&#x000A;      const xmlChar *match = NULL;&#x000A;&#x000A;      /* Find the first text node and use it as the reference. */&#x000A;      while (tmp &amp;&amp; tmp-&gt;type != XML_TEXT_NODE)&#x000A;        tmp = tmp-&gt;next;&#x000A;      if (! tmp)&#x000A;        return Qnil;&#x000A;      match = tmp-&gt;name;&#x000A;&#x000A;      /* Walk the remaining text nodes until we run out or one doesn't match. */&#x000A;      while (tmp &amp;&amp; (tmp-&gt;type != XML_TEXT_NODE || match == tmp-&gt;name))&#x000A;        tmp = tmp-&gt;next;&#x000A;&#x000A;      /* We're left with either the mismatched node or the aggregate result. */&#x000A;      return tmp ? Qnil : (match==xmlStringTextNoenc ? Qfalse : Qtrue);&#x000A;    }&#x000A;    break;&#x000A;  default:&#x000A;    return Qnil;&#x000A;  }&#x000A;}</pre>
+                  <pre id='method-i-output_escaping-3F-source'>static VALUE rxml_node_output_escaping_q(VALUE self)&#x000A;{&#x000A;  xmlNodePtr xnode;&#x000A;  xnode = rxml_get_xnode(self);&#x000A;&#x000A;  switch (xnode-&gt;type) {&#x000A;  case XML_TEXT_NODE:&#x000A;    return xnode-&gt;name==xmlStringTextNoenc ? Qfalse : Qtrue;&#x000A;  case XML_ELEMENT_NODE:&#x000A;  case XML_ATTRIBUTE_NODE:&#x000A;    {&#x000A;      xmlNodePtr tmp = xnode-&gt;children;&#x000A;      const xmlChar *match = NULL;&#x000A;&#x000A;      /* Find the first text node and use it as the reference. */&#x000A;      while (tmp &amp;&amp; tmp-&gt;type != XML_TEXT_NODE)&#x000A;        tmp = tmp-&gt;next;&#x000A;      if (! tmp)&#x000A;        return Qnil;&#x000A;      match = tmp-&gt;name;&#x000A;&#x000A;      /* Walk the remaining text nodes until we run out or one doesn&#39;t match. */&#x000A;      while (tmp &amp;&amp; (tmp-&gt;type != XML_TEXT_NODE || match == tmp-&gt;name))&#x000A;        tmp = tmp-&gt;next;&#x000A;&#x000A;      /* We&#39;re left with either the mismatched node or the aggregate result. */&#x000A;      return tmp ? Qnil : (match==xmlStringTextNoenc ? Qfalse : Qtrue);&#x000A;    }&#x000A;    break;&#x000A;  default:&#x000A;    return Qnil;&#x000A;  }&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-parent'>
@@ -1657,7 +1666,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this node's parent node, if any.</p>
+                  <p>Obtain this node&#39;s parent node, if any.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-parent-source'); return false">
@@ -1692,7 +1701,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this node's path.</p>
+                  <p>Obtain this node&#39;s path.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-path-source'); return false">
@@ -1806,7 +1815,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-properties-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-properties-source'><span class="ruby-comment"># File lib/libxml/properties.rb, line 10</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">properties</span>&#x000A;  <span class="ruby-identifier">warn</span>(<span class="ruby-string">'Node#properties is deprecated.  Use Node#attributes instead.'</span>)&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">attributes</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-properties-source'><span class="ruby-comment"># File lib/libxml/properties.rb, line 10</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">properties</span>&#x000A;  <span class="ruby-identifier">warn</span>(<span class="ruby-string">&#39;Node#properties is deprecated.  Use Node#attributes instead.&#39;</span>)&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">attributes</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-properties-3F'>
@@ -1822,7 +1831,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-properties-3F-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-properties-3F-source'><span class="ruby-comment"># File lib/libxml/properties.rb, line 15</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">properties?</span>&#x000A;  <span class="ruby-identifier">warn</span>(<span class="ruby-string">'Node#properties? is deprecated.  Use Node#attributes? instead.'</span>)&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">attributes?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-properties-3F-source'><span class="ruby-comment"># File lib/libxml/properties.rb, line 15</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">properties?</span>&#x000A;  <span class="ruby-identifier">warn</span>(<span class="ruby-string">&#39;Node#properties? is deprecated.  Use Node#attributes? instead.&#39;</span>)&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">attributes?</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-property'>
@@ -1838,7 +1847,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-property-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-property-source'><span class="ruby-comment"># File lib/libxml/properties.rb, line 5</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">property</span>(<span class="ruby-identifier">name</span>)&#x000A;  <span class="ruby-identifier">warn</span>(<span class="ruby-string">'Node#properties is deprecated.  Use Node#[] instead.'</span>)&#x000A;  <span class="ruby-keyword">self</span>[<span class="ruby-identifier">name</span>]&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-property-source'><span class="ruby-comment"># File lib/libxml/properties.rb, line 5</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">property</span>(<span class="ruby-identifier">name</span>)&#x000A;  <span class="ruby-identifier">warn</span>(<span class="ruby-string">&#39;Node#properties is deprecated.  Use Node#[] instead.&#39;</span>)&#x000A;  <span class="ruby-keyword">self</span>[<span class="ruby-identifier">name</span>]&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-remove-21'>
@@ -1859,7 +1868,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-remove-21-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-remove-21-source'>static VALUE rxml_node_remove_ex(VALUE self)&#x000A;{&#x000A;  xmlNodePtr xnode, xresult;&#x000A;  xnode = rxml_get_xnode(self);&#x000A;&#x000A;  /* First unlink the node from its parent. */&#x000A;  xmlUnlinkNode(xnode);&#x000A;&#x000A;  /* Now copy the node we want to remove and make the&#x000A;     current Ruby object point to it.  We do this because&#x000A;     a node has a number of dependencies on its parent&#x000A;     document - its name (if using a dictionary), entities,&#x000A;     namespaces, etc.  For a node to live on its own, it&#x000A;     needs to get its own copies of this information.*/&#x000A;  xresult = xmlDocCopyNode(xnode, NULL, 1);&#x000A;  &#x000A;  /* Now free the original node. */&#x000A;  xmlFreeNode(xnode);&#x000A;&#x000A;  /* Now wrap the new node */&#x000A;  RDATA(self)-&gt;data = xresult;&#x000A;  xresult-&gt;_private = (void*) self;&#x000A;&#x000A;  /* Now return the removed node so the user can&#x000A;     do something with it.*/&#x000A;  return self;&#x000A;}</pre>
+                  <pre id='method-i-remove-21-source'>static VALUE rxml_node_remove_ex(VALUE self)&#x000A;{&#x000A;  xmlNodePtr xnode, xresult;&#x000A;  xnode = rxml_get_xnode(self);&#x000A;&#x000A;  /* First unlink the node from its parent. */&#x000A;  xmlUnlinkNode(xnode);&#x000A;&#x000A;  /* Now copy the node we want to remove and make the&#x000A;     current Ruby object point to it.  We do this because&#x000A;     a node has a number of dependencies on its parent&#x000A;     document - its name (if using a dictionary), entities,&#x000A;     namespaces, etc.  For a node to live on its own, it&#x000A;     needs to get its own copies of this information.*/&#x000A;  xresult = xmlDocCopyNode(xnode, NULL, 1);&#x000A;&#x000A;  /* This ruby node object no longer points at the node.*/&#x000A;  xnode-&gt;_private = NULL;&#x000A;  RDATA(self)-&gt;data = NULL;&#x000A;&#x000A;  /* Now free the original node.  This will call the deregister node&#x000A;    callback which would reset the mark and free function except for &#x000A;        the fact we set the _private field to null above*/&#x000A;  xmlFreeNode(xnode);&#x000A;&#x000A;  /* Now wrap the new node */&#x000A;  RDATA(self)-&gt;data = xresult;&#x000A;  xresult-&gt;_private = (void*) self;&#x000A;&#x000A;  /* Now return the removed node so the user can&#x000A;     do something with it.*/&#x000A;  return self;&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-sibling-3D'>
@@ -1871,10 +1880,11 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Adds the specified node as the end of the current node's list of siblings. 
-                  If the node already exists in the document, it  is first removed from its
-                  existing context.  Any adjacent text nodes will be  merged together,
-                  meaning the returned node may be different than the original node.</p>
+                  <p>Adds the specified node as the end of the current node&#39;s list of
+                  siblings.  If the node already exists in the document, it  is first removed
+                  from its existing context.  Any adjacent text nodes will be  merged
+                  together, meaning the returned node may be different than the original
+                  node.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-sibling-3D-source'); return false">
@@ -1947,7 +1957,7 @@
                 <div class='description'>
                   
                   <p>Converts a node, and all of its children, to a string representation. To
-                  include only the node's children, use the the <a
+                  include only the node&#39;s children, use the the <a
                   href="Node.html#method-i-inner_xml">#inner_xml</a> method.</p>
                   
                   <p>You may provide an optional hash table to control how the string is 

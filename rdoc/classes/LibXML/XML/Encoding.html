@@ -34,10 +34,6 @@
             <a target="docwin" href="../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
           </li>
         </ol>
-        <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
-        </div>
       </div>
       <div id='content'>
         <div id='text'>
@@ -48,16 +44,16 @@
             
             <p><a href="../../LibXML.html">LibXML</a> converts all data sources to UTF8
             internally before processing them.  By default,  <a
-            href="../../LibXML.html">LibXML</a> determines a data source's encoding 
+            href="../../LibXML.html">LibXML</a> determines a data source&#39;s encoding
             using the algorithm described on its <a
             href="http://xmlsoft.org/encoding.html">website</a>.</p>
             
-            <p>However, you may override a data source's encoding  by using the encoding
-            constants defined in this module.</p>
+            <p>However, you may override a data source&#39;s encoding  by using the
+            encoding constants defined in this module.</p>
             
             <p>Example 1:</p>
             
-            <pre class="ruby"><span class="ruby-identifier">io</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">'some_file'</span>, <span class="ruby-string">'rb'</span>)&#x000A;<span class="ruby-identifier">parser</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">io</span>(<span class="ruby-identifier">io</span>, :<span class="ruby-identifier">encoding</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">ISO_8859_1</span>)&#x000A;<span class="ruby-identifier">doc</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span></pre>
+            <pre class="ruby"><span class="ruby-identifier">io</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&#39;some_file&#39;</span>, <span class="ruby-string">&#39;rb&#39;</span>)&#x000A;<span class="ruby-identifier">parser</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">io</span>(<span class="ruby-identifier">io</span>, :<span class="ruby-identifier">encoding</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">ISO_8859_1</span>)&#x000A;<span class="ruby-identifier">doc</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span></pre>
             
             <p>Example 2:</p>
             
@@ -65,7 +61,7 @@
             
             <p>Example 3:</p>
             
-            <pre>document = XML::Document.new&#x000A;document.encoding = XML::Encoding::ISO_8859_1&#x000A;doc &lt;&lt; XML::Node.new</pre>
+            <pre class="ruby"><span class="ruby-identifier">document</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>&#x000A;<span class="ruby-identifier">document</span>.<span class="ruby-identifier">encoding</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">ISO_8859_1</span>&#x000A;<span class="ruby-identifier">doc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span></pre>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>

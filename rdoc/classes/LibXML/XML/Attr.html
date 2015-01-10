@@ -41,8 +41,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -53,7 +53,7 @@
             
             <p>Basic Usage:</p>
             
-            <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'test_helper'</span>&#x000A;&#x000A;<span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">&lt;</span><span class="ruby-identifier">some_file</span><span class="ruby-operator">&gt;</span>)&#x000A;<span class="ruby-identifier">attribute</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">get_attribute_ns</span>(<span class="ruby-string">'http://www.w3.org/1999/xlink'</span>, <span class="ruby-string">'href'</span>)&#x000A;<span class="ruby-identifier">attribute</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'href'</span>&#x000A;<span class="ruby-identifier">attribute</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-string">'http://www.mydocument.com'</span>&#x000A;<span class="ruby-identifier">attribute</span>.<span class="ruby-identifier">remove!</span></pre>
+            <pre>require &#39;test_helper&#39;&#x000A;doc = XML::Document.new(&lt;some_file&gt;)&#x000A;attribute = doc.root.attributes.get_attribute_ns(&#39;http://www.w3.org/1999/xlink&#39;, &#39;href&#39;)&#x000A;attribute.name == &#39;href&#39;&#x000A;attribute.value == &#39;http://www.mydocument.com&#39;&#x000A;attribute.remove!</pre>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
@@ -133,7 +133,7 @@
                   <p>node: The <a href="Node.html">XML::Node</a> that will contain the attribute
                   name: The name of the attribute value: The value of the attribute</p>
                   
-                  <pre>attr = XML::Attr.new(doc.root, 'name', 'libxml')</pre>
+                  <pre class="ruby"><span class="ruby-identifier">attr</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Attr</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>, <span class="ruby-string">&#39;name&#39;</span>, <span class="ruby-string">&#39;libxml&#39;</span>)</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-new-source'); return false">
@@ -152,7 +152,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this attribute's child attribute(s).</p>
+                  <p>Obtain this attribute&#39;s child attribute(s).</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-child-source'); return false">
@@ -188,9 +188,9 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Returns this attribute's document.</p>
+                  <p>Returns this attribute&#39;s document.</p>
                   
-                  <pre>doc.root.attributes.get_attribute('name').doc == doc</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">get_attribute</span>(<span class="ruby-string">&#39;name&#39;</span>).<span class="ruby-identifier">doc</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">doc</span></pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-doc-source'); return false">
@@ -231,7 +231,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-each_sibling-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-each_sibling-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 96</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_sibling</span>(&amp;<span class="ruby-identifier">blk</span>)&#x000A;  <span class="ruby-identifier">siblings</span>(<span class="ruby-keyword">self</span>,&amp;<span class="ruby-identifier">blk</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-each_sibling-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 96</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_sibling</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)&#x000A;  <span class="ruby-identifier">siblings</span>(<span class="ruby-keyword">self</span>,<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-last'>
@@ -279,7 +279,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this attribute's name.</p>
+                  <p>Obtain this attribute&#39;s name.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-name-source'); return false">
@@ -297,8 +297,8 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Returns this node's <a href="Namespaces.html">XML::Namespaces</a> object,
-                  which is used to access the namespaces associated with this node.</p>
+                  <p>Returns this node&#39;s <a href="Namespaces.html">XML::Namespaces</a>
+                  object, which is used to access the namespaces associated with this node.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-namespaces-source'); return false">
@@ -352,7 +352,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this node's type identifier.</p>
+                  <p>Obtain this node&#39;s type identifier.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-node_type-source'); return false">
@@ -369,13 +369,13 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Returns this node's type name</p>
+                  <p>Returns this node&#39;s type name</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-node_type_name-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-node_type_name-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 78</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_type_name</span>&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node_type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">ATTRIBUTE_NODE</span>&#x000A;    <span class="ruby-string">'attribute'</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">UnknownType</span>, <span class="ruby-string">&quot;Unknown node type: %n&quot;</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">node_type</span>);&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-node_type_name-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 78</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_type_name</span>&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node_type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">ATTRIBUTE_NODE</span>&#x000A;    <span class="ruby-string">&#39;attribute&#39;</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">UnknownType</span>, <span class="ruby-string">&quot;Unknown node type: %n&quot;</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">node_type</span>);&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-ns'>
@@ -387,7 +387,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this attribute's associated XML::NS, if any.</p>
+                  <p>Obtain this attribute&#39;s associated XML::NS, if any.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-ns-source'); return false">
@@ -423,7 +423,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this attribute node's parent.</p>
+                  <p>Obtain this attribute node&#39;s parent.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-parent-source'); return false">
@@ -495,7 +495,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Removes this attribute from it's parent.  Note the attribute and its
+                  <p>Removes this attribute from it&#39;s parent.  Note the attribute and its
                   content is freed and can no longer be used.  If you try to use it you  will
                   get a segmentation fault.</p>
                 </div>
@@ -520,7 +520,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-siblings-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-siblings-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 87</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">siblings</span>(<span class="ruby-identifier">node</span>, &amp;<span class="ruby-identifier">blk</span>)&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> = <span class="ruby-identifier">node</span>&#x000A;    <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>&#x000A;      <span class="ruby-identifier">blk</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">n</span>)&#x000A;      <span class="ruby-keyword">break</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">n</span> = <span class="ruby-identifier">n</span>.<span class="ruby-identifier">next</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-siblings-source'><span class="ruby-comment"># File lib/libxml/attr.rb, line 87</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">siblings</span>(<span class="ruby-identifier">node</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> = <span class="ruby-identifier">node</span>&#x000A;    <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>&#x000A;      <span class="ruby-identifier">blk</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">n</span>)&#x000A;      <span class="ruby-keyword">break</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">n</span> = <span class="ruby-identifier">n</span>.<span class="ruby-identifier">next</span>&#x000A;    <span class="ruby-keyword">end</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-to_a'>

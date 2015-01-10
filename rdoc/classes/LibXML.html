@@ -37,10 +37,10 @@
             <a target="docwin" href="../files/lib/libxml/attr_rb.html">lib/libxml/attr.rb</a>
           </li>
           <li class='other'>
-            <a target="docwin" href="../files/lib/libxml/attributes_rb.html">lib/libxml/attributes.rb</a>
+            <a target="docwin" href="../files/lib/libxml/attr_decl_rb.html">lib/libxml/attr_decl.rb</a>
           </li>
           <li class='other'>
-            <a target="docwin" href="../files/lib/libxml/attr_decl_rb.html">lib/libxml/attr_decl.rb</a>
+            <a target="docwin" href="../files/lib/libxml/attributes_rb.html">lib/libxml/attributes.rb</a>
           </li>
           <li class='other'>
             <a target="docwin" href="../files/lib/libxml/document_rb.html">lib/libxml/document.rb</a>
@@ -79,6 +79,9 @@
             <a target="docwin" href="../files/lib/libxml/sax_parser_rb.html">lib/libxml/sax_parser.rb</a>
           </li>
           <li class='other'>
+            <a target="docwin" href="../files/lib/libxml/schema_rb.html">lib/libxml/schema.rb</a>
+          </li>
+          <li class='other'>
             <a target="docwin" href="../files/lib/libxml/schema/attribute_rb.html">lib/libxml/schema/attribute.rb</a>
           </li>
           <li class='other'>
@@ -86,9 +89,6 @@
           </li>
           <li class='other'>
             <a target="docwin" href="../files/lib/libxml/schema/type_rb.html">lib/libxml/schema/type.rb</a>
-          </li>
-          <li class='other'>
-            <a target="docwin" href="../files/lib/libxml/schema_rb.html">lib/libxml/schema.rb</a>
           </li>
           <li class='other'>
             <a target="docwin" href="../files/lib/libxml/tree_rb.html">lib/libxml/tree.rb</a>
@@ -100,25 +100,21 @@
             <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
           </li>
         </ol>
-        <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../files/lib/libxml/xpath_object_rb.html">xpath_object.rb</a></strong>
-        </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
             
-            <p>The libxml gem provides Ruby language bindings for GNOME's Libxml2 <a
+            <p>The libxml gem provides Ruby language bindings for GNOME&#39;s Libxml2 <a
             href="LibXML/XML.html">XML</a> toolkit.  To get started you may:</p>
             
-            <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'test_helper'</span>&#x000A;<span class="ruby-identifier">document</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span></pre>
+            <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;test_helper&#39;</span>&#x000A;<span class="ruby-identifier">document</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span></pre>
             
             <p>However, when creating an application or library you plan to redistribute,
             it is best to not add the <a href="LibXML.html">LibXML</a> module to the
             global namespace, in which case you can either write your code like this:</p>
             
-            <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'libxml'</span>&#x000A;<span class="ruby-identifier">document</span> = <span class="ruby-constant">LibXML</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span></pre>
+            <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;libxml&#39;</span>&#x000A;<span class="ruby-identifier">document</span> = <span class="ruby-constant">LibXML</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span></pre>
             
             <p>Refer to the <a href="../files/README_rdoc.html">README</a> file to get
             started and the <a href="../files/LICENSE.html">LICENSE</a> file for

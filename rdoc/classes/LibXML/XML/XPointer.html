@@ -35,8 +35,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -45,9 +45,8 @@
             
             <p>The XML::Pointer class provides a standards based API for searching an xml
             document. <a href="XPointer.html">XPointer</a> is based on the <a
-            href="../XML.html">XML</a> Path Language (<a
-            href="XPath.html">XML::XPath</a>) and is documented at <a
-            href="http://www.w3.org/TR/WD-xptr.">www.w3.org/TR/WD-xptr.</a></p>
+            href="../XML.html">XML</a> Path Language (XML::XPath) and is documented at
+            <a target="_top" href="http://www.w3.org/TR/WD-xptr">www.w3.org/TR/WD-xptr</a>.</p>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
@@ -77,7 +76,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-range-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-range-source'>static VALUE rxml_xpointer_range(VALUE class, VALUE rstart, VALUE rend)&#x000A;{&#x000A;#ifdef LIBXML_XPTR_ENABLED&#x000A;  xmlNodePtr start, end;&#x000A;  VALUE rxxp;&#x000A;  xmlXPathObjectPtr xpath;&#x000A;&#x000A;  if (rb_obj_is_kind_of(rstart, cXMLNode) == Qfalse)&#x000A;  rb_raise(rb_eTypeError, &quot;require an XML::Node object as a starting point&quot;);&#x000A;  if (rb_obj_is_kind_of(rend, cXMLNode) == Qfalse)&#x000A;  rb_raise(rb_eTypeError, &quot;require an XML::Node object as an ending point&quot;);&#x000A;&#x000A;  Data_Get_Struct(rstart, xmlNode, start);&#x000A;  if (start == NULL)&#x000A;  return(Qnil);&#x000A;&#x000A;  Data_Get_Struct(rend, xmlNode, end);&#x000A;  if (end == NULL)&#x000A;  return(Qnil);&#x000A;&#x000A;  xpath = xmlXPtrNewRangeNodes(start, end);&#x000A;  if (xpath == NULL)&#x000A;  rb_fatal(&quot;You shouldn't be able to have this happen&quot;);&#x000A;&#x000A;  rxxp = rxml_xpath_object_wrap(start-&gt;doc, xpath);&#x000A;  return(rxxp);&#x000A;#else&#x000A;  rb_warn(&quot;libxml was compiled without XPointer support&quot;);&#x000A;  return (Qfalse);&#x000A;#endif&#x000A;}</pre>
+                  <pre id='method-c-range-source'>static VALUE rxml_xpointer_range(VALUE class, VALUE rstart, VALUE rend)&#x000A;{&#x000A;#ifdef LIBXML_XPTR_ENABLED&#x000A;  xmlNodePtr start, end;&#x000A;  VALUE rxxp;&#x000A;  xmlXPathObjectPtr xpath;&#x000A;&#x000A;  if (rb_obj_is_kind_of(rstart, cXMLNode) == Qfalse)&#x000A;  rb_raise(rb_eTypeError, &quot;require an XML::Node object as a starting point&quot;);&#x000A;  if (rb_obj_is_kind_of(rend, cXMLNode) == Qfalse)&#x000A;  rb_raise(rb_eTypeError, &quot;require an XML::Node object as an ending point&quot;);&#x000A;&#x000A;  Data_Get_Struct(rstart, xmlNode, start);&#x000A;  if (start == NULL)&#x000A;  return(Qnil);&#x000A;&#x000A;  Data_Get_Struct(rend, xmlNode, end);&#x000A;  if (end == NULL)&#x000A;  return(Qnil);&#x000A;&#x000A;  xpath = xmlXPtrNewRangeNodes(start, end);&#x000A;  if (xpath == NULL)&#x000A;  rb_fatal(&quot;You shouldn&#39;t be able to have this happen&quot;);&#x000A;&#x000A;  rxxp = rxml_xpath_object_wrap(start-&gt;doc, xpath);&#x000A;  return(rxxp);&#x000A;#else&#x000A;  rb_warn(&quot;libxml was compiled without XPointer support&quot;);&#x000A;  return (Qfalse);&#x000A;#endif&#x000A;}</pre>
                 </div>
               </div>
             </div>

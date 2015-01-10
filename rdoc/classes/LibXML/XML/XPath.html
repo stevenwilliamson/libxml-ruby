@@ -34,16 +34,18 @@
             <a target="docwin" href="../../../files/ext/libxml/libxml_c.html">ext/libxml/libxml.c</a>
           </li>
           <li class='other'>
+            <a target="docwin" href="../../../files/lib/libxml/document_rb.html">lib/libxml/document.rb</a>
+          </li>
+          <li class='other'>
+            <a target="docwin" href="../../../files/lib/libxml/node_rb.html">lib/libxml/node.rb</a>
+          </li>
+          <li class='other'>
             <a target="docwin" href="../../../files/lib/libxml/xpath_object_rb.html">lib/libxml/xpath_object.rb</a>
           </li>
           <li>
             <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
           </li>
         </ol>
-        <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
-        </div>
       </div>
       <div id='content'>
         <div id='text'>
@@ -55,34 +57,34 @@
             href="Node.html#method-i-find">LibXML::XML::Node#find</a> methods.  For
             example:</p>
             
-            <pre>document.find('/foo', namespaces) -&gt; XML::XPath::Object</pre>
+            <pre>document.find(&#39;/foo&#39;, namespaces) -&gt; XML::XPath::Object</pre>
             
             <p>The optional namespaces parameter can be a string, array or hash table.</p>
             
-            <pre class="ruby"><span class="ruby-identifier">document</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">'/foo'</span>, <span class="ruby-string">'xlink:http://www.w3.org/1999/xlink'</span>)&#x000A;<span class="ruby-identifier">document</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">'/foo'</span>, [<span class="ruby-string">'xlink:http://www.w3.org/1999/xlink'</span>,&#x000A;                       <span class="ruby-string">'xi:http://www.w3.org/2001/XInclude'</span>)&#x000A;<span class="ruby-identifier">document</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">'/foo'</span>, <span class="ruby-string">'xlink'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'http://www.w3.org/1999/xlink'</span>,&#x000A;                          <span class="ruby-string">'xi'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'http://www.w3.org/2001/XInclude'</span>)</pre>
+            <pre>document.find(&#39;/foo&#39;, &#39;xlink:http://www.w3.org/1999/xlink&#39;)&#x000A;document.find(&#39;/foo&#39;, [&#39;xlink:http://www.w3.org/1999/xlink&#39;,&#x000A;                       &#39;xi:http://www.w3.org/2001/XInclude&#39;)&#x000A;document.find(&#39;/foo&#39;, &#39;xlink&#39; =&gt; &#39;http://www.w3.org/1999/xlink&#39;,&#x000A;                          &#39;xi&#39; =&gt; &#39;http://www.w3.org/2001/XInclude&#39;)</pre>
             
-            <h3 id="label-Working+With+Default+Namespaces">Working With Default <a href="Namespaces.html">Namespaces</a></h3>
+            <h3 id="module-LibXML::XML::XPath-label-Working+With+Default+Namespaces">Working With Default <a href="Namespaces.html">Namespaces</a><span><a href="#module-LibXML::XML::XPath-label-Working+With+Default+Namespaces">&para;</a> <a href="#top">&uarr;</a></span></h3>
             
             <p>Finding namespaced elements and attributes can be tricky. Lets work through
             an example of a document with a default namespace:</p>
             
-            <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#x000A;&lt;feed xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;&#x000A;  &lt;title type=&quot;text&quot;&gt;Phil Bogle's Contacts&lt;/title&gt;&#x000A;&lt;/feed&gt;</pre>
+            <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#x000A;&lt;feed xmlns=&quot;http://www.w3.org/2005/Atom&quot;&gt;&#x000A;  &lt;title type=&quot;text&quot;&gt;Phil Bogle&#39;s Contacts&lt;/title&gt;&#x000A;&lt;/feed&gt;</pre>
             
             <p>To find nodes you must define the atom namespace for libxml.  One way to do
             this is:</p>
             
-            <pre>node = doc.find('atom:title', 'atom:http://www.w3.org/2005/Atom')</pre>
+            <pre class="ruby"><span class="ruby-identifier">node</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">&#39;atom:title&#39;</span>, <span class="ruby-string">&#39;atom:http://www.w3.org/2005/Atom&#39;</span>)</pre>
             
             <p>Alternatively, you can register the default namespace like this:</p>
             
-            <pre>doc.root.namespaces.default_prefix = 'atom'&#x000A;node = doc.find('atom:title')</pre>
+            <pre class="ruby"><span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">namespaces</span>.<span class="ruby-identifier">default_prefix</span> = <span class="ruby-string">&#39;atom&#39;</span>&#x000A;<span class="ruby-identifier">node</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">&#39;atom:title&#39;</span>)</pre>
             
-            <h3 id="label-More+Complex+Namespace+Examples">More Complex <a href="Namespace.html">Namespace</a> Examples</h3>
+            <h3 id="module-LibXML::XML::XPath-label-More+Complex+Namespace+Examples">More Complex <a href="Namespace.html">Namespace</a> Examples<span><a href="#module-LibXML::XML::XPath-label-More+Complex+Namespace+Examples">&para;</a> <a href="#top">&uarr;</a></span></h3>
             
             <p>Lets work through some more complex examples using the following xml
             document:</p>
             
-            <pre>&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&#x000A;  &lt;soap:Body&gt;&#x000A;    &lt;getManufacturerNamesResponse xmlns=&quot;http://services.somewhere.com&quot;&gt;&#x000A;      &lt;IDAndNameList xmlns=&quot;http://services.somewhere.com&quot;&gt;&#x000A;        &lt;ns1:IdAndName xmlns:ns1=&quot;http://domain.somewhere.com&quot;/&gt;&#x000A;      &lt;/IDAndNameList&gt;&#x000A;    &lt;/getManufacturerNamesResponse&gt;&#x000A;&lt;/soap:Envelope&gt;&#x000A;# Since the soap namespace is defined on the root&#x000A;# node we can directly use it.&#x000A;doc.find('/soap:Envelope')&#x000A;&#x000A;# Since the ns1 namespace is not defined on the root node&#x000A;# we have to first register it with the xpath engine.&#x000A;doc.find('//ns1:IdAndName',&#x000A;         'ns1:http://domain.somewhere.com')&#x000A;&#x000A;# Since the getManufacturerNamesResponse element uses a default&#x000A;# namespace we first have to give it a prefix and register&#x000A;# it with the xpath engine.&#x000A;doc.find('//ns:getManufacturerNamesResponse',&#x000A;          'ns:http://services.somewhere.com')&#x000A;&#x000A;# Here is an example showing a complex namespace aware&#x000A;# xpath expression.&#x000A;doc.find('/soap:Envelope/soap:Body/ns0:getManufacturerNamesResponse/ns0:IDAndNameList/ns1:IdAndName',&#x000A;['ns0:http://services.somewhere.com', 'ns1:http://domain.somewhere.com'])</pre>
+            <pre>&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;&#x000A;  &lt;soap:Body&gt;&#x000A;    &lt;getManufacturerNamesResponse xmlns=&quot;http://services.somewhere.com&quot;&gt;&#x000A;      &lt;IDAndNameList xmlns=&quot;http://services.somewhere.com&quot;&gt;&#x000A;        &lt;ns1:IdAndName xmlns:ns1=&quot;http://domain.somewhere.com&quot;/&gt;&#x000A;      &lt;/IDAndNameList&gt;&#x000A;    &lt;/getManufacturerNamesResponse&gt;&#x000A;  &lt;/soap:Body&gt;&#x000A;&lt;/soap:Envelope&gt;&#x000A;# Since the soap namespace is defined on the root&#x000A;# node we can directly use it.&#x000A;doc.find(&#39;/soap:Envelope&#39;)&#x000A;&#x000A;# Since the ns1 namespace is not defined on the root node&#x000A;# we have to first register it with the xpath engine.&#x000A;doc.find(&#39;//ns1:IdAndName&#39;,&#x000A;         &#39;ns1:http://domain.somewhere.com&#39;)&#x000A;&#x000A;# Since the getManufacturerNamesResponse element uses a default&#x000A;# namespace we first have to give it a prefix and register&#x000A;# it with the xpath engine.&#x000A;doc.find(&#39;//ns:getManufacturerNamesResponse&#39;,&#x000A;          &#39;ns:http://services.somewhere.com&#39;)&#x000A;&#x000A;# Here is an example showing a complex namespace aware&#x000A;# xpath expression.&#x000A;doc.find(&#39;/soap:Envelope/soap:Body/ns0:getManufacturerNamesResponse/ns0:IDAndNameList/ns1:IdAndName&#39;,&#x000A;[&#39;ns0:http://services.somewhere.com&#39;, &#39;ns1:http://domain.somewhere.com&#39;])</pre>
           </div>
           <div id='context'>
           </div>

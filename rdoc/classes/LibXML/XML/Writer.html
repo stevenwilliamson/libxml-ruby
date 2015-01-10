@@ -35,8 +35,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -130,7 +130,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-document-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-document-source'>static VALUE rxml_writer_doc(VALUE klass)&#x000A;{&#x000A;    xmlDocPtr doc;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = ALLOC(rxml_writer_object);&#x000A;    rwo-&gt;buffer = NULL;&#x000A;    rwo-&gt;output = Qnil;&#x000A;    rwo-&gt;output_type = RXMLW_OUTPUT_DOC;&#x000A;    if (NULL == (rwo-&gt;writer = xmlNewTextWriterDoc(&amp;doc, 0))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;    rwo-&gt;output = rxml_document_wrap(doc);&#x000A;&#x000A;    return rxml_writer_wrap(rwo);&#x000A;}</pre>
+                  <pre id='method-c-document-source'>static VALUE rxml_writer_doc(VALUE klass)&#x000A;{&#x000A;    xmlDocPtr doc;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = ALLOC(rxml_writer_object);&#x000A;    rwo-&gt;buffer = NULL;&#x000A;    rwo-&gt;output = Qnil;&#x000A;    rwo-&gt;closed = 0;&#x000A;#ifdef HAVE_RUBY_ENCODING_H&#x000A;    rwo-&gt;encoding = NULL;&#x000A;#endif /* HAVE_RUBY_ENCODING_H */&#x000A;    rwo-&gt;output_type = RXMLW_OUTPUT_DOC;&#x000A;    if (NULL == (rwo-&gt;writer = xmlNewTextWriterDoc(&amp;doc, 0))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;    rwo-&gt;output = rxml_document_wrap(doc);&#x000A;&#x000A;    return rxml_writer_wrap(rwo);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-class' id='method-method-c-file'>
@@ -149,7 +149,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-file-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-file-source'>static VALUE rxml_writer_file(VALUE klass, VALUE filename)&#x000A;{&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = ALLOC(rxml_writer_object);&#x000A;    rwo-&gt;output = Qnil;&#x000A;    rwo-&gt;buffer = NULL;&#x000A;    rwo-&gt;output_type = RXMLW_OUTPUT_NONE;&#x000A;    if (NULL == (rwo-&gt;writer = xmlNewTextWriterFilename(StringValueCStr(filename), 0))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;&#x000A;    return rxml_writer_wrap(rwo);&#x000A;}</pre>
+                  <pre id='method-c-file-source'>static VALUE rxml_writer_file(VALUE klass, VALUE filename)&#x000A;{&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = ALLOC(rxml_writer_object);&#x000A;    rwo-&gt;output = Qnil;&#x000A;    rwo-&gt;buffer = NULL;&#x000A;    rwo-&gt;closed = 0;&#x000A;#ifdef HAVE_RUBY_ENCODING_H&#x000A;    rwo-&gt;encoding = NULL;&#x000A;#endif /* HAVE_RUBY_ENCODING_H */&#x000A;    rwo-&gt;output_type = RXMLW_OUTPUT_NONE;&#x000A;    if (NULL == (rwo-&gt;writer = xmlNewTextWriterFilename(StringValueCStr(filename), 0))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;&#x000A;    return rxml_writer_wrap(rwo);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-class' id='method-method-c-io'>
@@ -168,7 +168,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-io-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-io-source'>static VALUE rxml_writer_io(VALUE klass, VALUE io)&#x000A;{&#x000A;#if 0&#x000A;typedef int (*xmlOutputCloseCallback)(void * context);&#x000A;typedef int (*xmlOutputWriteCallback)(void * context, const char * buffer, int len);&#x000A;&#x000A;ssize_t rb_io_bufwrite(VALUE io, const void *buf, size_t size);&#x000A;&#x000A;xmlOutputBufferPtr xmlOutputBufferCreateIO(xmlOutputWriteCallback iowrite, xmlOutputCloseCallback ioclose, void * ioctx, xmlCharEncodingHandlerPtr encoder)&#x000A;&#x000A;xmlCharEncodingHandlerPtr xmlFindCharEncodingHandler(const char * name);&#x000A;#endif&#x000A;    xmlOutputBufferPtr out;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = ALLOC(rxml_writer_object);&#x000A;    rwo-&gt;output = io;&#x000A;    rwo-&gt;buffer = NULL;&#x000A;    rwo-&gt;output_type = RXMLW_OUTPUT_IO;&#x000A;    if (NULL == (out = xmlOutputBufferCreateIO(rxml_write_callback, NULL, (void *) io, NULL))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;    if (NULL == (rwo-&gt;writer = xmlNewTextWriter(out))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;&#x000A;    return rxml_writer_wrap(rwo);&#x000A;}</pre>
+                  <pre id='method-c-io-source'>static VALUE rxml_writer_io(VALUE klass, VALUE io)&#x000A;{&#x000A;#if 0&#x000A;typedef int (*xmlOutputCloseCallback)(void * context);&#x000A;typedef int (*xmlOutputWriteCallback)(void * context, const char * buffer, int len);&#x000A;&#x000A;ssize_t rb_io_bufwrite(VALUE io, const void *buf, size_t size);&#x000A;&#x000A;xmlOutputBufferPtr xmlOutputBufferCreateIO(xmlOutputWriteCallback iowrite, xmlOutputCloseCallback ioclose, void * ioctx, xmlCharEncodingHandlerPtr encoder)&#x000A;&#x000A;xmlCharEncodingHandlerPtr xmlFindCharEncodingHandler(const char * name);&#x000A;#endif&#x000A;    xmlOutputBufferPtr out;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = ALLOC(rxml_writer_object);&#x000A;    rwo-&gt;output = io;&#x000A;    rwo-&gt;buffer = NULL;&#x000A;    rwo-&gt;closed = 0;&#x000A;#ifdef HAVE_RUBY_ENCODING_H&#x000A;    rwo-&gt;encoding = NULL;&#x000A;#endif /* HAVE_RUBY_ENCODING_H */&#x000A;    rwo-&gt;output_type = RXMLW_OUTPUT_IO;&#x000A;    if (NULL == (out = xmlOutputBufferCreateIO(rxml_writer_write_callback, NULL, (void *) rwo, NULL))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;    if (NULL == (rwo-&gt;writer = xmlNewTextWriter(out))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;&#x000A;    return rxml_writer_wrap(rwo);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-class' id='method-method-c-string'>
@@ -187,7 +187,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-string-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-string-source'>static VALUE rxml_writer_string(VALUE klass)&#x000A;{&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = ALLOC(rxml_writer_object);&#x000A;    rwo-&gt;output = Qnil;&#x000A;    rwo-&gt;output_type = RXMLW_OUTPUT_STRING;&#x000A;    if (NULL == (rwo-&gt;buffer = xmlBufferCreate())) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;    if (NULL == (rwo-&gt;writer = xmlNewTextWriterMemory(rwo-&gt;buffer, 0))) {&#x000A;        xmlBufferFree(rwo-&gt;buffer);&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;&#x000A;    return rxml_writer_wrap(rwo);&#x000A;}</pre>
+                  <pre id='method-c-string-source'>static VALUE rxml_writer_string(VALUE klass)&#x000A;{&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = ALLOC(rxml_writer_object);&#x000A;    rwo-&gt;output = Qnil;&#x000A;    rwo-&gt;closed = 0;&#x000A;#ifdef HAVE_RUBY_ENCODING_H&#x000A;    rwo-&gt;encoding = NULL;&#x000A;#endif /* HAVE_RUBY_ENCODING_H */&#x000A;    rwo-&gt;output_type = RXMLW_OUTPUT_STRING;&#x000A;    if (NULL == (rwo-&gt;buffer = xmlBufferCreate())) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;    if (NULL == (rwo-&gt;writer = xmlNewTextWriterMemory(rwo-&gt;buffer, 0))) {&#x000A;        xmlBufferFree(rwo-&gt;buffer);&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;&#x000A;    return rxml_writer_wrap(rwo);&#x000A;}</pre>
                 </div>
               </div>
               <h2>Public Instance methods</h2>
@@ -378,18 +378,22 @@
                 <a name='method-i-flush'></a>
                 <div class='synopsis'>
                   <span class='name'>
-                    <div>writer.flush -> (true|false)</div>
+                    <div>writer.flush(empty? = true) -> (num|string)</div>
                   </span>
                 </div>
                 <div class='description'>
                   
-                  <p>Flushes the output buffer.</p>
+                  <p>Flushes the output buffer. Returns the number of written bytes or the
+                  current content of the internal buffer for a in memory <a
+                  href="Writer.html">XML::Writer</a>. If <code>empty?</code> is
+                  <code>true</code>, and for a in memory <a
+                  href="Writer.html">XML::Writer</a>, this internel buffer is empty.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-flush-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-flush-source'>static VALUE rxml_writer_flush(VALUE self)&#x000A;{&#x000A;    int ret;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rwo = rxml_textwriter_get(self);&#x000A;    ret = xmlTextWriterFlush(rwo-&gt;writer);&#x000A;&#x000A;    return (-1 == ret ? Qfalse : Qtrue);&#x000A;}</pre>
+                  <pre id='method-i-flush-source'>static VALUE rxml_writer_flush(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    int ret;&#x000A;    VALUE empty;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;01&quot;, &amp;empty);&#x000A;&#x000A;    rwo = rxml_textwriter_get(self);&#x000A;    if (-1 == (ret = xmlTextWriterFlush(rwo-&gt;writer))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;&#x000A;    if (NULL != rwo-&gt;buffer) {&#x000A;        VALUE content;&#x000A;&#x000A;#ifdef HAVE_RUBY_ENCODING_H&#x000A;        content = rb_external_str_new_with_enc(rwo-&gt;buffer-&gt;content, rwo-&gt;buffer-&gt;use, rwo-&gt;encoding);&#x000A;#else&#x000A;        content = rb_str_new(rwo-&gt;buffer-&gt;content, rwo-&gt;buffer-&gt;use);&#x000A;#endif /* HAVE_RUBY_ENCODING_H */&#x000A;        if (NIL_P(empty) || RTEST(empty)) { /* nil = default value = true */&#x000A;            xmlBufferEmpty(rwo-&gt;buffer);&#x000A;        }&#x000A;&#x000A;        return content;&#x000A;    } else {&#x000A;        return INT2NUM(ret);&#x000A;    }&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-full_end_element'>
@@ -434,7 +438,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-result-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-result-source'>static VALUE rxml_writer_result(VALUE self)&#x000A;{&#x000A;    VALUE ret;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    ret = Qnil;&#x000A;    rwo = rxml_textwriter_get(self);&#x000A;    switch (rwo-&gt;output_type) {&#x000A;        case RXMLW_OUTPUT_DOC:&#x000A;            ret = rwo-&gt;output;&#x000A;            break;&#x000A;        case RXMLW_OUTPUT_STRING:&#x000A;            ret = rxml_writer_c_to_ruby_string(rwo-&gt;buffer-&gt;content, rwo-&gt;buffer-&gt;use);&#x000A;            break;&#x000A;        case RXMLW_OUTPUT_IO:&#x000A;        case RXMLW_OUTPUT_NONE:&#x000A;            break;&#x000A;        default:&#x000A;            rb_bug(&quot;unexpected output&quot;);&#x000A;            break;&#x000A;    }&#x000A;&#x000A;    return ret;&#x000A;}</pre>
+                  <pre id='method-i-result-source'>static VALUE rxml_writer_result(VALUE self)&#x000A;{&#x000A;    VALUE ret;&#x000A;    rxml_writer_object *rwo;&#x000A;&#x000A;    ret = Qnil;&#x000A;    rwo = rxml_textwriter_get(self);&#x000A;    if (-1 == (ret = xmlTextWriterFlush(rwo-&gt;writer))) {&#x000A;        rxml_raise(&amp;xmlLastError);&#x000A;    }&#x000A;    switch (rwo-&gt;output_type) {&#x000A;        case RXMLW_OUTPUT_DOC:&#x000A;            ret = rwo-&gt;output;&#x000A;            break;&#x000A;        case RXMLW_OUTPUT_STRING:&#x000A;            ret = rxml_writer_c_to_ruby_string(rwo-&gt;buffer-&gt;content, rwo-&gt;buffer-&gt;use);&#x000A;            break;&#x000A;        case RXMLW_OUTPUT_IO:&#x000A;        case RXMLW_OUTPUT_NONE:&#x000A;            break;&#x000A;        default:&#x000A;            rb_bug(&quot;unexpected output&quot;);&#x000A;            break;&#x000A;    }&#x000A;&#x000A;    return ret;&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-set_indent'>
@@ -466,8 +470,8 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Sets the string to use to indent each element of the document. Don't forget
-                  to enable indentation with set_indent. Returns <code>false</code> on
+                  <p>Sets the string to use to indent each element of the document. Don&#39;t
+                  forget to enable indentation with set_indent. Returns <code>false</code> on
                   failure.</p>
                   
                   <p>Availability: libxml2 &gt;= 2.6.5</p>
@@ -493,7 +497,7 @@
                   
                   <p>Notes:</p>
                   <ul><li>
-                  <p>only " (default) and ' characters are valid</p>
+                  <p>only “ (default) and &#39; characters are valid</p>
                   </li><li>
                   <p>availability: libxml2 &gt;= 2.9.0</p>
                   </li></ul>
@@ -535,15 +539,15 @@
                   <p>Starts a namespaced attribute. Returns <code>false</code> on failure.</p>
                   
                   <p>Note: by default, the xmlns: definition is repeated on every element. If
-                  you want the prefix, but don't want the xmlns: declaration repeated, set
-                  <code>namespaceURI</code> to nil or omit it. Don't forget to declare the
-                  namespace prefix somewhere earlier.</p>
+                  you want the prefix, but don&#39;t want the xmlns: declaration repeated,
+                  set <code>namespaceURI</code> to nil or omit it. Don&#39;t forget to
+                  declare the namespace prefix somewhere earlier.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_attribute_ns-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-start_attribute_ns-source'>static VALUE rxml_writer_start_attribute_ns(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE prefix, name, namespaceURI;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;21&quot;, &amp;prefix, &amp;name, &amp;namespaceURI);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 3, xmlTextWriterStartAttributeNS, prefix, name, namespaceURI);&#x000A;}</pre>
+                  <pre id='method-i-start_attribute_ns-source'>static VALUE rxml_writer_start_attribute_ns(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE prefix, name, namespaceURI;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;21&quot;, &amp;prefix, &amp;name, &amp;namespaceURI);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qundef, 3, xmlTextWriterStartAttributeNS, prefix, name, namespaceURI);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-start_cdata'>
@@ -615,7 +619,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_document-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-start_document-source'>static VALUE rxml_writer_start_document(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    int ret;&#x000A;    VALUE options;&#x000A;    rxml_writer_object *rwo;&#x000A;    const char *xencoding, *xstandalone;&#x000A;&#x000A;    options = Qnil;&#x000A;    xstandalone = xencoding = NULL;&#x000A;    rb_scan_args(argc, argv, &quot;01&quot;, &amp;options);&#x000A;    if (!NIL_P(options)) {&#x000A;        VALUE encoding, standalone;&#x000A;&#x000A;        encoding = standalone = Qnil;&#x000A;        Check_Type(options, T_HASH);&#x000A;        encoding = rb_hash_aref(options, sEncoding);&#x000A;        xencoding = NIL_P(encoding) ? NULL : xmlGetCharEncodingName(NUM2INT(encoding));&#x000A;        standalone = rb_hash_aref(options, sStandalone);&#x000A;        if (NIL_P(standalone)) {&#x000A;            xstandalone = NULL;&#x000A;        } else {&#x000A;            xstandalone = RTEST(standalone) ? &quot;yes&quot; : &quot;no&quot;;&#x000A;        }&#x000A;    }&#x000A;    rwo = rxml_textwriter_get(self);&#x000A;    ret = xmlTextWriterStartDocument(rwo-&gt;writer, NULL, xencoding, xstandalone);&#x000A;&#x000A;    return (-1 == ret ? Qfalse : Qtrue);&#x000A;}</pre>
+                  <pre id='method-i-start_document-source'>static VALUE rxml_writer_start_document(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    int ret;&#x000A;    VALUE options;&#x000A;    rxml_writer_object *rwo;&#x000A;    const char *xencoding, *xstandalone;&#x000A;&#x000A;    options = Qnil;&#x000A;    xstandalone = xencoding = NULL;&#x000A;    rb_scan_args(argc, argv, &quot;01&quot;, &amp;options);&#x000A;    if (!NIL_P(options)) {&#x000A;        VALUE encoding, standalone;&#x000A;&#x000A;        encoding = standalone = Qnil;&#x000A;        Check_Type(options, T_HASH);&#x000A;        encoding = rb_hash_aref(options, sEncoding);&#x000A;        xencoding = NIL_P(encoding) ? NULL : xmlGetCharEncodingName(NUM2INT(encoding));&#x000A;        standalone = rb_hash_aref(options, sStandalone);&#x000A;        if (NIL_P(standalone)) {&#x000A;            xstandalone = NULL;&#x000A;        } else {&#x000A;            xstandalone = RTEST(standalone) ? &quot;yes&quot; : &quot;no&quot;;&#x000A;        }&#x000A;    }&#x000A;    rwo = rxml_textwriter_get(self);&#x000A;#ifdef HAVE_RUBY_ENCODING_H&#x000A;    rwo-&gt;encoding = rxml_figure_encoding(xencoding);&#x000A;#endif /* !HAVE_RUBY_ENCODING_H */&#x000A;    ret = xmlTextWriterStartDocument(rwo-&gt;writer, NULL, xencoding, xstandalone);&#x000A;&#x000A;    return (-1 == ret ? Qfalse : Qtrue);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-start_dtd'>
@@ -633,7 +637,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_dtd-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-start_dtd-source'>static VALUE rxml_writer_start_dtd(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE name, pubid, sysid;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;12&quot;, &amp;name, &amp;pubid, &amp;sysid);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 3, xmlTextWriterStartDTD, name, pubid, sysid);&#x000A;}</pre>
+                  <pre id='method-i-start_dtd-source'>static VALUE rxml_writer_start_dtd(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE name, pubid, sysid;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;12&quot;, &amp;name, &amp;pubid, &amp;sysid);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qundef, 3, xmlTextWriterStartDTD, name, pubid, sysid);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-start_dtd_attlist'>
@@ -645,7 +649,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Starts a DTD attribute list (&lt;!ATTLIST ... &gt;). Returns
+                  <p>Starts a DTD attribute list (&lt;!ATTLIST … &gt;). Returns
                   <code>false</code> on failure.</p>
                 </div>
                 <div class='source'>
@@ -664,7 +668,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Starts a DTD element (&lt;!ELEMENT ... &gt;). Returns <code>false</code> on
+                  <p>Starts a DTD element (&lt;!ELEMENT … &gt;). Returns <code>false</code> on
                   failure.</p>
                 </div>
                 <div class='source'>
@@ -683,7 +687,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Starts a DTD entity (&lt;!ENTITY ... &gt;). Returns <code>false</code> on
+                  <p>Starts a DTD entity (&lt;!ENTITY … &gt;). Returns <code>false</code> on
                   failure.</p>
                 </div>
                 <div class='source'>
@@ -723,15 +727,15 @@
                   <p>Starts a new namespaced element. Returns <code>false</code> on failure.</p>
                   
                   <p>Note: by default, the xmlns: definition is repeated on every element. If
-                  you want the prefix, but don't want the xmlns: declaration repeated, set
-                  <code>namespaceURI</code> to nil or omit it. Don't forget to declare the
-                  namespace prefix somewhere earlier.</p>
+                  you want the prefix, but don&#39;t want the xmlns: declaration repeated,
+                  set <code>namespaceURI</code> to nil or omit it. Don&#39;t forget to
+                  declare the namespace prefix somewhere earlier.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-start_element_ns-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-start_element_ns-source'>static VALUE rxml_writer_start_element_ns(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE prefix, name, namespaceURI;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;21&quot;, &amp;prefix, &amp;name, &amp;namespaceURI);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 3, xmlTextWriterStartElementNS, prefix, name, namespaceURI);&#x000A;}</pre>
+                  <pre id='method-i-start_element_ns-source'>static VALUE rxml_writer_start_element_ns(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE prefix, name, namespaceURI;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;21&quot;, &amp;prefix, &amp;name, &amp;namespaceURI);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qundef, 3, xmlTextWriterStartElementNS, prefix, name, namespaceURI);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-start_pi'>
@@ -771,7 +775,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_attribute-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-write_attribute-source'>static VALUE rxml_writer_write_attribute(VALUE self, VALUE name, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 2, xmlTextWriterWriteAttribute, name, content);&#x000A;}</pre>
+                  <pre id='method-i-write_attribute-source'>static VALUE rxml_writer_write_attribute(VALUE self, VALUE name, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qundef, 2, xmlTextWriterWriteAttribute, name, content);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-write_attribute_ns'>
@@ -795,9 +799,9 @@
                   <p>by default, the xmlns: definition is repeated on every element. If you want</p>
                   </li></ul>
                   
-                  <p>the prefix, but don't want the xmlns: declaration repeated, set
-                  <code>namespaceURI</code> to nil or omit it. Don't forget to declare the
-                  namespace prefix somewhere earlier.</p>
+                  <p>the prefix, but don&#39;t want the xmlns: declaration repeated, set
+                  <code>namespaceURI</code> to nil or omit it. Don&#39;t forget to declare
+                  the namespace prefix somewhere earlier.</p>
                   <ul><li>
                   <p><code>content</code> can be omitted too for an empty attribute</p>
                   </li></ul>
@@ -806,7 +810,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_attribute_ns-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-write_attribute_ns-source'>static VALUE rxml_writer_write_attribute_ns(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE prefix, name, namespaceURI, content;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;22&quot;, &amp;prefix, &amp;name, &amp;namespaceURI, &amp;content);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 4, xmlTextWriterWriteAttributeNS, prefix, name, namespaceURI, content);&#x000A;}</pre>
+                  <pre id='method-i-write_attribute_ns-source'>static VALUE rxml_writer_write_attribute_ns(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE prefix, name, namespaceURI, content;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;22&quot;, &amp;prefix, &amp;name, &amp;namespaceURI, &amp;content);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qundef, 4, xmlTextWriterWriteAttributeNS, prefix, name, namespaceURI, content);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-write_cdata'>
@@ -875,13 +879,13 @@
                   
                   <p>Examples:</p>
                   
-                  <pre class="ruby"><span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd</span> <span class="ruby-string">'html'</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!DOCTYPE html&gt;</span>&#x000A;<span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd</span> <span class="ruby-string">'docbook'</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-string">'http://www.docbook.org/xml/5.0/dtd/docbook.dtd'</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!DOCTYPE docbook SYSTEM &quot;http://www.docbook.org/xml/5.0/dtd/docbook.dtd&quot;&gt;</span>&#x000A;<span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd</span> <span class="ruby-string">'html'</span>, <span class="ruby-string">'-//W3C//DTD XHTML 1.1//EN'</span>, <span class="ruby-string">'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.1//EN&quot; &quot;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&quot;&gt;</span>&#x000A;<span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd</span> <span class="ruby-string">'person'</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-string">'&lt;!ELEMENT person (firstname,lastname)&gt;&lt;!ELEMENT firstname (#PCDATA)&gt;&lt;!ELEMENT lastname (#PCDATA)&gt;'</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!DOCTYPE person [&lt;!ELEMENT person (firstname,lastname)&gt;&lt;!ELEMENT firstname (#PCDATA)&gt;&lt;!ELEMENT lastname (#PCDATA)&gt;]&gt;</span></pre>
+                  <pre class="ruby"><span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd</span> <span class="ruby-string">&#39;html&#39;</span>&#x000A;  <span class="ruby-comment">#=&gt; &lt;!DOCTYPE html&gt;</span>&#x000A;<span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd</span> <span class="ruby-string">&#39;docbook&#39;</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-string">&#39;http://www.docbook.org/xml/5.0/dtd/docbook.dtd&#39;</span>&#x000A;  <span class="ruby-comment">#=&gt; &lt;!DOCTYPE docbook SYSTEM &quot;http://www.docbook.org/xml/5.0/dtd/docbook.dtd&quot;&gt;</span>&#x000A;<span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd</span> <span class="ruby-string">&#39;html&#39;</span>, <span class="ruby-string">&#39;-//W3C//DTD XHTML 1.1//EN&#39;</span>, <span class="ruby-string">&#39;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&#39;</span>&#x000A;  <span class="ruby-comment">#=&gt; &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.1//EN&quot; &quot;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&quot;&gt;</span>&#x000A;<span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd</span> <span class="ruby-string">&#39;person&#39;</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-string">&#39;&lt;!ELEMENT person (firstname,lastname)&gt;&lt;!ELEMENT firstname (#PCDATA)&gt;&lt;!ELEMENT lastname (#PCDATA)&gt;&#39;</span>&#x000A;  <span class="ruby-comment">#=&gt; &lt;!DOCTYPE person [&lt;!ELEMENT person (firstname,lastname)&gt;&lt;!ELEMENT firstname (#PCDATA)&gt;&lt;!ELEMENT lastname (#PCDATA)&gt;]&gt;</span></pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-write_dtd-source'>static VALUE rxml_writer_write_dtd(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE name, pubid, sysid, subset;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;13&quot;, &amp;name, &amp;pubid, &amp;sysid, &amp;subset);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 4, xmlTextWriterWriteDTD, name, pubid, sysid, subset);&#x000A;}</pre>
+                  <pre id='method-i-write_dtd-source'>static VALUE rxml_writer_write_dtd(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE name, pubid, sysid, subset;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;13&quot;, &amp;name, &amp;pubid, &amp;sysid, &amp;subset);&#x000A;&#x000A;    return numeric_rxml_writer_va_strings(self, Qundef, 4, xmlTextWriterWriteDTD, name, pubid, sysid, subset);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-write_dtd_attlist'>
@@ -896,13 +900,13 @@
                   <p>Writes a DTD attribute list, all at once. Returns <code>false</code> on
                   failure.</p>
                   
-                  <pre class="ruby"><span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd_attlist</span> <span class="ruby-string">'id'</span>, <span class="ruby-string">'ID #IMPLIED'</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!ATTLIST id ID #IMPLIED&gt;</span></pre>
+                  <pre class="ruby"><span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd_attlist</span> <span class="ruby-string">&#39;id&#39;</span>, <span class="ruby-string">&#39;ID #IMPLIED&#39;</span>&#x000A;  <span class="ruby-comment">#=&gt; &lt;!ATTLIST id ID #IMPLIED&gt;</span></pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd_attlist-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-write_dtd_attlist-source'>static VALUE rxml_writer_write_dtd_attlist(VALUE self, VALUE name, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 2, xmlTextWriterWriteDTDAttlist, name, content);&#x000A;}</pre>
+                  <pre id='method-i-write_dtd_attlist-source'>static VALUE rxml_writer_write_dtd_attlist(VALUE self, VALUE name, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qundef, 2, xmlTextWriterWriteDTDAttlist, name, content);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-write_dtd_element'>
@@ -917,13 +921,13 @@
                   <p>Writes a full DTD element, all at once. Returns <code>false</code> on
                   failure.</p>
                   
-                  <pre class="ruby"><span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd_element</span> <span class="ruby-string">'person'</span>, <span class="ruby-string">'(firstname,lastname)'</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!ELEMENT person (firstname,lastname)&gt;</span></pre>
+                  <pre class="ruby"><span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd_element</span> <span class="ruby-string">&#39;person&#39;</span>, <span class="ruby-string">&#39;(firstname,lastname)&#39;</span>&#x000A;  <span class="ruby-comment">#=&gt; &lt;!ELEMENT person (firstname,lastname)&gt;</span></pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd_element-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-write_dtd_element-source'>static VALUE rxml_writer_write_dtd_element(VALUE self, VALUE name, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 2, xmlTextWriterWriteDTDElement, name, content);&#x000A;}</pre>
+                  <pre id='method-i-write_dtd_element-source'>static VALUE rxml_writer_write_dtd_element(VALUE self, VALUE name, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qundef, 2, xmlTextWriterWriteDTDElement, name, content);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-write_dtd_entity'>
@@ -994,7 +998,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd_external_entity_contents-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-write_dtd_external_entity_contents-source'>static VALUE rxml_writer_write_dtd_external_entity_contents(VALUE self, VALUE pubid, VALUE sysid, VALUE ndataid)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 3, xmlTextWriterWriteDTDExternalEntityContents, pubid, sysid, ndataid);&#x000A;}</pre>
+                  <pre id='method-i-write_dtd_external_entity_contents-source'>static VALUE rxml_writer_write_dtd_external_entity_contents(VALUE self, VALUE pubid, VALUE sysid, VALUE ndataid)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qundef, 3, xmlTextWriterWriteDTDExternalEntityContents, pubid, sysid, ndataid);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-write_dtd_internal_entity'>
@@ -1011,7 +1015,7 @@
                   
                   <p>Examples:</p>
                   
-                  <pre class="ruby"><span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd_entity</span> <span class="ruby-string">'Shape'</span>, <span class="ruby-string">'(rect|circle|poly|default)'</span>, <span class="ruby-keyword">true</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!ENTITY % Shape &quot;(rect|circle|poly|default)&quot;&gt;</span>&#x000A;<span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd_entity</span> <span class="ruby-string">'delta'</span>, <span class="ruby-string">'&amp;#948;'</span>, <span class="ruby-keyword">false</span>&#x000A;  <span class="ruby-comment"># =&gt; &lt;!ENTITY delta &quot;&amp;#948;&quot;&gt;</span></pre>
+                  <pre class="ruby"><span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd_entity</span> <span class="ruby-string">&#39;Shape&#39;</span>, <span class="ruby-string">&#39;(rect|circle|poly|default)&#39;</span>, <span class="ruby-keyword">true</span>&#x000A;  <span class="ruby-comment">#=&gt; &lt;!ENTITY % Shape &quot;(rect|circle|poly|default)&quot;&gt;</span>&#x000A;<span class="ruby-identifier">writer</span>.<span class="ruby-identifier">write_dtd_entity</span> <span class="ruby-string">&#39;delta&#39;</span>, <span class="ruby-string">&#39;&amp;#948;&#39;</span>, <span class="ruby-keyword">false</span>&#x000A;  <span class="ruby-comment">#=&gt; &lt;!ENTITY delta &quot;&amp;#948;&quot;&gt;</span></pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd_internal_entity-source'); return false">
@@ -1035,7 +1039,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_dtd_notation-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-write_dtd_notation-source'>static VALUE rxml_writer_write_dtd_notation(VALUE self, VALUE name, VALUE pubid, VALUE sysid)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 3, xmlTextWriterWriteDTDNotation, name, pubid, sysid);&#x000A;}</pre>
+                  <pre id='method-i-write_dtd_notation-source'>static VALUE rxml_writer_write_dtd_notation(VALUE self, VALUE name, VALUE pubid, VALUE sysid)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qundef, 3, xmlTextWriterWriteDTDNotation, name, pubid, sysid);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-write_element'>
@@ -1057,7 +1061,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_element-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-write_element-source'>static VALUE rxml_writer_write_element(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE name, content;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;11&quot;, &amp;name, &amp;content);&#x000A;    if (Qnil == content) {&#x000A;        if (Qfalse == rxml_writer_start_element(self, name)) {&#x000A;            return Qfalse;&#x000A;        }&#x000A;        return rxml_writer_end_element(self);&#x000A;    } else {&#x000A;        return numeric_rxml_writer_va_strings(self, Qnil, 2, xmlTextWriterWriteElement, name, content);&#x000A;    }&#x000A;}</pre>
+                  <pre id='method-i-write_element-source'>static VALUE rxml_writer_write_element(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE name, content;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;11&quot;, &amp;name, &amp;content);&#x000A;    if (Qnil == content) {&#x000A;        if (Qfalse == rxml_writer_start_element(self, name)) {&#x000A;            return Qfalse;&#x000A;        }&#x000A;        return rxml_writer_end_element(self);&#x000A;    } else {&#x000A;        return numeric_rxml_writer_va_strings(self, Qundef, 2, xmlTextWriterWriteElement, name, content);&#x000A;    }&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-write_element_ns'>
@@ -1081,9 +1085,9 @@
                   <p>by default, the xmlns: definition is repeated on every element. If you want</p>
                   </li></ul>
                   
-                  <p>the prefix, but don't want the xmlns: declaration repeated, set
-                  <code>namespaceURI</code> to nil or omit it. Don't forget to declare the
-                  namespace prefix somewhere earlier.</p>
+                  <p>the prefix, but don&#39;t want the xmlns: declaration repeated, set
+                  <code>namespaceURI</code> to nil or omit it. Don&#39;t forget to declare
+                  the namespace prefix somewhere earlier.</p>
                   <ul><li>
                   <p><code>content</code> can be omitted for an empty tag</p>
                   </li></ul>
@@ -1092,7 +1096,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_element_ns-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-write_element_ns-source'>static VALUE rxml_writer_write_element_ns(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE prefix, name, namespaceURI, content;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;22&quot;, &amp;prefix, &amp;name, &amp;namespaceURI, &amp;content);&#x000A;    if (Qnil == content) {&#x000A;        VALUE argv[3] = { prefix, name, namespaceURI };&#x000A;&#x000A;        if (Qfalse == rxml_writer_start_element_ns(ARRAY_SIZE(argv), argv, self)) {&#x000A;            return Qfalse;&#x000A;        }&#x000A;        return rxml_writer_end_element(self);&#x000A;    } else {&#x000A;        return numeric_rxml_writer_va_strings(self, Qnil, 4, xmlTextWriterWriteElementNS, prefix, name, namespaceURI, content);&#x000A;    }&#x000A;}</pre>
+                  <pre id='method-i-write_element_ns-source'>static VALUE rxml_writer_write_element_ns(int argc, VALUE *argv, VALUE self)&#x000A;{&#x000A;    VALUE prefix, name, namespaceURI, content;&#x000A;&#x000A;    rb_scan_args(argc, argv, &quot;22&quot;, &amp;prefix, &amp;name, &amp;namespaceURI, &amp;content);&#x000A;    if (Qnil == content) {&#x000A;        VALUE argv[3] = { prefix, name, namespaceURI };&#x000A;&#x000A;        if (Qfalse == rxml_writer_start_element_ns(ARRAY_SIZE(argv), argv, self)) {&#x000A;            return Qfalse;&#x000A;        }&#x000A;        return rxml_writer_end_element(self);&#x000A;    } else {&#x000A;        return numeric_rxml_writer_va_strings(self, Qundef, 4, xmlTextWriterWriteElementNS, prefix, name, namespaceURI, content);&#x000A;    }&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-write_pi'>
@@ -1114,7 +1118,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_pi-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-write_pi-source'>static VALUE rxml_writer_write_pi(VALUE self, VALUE target, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qnil, 2, xmlTextWriterWritePI, target, content);&#x000A;}</pre>
+                  <pre id='method-i-write_pi-source'>static VALUE rxml_writer_write_pi(VALUE self, VALUE target, VALUE content)&#x000A;{&#x000A;    return numeric_rxml_writer_va_strings(self, Qundef, 2, xmlTextWriterWritePI, target, content);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-write_raw'>
@@ -1149,7 +1153,7 @@
                   
                   <p>Safely (problematic characters are internally translated to their
                   associated named entities) writes a string into the current node
-                  (attribute, element, comment, ...). Returns <code>false</code> on failure.</p>
+                  (attribute, element, comment, …). Returns <code>false</code> on failure.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-write_string-source'); return false">

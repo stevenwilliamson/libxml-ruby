@@ -41,8 +41,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XPath.html">XPath</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -142,7 +142,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-debug-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-debug-source'>static VALUE rxml_xpath_object_debug(VALUE self)&#x000A;{&#x000A;#ifdef LIBXML_DEBUG_ENABLED&#x000A;  rxml_xpath_object *rxpop;&#x000A;  Data_Get_Struct(self, rxml_xpath_object, rxpop);&#x000A;  xmlXPathDebugDumpObject(stdout, rxpop-&gt;xpop, 0);&#x000A;  return Qtrue;&#x000A;#else&#x000A;  rb_warn(&quot;libxml was compiled without debugging support.&quot;)&#x000A;  return Qfalse;&#x000A;#endif&#x000A;}</pre>
+                  <pre id='method-i-debug-source'>static VALUE rxml_xpath_object_debug(VALUE self)&#x000A;{&#x000A;#ifdef LIBXML_DEBUG_ENABLED&#x000A;  rxml_xpath_object *rxpop;&#x000A;  Data_Get_Struct(self, rxml_xpath_object, rxpop);&#x000A;  xmlXPathDebugDumpObject(stdout, rxpop-&gt;xpop, 0);&#x000A;  return Qtrue;&#x000A;#else&#x000A;  rb_warn(&quot;libxml was compiled without debugging support.&quot;);&#x000A;  return Qfalse;&#x000A;#endif&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-each'>

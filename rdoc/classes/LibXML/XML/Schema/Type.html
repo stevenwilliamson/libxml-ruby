@@ -41,8 +41,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../Schema.html">Schema</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -100,7 +100,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-annonymus_subtypes_recursively-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-annonymus_subtypes_recursively-source'><span class="ruby-comment"># File lib/libxml/schema/type.rb, line 20</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">annonymus_subtypes_recursively</span>(<span class="ruby-identifier">parent</span>=<span class="ruby-keyword">nil</span>)&#x000A;  <span class="ruby-identifier">annonymus_subtypes</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">element_name</span>, <span class="ruby-identifier">e</span><span class="ruby-operator">|</span>&#x000A;    [{[<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">element_name</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'::'</span>) =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">type</span>},&#x000A;     <span class="ruby-identifier">e</span>.<span class="ruby-identifier">type</span>.<span class="ruby-identifier">annonymus_subtypes_recursively</span>(<span class="ruby-identifier">element_name</span>)]&#x000A;  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-annonymus_subtypes_recursively-source'><span class="ruby-comment"># File lib/libxml/schema/type.rb, line 20</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">annonymus_subtypes_recursively</span>(<span class="ruby-identifier">parent</span>=<span class="ruby-keyword">nil</span>)&#x000A;  <span class="ruby-identifier">annonymus_subtypes</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">element_name</span>, <span class="ruby-identifier">e</span><span class="ruby-operator">|</span>&#x000A;    [{[<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">element_name</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;::&#39;</span>) =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">type</span>},&#x000A;     <span class="ruby-identifier">e</span>.<span class="ruby-identifier">type</span>.<span class="ruby-identifier">annonymus_subtypes_recursively</span>(<span class="ruby-identifier">element_name</span>)]&#x000A;  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-annotation'>

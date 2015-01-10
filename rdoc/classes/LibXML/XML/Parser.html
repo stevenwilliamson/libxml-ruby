@@ -36,13 +36,16 @@
           <li class='other'>
             <a target="docwin" href="../../../files/lib/libxml/parser_rb.html">lib/libxml/parser.rb</a>
           </li>
+          <li class='other'>
+            <a target="docwin" href="../../../files/lib/libxml/sax_parser_rb.html">lib/libxml/sax_parser.rb</a>
+          </li>
           <li>
             <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -50,8 +53,8 @@
           <div id='description'>
             
             <p>The <a href="Parser.html">XML::Parser</a> provides a tree based API for
-            processing xml documents, in contract to XML::Reader's stream based api and
-            <a href="SaxParser.html">XML::SaxParser</a> callback based API.</p>
+            processing xml documents, in contract to XML::Reader&#39;s stream based api
+            and <a href="SaxParser.html">XML::SaxParser</a> callback based API.</p>
             
             <p>As a result, parsing a document creates an in-memory document object that
             consist of any number of <a href="Node.html">XML::Node</a> instances.  This
@@ -62,7 +65,7 @@
             
             <p>Using the parser is simple:</p>
             
-            <pre>parser = XML::Parser.file('my_file')&#x000A;doc = parser.parse</pre>
+            <pre class="ruby"><span class="ruby-identifier">parser</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">file</span>(<span class="ruby-string">&#39;my_file&#39;</span>)&#x000A;<span class="ruby-identifier">doc</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span></pre>
             
             <p>You can also parse documents (see <a
             href="Parser.html#method-c-document">::document</a>),  strings (see <a
@@ -224,7 +227,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-register_error_handler-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-register_error_handler-source'><span class="ruby-comment"># File lib/libxml/parser.rb, line 90</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">register_error_handler</span>(<span class="ruby-identifier">proc</span>)&#x000A;  <span class="ruby-identifier">warn</span>(<span class="ruby-string">'Parser.register_error_handler is deprecated.  Use Error.set_handler instead'</span>)&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">proc</span>.<span class="ruby-identifier">nil?</span>&#x000A;    <span class="ruby-constant">Error</span>.<span class="ruby-identifier">reset_handler</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-constant">Error</span>.<span class="ruby-identifier">set_handler</span>(&amp;<span class="ruby-identifier">proc</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-c-register_error_handler-source'><span class="ruby-comment"># File lib/libxml/parser.rb, line 90</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">register_error_handler</span>(<span class="ruby-identifier">proc</span>)&#x000A;  <span class="ruby-identifier">warn</span>(<span class="ruby-string">&#39;Parser.register_error_handler is deprecated.  Use Error.set_handler instead&#39;</span>)&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-identifier">proc</span>.<span class="ruby-identifier">nil?</span>&#x000A;    <span class="ruby-constant">Error</span>.<span class="ruby-identifier">reset_handler</span>&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-constant">Error</span>.<span class="ruby-identifier">set_handler</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">proc</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-class' id='method-method-c-string'>
@@ -264,7 +267,7 @@
                 <div class='description'>
                   
                   <p>Parse the input <a href="../XML.html">XML</a> and create an <a
-                  href="Document.html">XML::Document</a> with it's content. If an error
+                  href="Document.html">XML::Document</a> with it&#39;s content. If an error
                   occurs, XML::Parser::ParseError is thrown.</p>
                 </div>
                 <div class='source'>

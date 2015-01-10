@@ -41,8 +41,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong>StandardError</strong>
         </div>
       </div>
       <div id='content'>
@@ -58,11 +58,11 @@
             
             <p>To disable this output you can install the quiet handler:</p>
             
-            <pre>XML::Error.set_handler(&amp;XML::Error::QUIET_HANDLER)</pre>
+            <pre class="ruby"><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>.<span class="ruby-identifier">set_handler</span>(<span class="ruby-operator">&amp;</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">QUIET_HANDLER</span>)</pre>
             
             <p>Get the current handler:</p>
             
-            <pre>proc = XML::Error.get_handler</pre>
+            <pre class="ruby"><span class="ruby-identifier">proc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>.<span class="ruby-identifier">get_handler</span></pre>
             
             <p>Install your own handler:</p>
             
@@ -70,7 +70,7 @@
             
             <p>Or remove all handlers:</p>
             
-            <pre>XML::Error.reset_handler</pre>
+            <pre class="ruby"><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>.<span class="ruby-identifier">reset_handler</span></pre>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
@@ -624,15 +624,21 @@
                     <td class='context-item-name'>DOMAIN_CODE_MAP</td>
                     <td>=</td>
                     <td class='context-item-value'>
-                      Hash.new.tap do |map|
-                      ([:NO_ERROR, :PARSER, :TREE, :NAMESPACE, :DTD, :HTML, :MEMORY, :OUTPUT, :IO, :FTP, :HTTP, :XINCLUDE, :XPATH, :XPOINTER, :REGEXP, :DATATYPE, :SCHEMASP, :SCHEMASV, :RELAXNGP, :RELAXNGV, :CATALOG, :C14N, :XSLT, :VALID, :CHECK, :WRITER, :MODULE, :I18N, :SCHEMATRONV]
-                      ).each do |code|
-                      map[const_get(code)] = code.to_s.gsub(/XML_ERR_/, '')
+                      [:NO_ERROR, :PARSER, :TREE, :NAMESPACE, :DTD, :HTML, :MEMORY,
+                      :OUTPUT, :IO, :FTP, :HTTP, :XINCLUDE, :XPATH, :XPOINTER, :REGEXP,
+                      :DATATYPE, :SCHEMASP, :SCHEMASV, :RELAXNGP, :RELAXNGV, :CATALOG,
+                      :C14N, :XSLT, :VALID, :CHECK, :WRITER, :MODULE, :I18N, :SCHEMATRONV].inject(Hash.new) do |hash, code|
+                      if const_defined?(code)
+                      hash[const_get(code)] = code.to_s
                       end
+                      hash
                       end
                     </td>
                     <td>&nbsp;</td>
-                    <td class='context-item-desc'></td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Create mapping from domain constant value to keys</p>
+                    </td>
                   </tr>
                   <tr class='top-aligned-row context-row'>
                     <td class='context-item-name'>DTD</td>
@@ -1077,12 +1083,15 @@
                       DOMAIN_CODE_MAP.values - #Domains
                       [:NONE, :WARNING, :ERROR, :FATAL] # Levels
                       ).each do |code|
-                      map[const_get(code)] = code.to_s.gsub(/XML_ERR_/, '')
+                      map[const_get(code)] = code.to_s
                       end
                       end
                     </td>
                     <td>&nbsp;</td>
-                    <td class='context-item-desc'></td>
+                    <td class='context-item-desc'>
+                      
+                      <p>Create mapping from domain constant value to keys</p>
+                    </td>
                   </tr>
                   <tr class='top-aligned-row context-row'>
                     <td class='context-item-name'>EXTRA_CONTENT</td>
@@ -5673,7 +5682,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-3D-3D-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-3D-3D-source'><span class="ruby-comment"># File lib/libxml/error.rb, line 32</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other</span>)&#x000A;  <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">other</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-3D-3D-source'><span class="ruby-comment"># File lib/libxml/error.rb, line 36</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other</span>)&#x000A;  <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">other</span>)&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-code_to_s'>
@@ -5689,7 +5698,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-code_to_s-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-code_to_s-source'><span class="ruby-comment"># File lib/libxml/error.rb, line 69</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">code_to_s</span>&#x000A;  <span class="ruby-constant">ERROR_CODE_MAP</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">code</span>]&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-code_to_s-source'><span class="ruby-comment"># File lib/libxml/error.rb, line 75</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">code_to_s</span>&#x000A;  <span class="ruby-constant">ERROR_CODE_MAP</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">code</span>]&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-domain_to_s'>
@@ -5705,7 +5714,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-domain_to_s-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-domain_to_s-source'><span class="ruby-comment"># File lib/libxml/error.rb, line 65</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">domain_to_s</span>&#x000A;  <span class="ruby-constant">DOMAIN_CODE_MAP</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">domain</span>]&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-domain_to_s-source'><span class="ruby-comment"># File lib/libxml/error.rb, line 71</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">domain_to_s</span>&#x000A;  <span class="ruby-constant">DOMAIN_CODE_MAP</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">domain</span>]&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-eql-3F'>
@@ -5721,7 +5730,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-eql-3F-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-eql-3F-source'><span class="ruby-comment"># File lib/libxml/error.rb, line 36</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">other</span>)&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">code</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">domain</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">domain</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">message</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">message</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">level</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">level</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">file</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">line</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">line</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">str1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">str1</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">str2</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">str2</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">str3</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">str3</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">int1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">int1</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">int2</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">int2</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ctxt</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">ctxt</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">node</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">node</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-eql-3F-source'><span class="ruby-comment"># File lib/libxml/error.rb, line 40</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">other</span>)&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">code</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">domain</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">domain</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">message</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">message</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">level</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">level</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">file</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">line</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">line</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">str1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">str1</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">str2</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">str2</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">str3</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">str3</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">int1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">int1</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">int2</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">int2</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ctxt</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">ctxt</span> <span class="ruby-keyword">and</span>&#x000A;  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">node</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">node</span>&#x000A;<span class="ruby-keyword">rescue</span>&#x000A;  <span class="ruby-keyword">false</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-level_to_s'>
@@ -5737,7 +5746,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-level_to_s-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-level_to_s-source'><span class="ruby-comment"># File lib/libxml/error.rb, line 52</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">level_to_s</span>&#x000A;  <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">level</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">NONE</span>&#x000A;      <span class="ruby-string">''</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">WARNING</span>&#x000A;      <span class="ruby-string">'Warning:'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ERROR</span>&#x000A;      <span class="ruby-string">'Error:'</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">FATAL</span>&#x000A;      <span class="ruby-string">'Fatal error:'</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-level_to_s-source'><span class="ruby-comment"># File lib/libxml/error.rb, line 58</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">level_to_s</span>&#x000A;  <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">level</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">NONE</span>&#x000A;      <span class="ruby-string">&#39;&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">WARNING</span>&#x000A;      <span class="ruby-string">&#39;Warning:&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">ERROR</span>&#x000A;      <span class="ruby-string">&#39;Error:&#39;</span>&#x000A;    <span class="ruby-keyword">when</span> <span class="ruby-constant">FATAL</span>&#x000A;      <span class="ruby-string">&#39;Fatal error:&#39;</span>&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-to_s'>
@@ -5753,7 +5762,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-to_s-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-to_s-source'><span class="ruby-comment"># File lib/libxml/error.rb, line 73</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>&#x000A;  <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">super</span>&#x000A;  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">msg</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">strip</span><span class="ruby-operator">:</span> <span class="ruby-string">''</span>&#x000A;&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">line</span>&#x000A;    <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%s %s at %s:%d.&quot;</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">level_to_s</span>, <span class="ruby-identifier">msg</span>,&#x000A;                               <span class="ruby-keyword">self</span>.<span class="ruby-identifier">file</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">line</span>)&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%s %s.&quot;</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">level_to_s</span>, <span class="ruby-identifier">msg</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre id='method-i-to_s-source'><span class="ruby-comment"># File lib/libxml/error.rb, line 79</span>&#x000A;<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>&#x000A;  <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">super</span>&#x000A;  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">msg</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">strip</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;&#39;</span>&#x000A;&#x000A;  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">line</span>&#x000A;    <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%s %s at %s:%d.&quot;</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">level_to_s</span>, <span class="ruby-identifier">msg</span>,&#x000A;                               <span class="ruby-keyword">self</span>.<span class="ruby-identifier">file</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">line</span>)&#x000A;  <span class="ruby-keyword">else</span>&#x000A;    <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&quot;%s %s.&quot;</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">level_to_s</span>, <span class="ruby-identifier">msg</span>)&#x000A;  <span class="ruby-keyword">end</span>&#x000A;<span class="ruby-keyword">end</span></pre>
                 </div>
               </div>
             </div>

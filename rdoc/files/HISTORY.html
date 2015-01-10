@@ -31,16 +31,66 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>2013-01-27 01:38:02 -0700</span>
+          <span class='datetime'>2015-01-09 23:34:37 -0800</span>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
             
-            <h1 id="label-Release+History">Release History</h1>
+            <h1 id="label-Release+History">Release History<span><a href="#label-Release+History">&para;</a> <a href="#top">&uarr;</a></span></h1>
             
-            <h2 id="label-2.5.0+%2F+2013-01-27+Charlie+Savage">2.5.0 / 2013-01-27 Charlie Savage</h2>
+            <h2 id="label-2.8.0+-2F+2015-01-09+Charlie+Savage">2.8.0 / 2015-01-09 Charlie Savage<span><a href="#label-2.8.0+-2F+2015-01-09+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
+            <ul><li>
+            <p>Use RbConfig instead of Config in extconf.rb (Robert Haines)</p>
+            </li><li>
+            <p>Correct xpath documentation XML (Bill Mill)</p>
+            </li><li>
+            <p>Correct from_string method documentation (Bill Mill)</p>
+            </li><li>
+            <p>Fix compile error with debug not enabled in libxml (Patrick Ziegler)</p>
+            </li><li>
+            <p>Update gemspec to include license (Charlie Savage)</p>
+            </li><li>
+            <p>In XML::Writer prevent writing to io while being GCed (Brett Gibson)</p>
+            </li></ul>
+            
+            <h2 id="label-2.7.0+-2F+2013-08-13+Charlie+Savage">2.7.0 / 2013-08-13 Charlie Savage<span><a href="#label-2.7.0+-2F+2013-08-13+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
+            <ul><li>
+            <p>Don&#39;t call rb_warning in GC mark function (Dirkjan Bussink)</p>
+            </li><li>
+            <p>Set libxml error handler when a libxml-ruby error handler is set (Geoffrey
+            Giesemann)</p>
+            </li><li>
+            <p>Fix tests for nil TypeErrors for ruby 2.0=&lt; (Geoffrey Giesemann)</p>
+            </li><li>
+            <p>Fix segmentation fault for issue #62 (Charlie Savage)</p>
+            </li><li>
+            <p>Add node_type method to dtd (Charlie Savage)</p>
+            </li><li>
+            <p>Fixing equality check of <a
+            href="../classes/LibXML/XML/Error.html">LibXML::XML::Error</a> against
+            other objects (Michał Szajbe)</p>
+            </li><li>
+            <p>Fix #63, XML::Writer.set_quote_char UT, wrong expected string (julp)</p>
+            </li><li>
+            <p>Fix potential segfault when GC occurs while creating ns from xpath (Timothy
+            Elliott)</p>
+            </li><li>
+            <p>Fix for #59, segmentation fault after failure to load external schema
+            (Clifford Heath)</p>
+            </li></ul>
+            
+            <h2 id="label-2.6.0+-2F+2013-02-16+Charlie+Savage">2.6.0 / 2013-02-16 Charlie Savage<span><a href="#label-2.6.0+-2F+2013-02-16+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
+            <ul><li>
+            <p>Fix uninitialized constant LibXML::XML::Error::I18N (NameError) that
+            occurred with older versions of libxml.</p>
+            </li><li>
+            <p>Various updates/fixes to new XML::Writer class and update how flushing
+            works (julp)</p>
+            </li></ul>
+            
+            <h2 id="label-2.5.0+-2F+2013-01-27+Charlie+Savage">2.5.0 / 2013-01-27 Charlie Savage<span><a href="#label-2.5.0+-2F+2013-01-27+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Compatibility with older versions for IO::write (rb_io_bufwrite is specific
             to ruby &gt;= 1.9.3?) and symbols are VALUE not ID (julp).</p>
@@ -63,7 +113,7 @@
             <p>Improve error handling and messages (Jarl Friis)</p>
             </li></ul>
             
-            <h2 id="label-2.4.0+%2F+2012-12-14+Charlie+Savage">2.4.0 / 2012-12-14 Charlie Savage</h2>
+            <h2 id="label-2.4.0+-2F+2012-12-14+Charlie+Savage">2.4.0 / 2012-12-14 Charlie Savage<span><a href="#label-2.4.0+-2F+2012-12-14+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Support libxml 2.9.0 (Daniel Veillard)</p>
             </li><li>
@@ -75,7 +125,7 @@
             <p>Node#content= encoding (Nikita Afanasenko)</p>
             </li></ul>
             
-            <h2 id="label-2.3.3+%2F+2012-07-01+Charlie+Savage">2.3.3 / 2012-07-01 Charlie Savage</h2>
+            <h2 id="label-2.3.3+-2F+2012-07-01+Charlie+Savage">2.3.3 / 2012-07-01 Charlie Savage<span><a href="#label-2.3.3+-2F+2012-07-01+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Add <a
             href="../classes/LibXML/XML/Error.html#method-c-get_handler">LibXML::XML::Error.get_handler</a>
@@ -84,18 +134,18 @@
             <p>Fix variable name in example (Marcus)</p>
             </li></ul>
             
-            <h2 id="label-2.3.2+%2F+2012-03-20+Charlie+Savage">2.3.2 / 2012-03-20 Charlie Savage</h2>
+            <h2 id="label-2.3.2+-2F+2012-03-20+Charlie+Savage">2.3.2 / 2012-03-20 Charlie Savage<span><a href="#label-2.3.2+-2F+2012-03-20+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Define various canonicalize constants to support libxml2 versions older
             than 1.1.25 (thanks Apple!)</p>
             </li></ul>
             
-            <h2 id="label-2.3.1+%2F+2012-03-20+Charlie+Savage">2.3.1 / 2012-03-20 Charlie Savage</h2>
+            <h2 id="label-2.3.1+-2F+2012-03-20+Charlie+Savage">2.3.1 / 2012-03-20 Charlie Savage<span><a href="#label-2.3.1+-2F+2012-03-20+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
-            <p>Yanked - didn't fix the OSX canonicalize issue</p>
+            <p>Yanked - didn&#39;t fix the OSX canonicalize issue</p>
             </li></ul>
             
-            <h2 id="label-2.3.0+%2F+2012-03-18+Charlie+Savage">2.3.0 / 2012-03-18 Charlie Savage</h2>
+            <h2 id="label-2.3.0+-2F+2012-03-18+Charlie+Savage">2.3.0 / 2012-03-18 Charlie Savage<span><a href="#label-2.3.0+-2F+2012-03-18+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Add ability to insert new PI-nodes into the xmltree (Axel Struebing).</p>
             </li><li>
@@ -110,7 +160,7 @@
             <p>Update sax handler to support encodings on Ruby 1.9 and higher.</p>
             </li></ul>
             
-            <h2 id="label-2.2.2+%2F+2011-08-29+Charlie+Savage">2.2.2 / 2011-08-29 Charlie Savage</h2>
+            <h2 id="label-2.2.2+-2F+2011-08-29+Charlie+Savage">2.2.2 / 2011-08-29 Charlie Savage<span><a href="#label-2.2.2+-2F+2011-08-29+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>++API CHANGE+++</p>
             </li></ul>
@@ -129,21 +179,22 @@
             allow the underlying io stream (file, string, etc) to be closed.  Once a
             parser is done parsing its data, it now calls one of these methods. This
             means that if you parse thousands of files at the same time, without
-            running Ruby's garbage colllector, you won't get a too many files open
-            error.  Fixes GitHub issue #29.</p>
+            running Ruby&#39;s garbage colllector, you won&#39;t get a too many files
+            open error.  Fixes GitHub issue #29.</p>
             </li><li>
             <p>Fixed bug where Node#inner_xml caused an error when it had no child nodes.
             Fixes GitHub issues #31</p>
             </li><li>
-            <p>Don't require 'rake' in the gemspec to avoid annoying Bundler bugs</p>
+            <p>Don&#39;t require &#39;rake&#39; in the gemspec to avoid annoying Bundler
+            bugs</p>
             </li></ul>
             
-            <h2 id="label-2.2.1+%2F+2011-08-13+Charlie+Savage">2.2.1 / 2011-08-13 Charlie Savage</h2>
+            <h2 id="label-2.2.1+-2F+2011-08-13+Charlie+Savage">2.2.1 / 2011-08-13 Charlie Savage<span><a href="#label-2.2.1+-2F+2011-08-13+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Packaging fix - include the custom .def file in the gem.</p>
             </li></ul>
             
-            <h2 id="label-2.2.0+%2F+2011-08-09+Charlie+Savage">2.2.0 / 2011-08-09 Charlie Savage</h2>
+            <h2 id="label-2.2.0+-2F+2011-08-09+Charlie+Savage">2.2.0 / 2011-08-09 Charlie Savage<span><a href="#label-2.2.0+-2F+2011-08-09+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Update encoding support for Ruby 1.9 so that libxml-ruby returns strings
             encoded in UTF-8.  This change was required since libxml internally stores
@@ -151,7 +202,7 @@
             return UTF-8 by default but can return other encodings if requested.</p>
             </li></ul>
             
-            <h2 id="label-2.1.2+%2F+2011-08-03+Charlie+Savage">2.1.2 / 2011-08-03 Charlie Savage</h2>
+            <h2 id="label-2.1.2+-2F+2011-08-03+Charlie+Savage">2.1.2 / 2011-08-03 Charlie Savage<span><a href="#label-2.1.2+-2F+2011-08-03+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Fix segmentation fault that could occur when an XPathContext was marked
             before it was fully initialized (Charlie Savage).</p>
@@ -160,12 +211,12 @@
             ruby.  This make Ruby Enterprise Edition happy (Charlie Savage).</p>
             </li></ul>
             
-            <h2 id="label-2.1.1+%2F+2011-07-31+Charlie+Savage">2.1.1 / 2011-07-31 Charlie Savage</h2>
+            <h2 id="label-2.1.1+-2F+2011-07-31+Charlie+Savage">2.1.1 / 2011-07-31 Charlie Savage<span><a href="#label-2.1.1+-2F+2011-07-31+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Switch to using def files to control library exports (Charlie Savage).</p>
             </li></ul>
             
-            <h2 id="label-2.1.0+%2F+2011-07-31+Charlie+Savage">2.1.0 / 2011-07-31 Charlie Savage</h2>
+            <h2 id="label-2.1.0+-2F+2011-07-31+Charlie+Savage">2.1.0 / 2011-07-31 Charlie Savage<span><a href="#label-2.1.0+-2F+2011-07-31+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Ruby 1.9.3 compatability (Charlie Savage).</p>
             </li><li>
@@ -174,8 +225,8 @@
             </li><li>
             <p>Extracted rxml_xpath_to_value from rxml_xpath_context_find (Jens Wille).</p>
             </li><li>
-            <p>Adapted rxml_xpath_from_value from Gregoire Lejeune's ruby-xslt library,
-            see <a
+            <p>Adapted rxml_xpath_from_value from Gregoire Lejeune&#39;s ruby-xslt
+            library, see <a
             href="https://github.com/glejeune/ruby-xslt">github.com/glejeune/ruby-xslt</a>
             (Jens Wille).</p>
             </li><li>
@@ -193,27 +244,27 @@
             faults that occurred when using Ruby 1.9.3 (Charlie Savage).</p>
             </li></ul>
             
-            <h2 id="label-2.0.8+%2F+2011-06-23+Charlie+Savage">2.0.8 / 2011-06-23 Charlie Savage</h2>
+            <h2 id="label-2.0.8+-2F+2011-06-23+Charlie+Savage">2.0.8 / 2011-06-23 Charlie Savage<span><a href="#label-2.0.8+-2F+2011-06-23+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Add in 2 new HTML Parser constants - NODEFDTD and NOIMPLIED.</p>
             </li><li>
             <p>Fix compile issue on Ruby 1.9.3</p>
             </li></ul>
             
-            <h2 id="label-2.0.6+%2F+2011-05-23+Charlie+Savage">2.0.6 / 2011-05-23 Charlie Savage</h2>
+            <h2 id="label-2.0.6+-2F+2011-05-23+Charlie+Savage">2.0.6 / 2011-05-23 Charlie Savage<span><a href="#label-2.0.6+-2F+2011-05-23+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Fix segfault that sometimes occurred when looking up encodings on 1.9. In
             some cases the Ruby encoding infrastructure was not properly initialized
             (nkriege).</p>
             </li></ul>
             
-            <h2 id="label-2.0.5+%2F+2011-05-05+Charlie+Savage">2.0.5 / 2011-05-05 Charlie Savage</h2>
+            <h2 id="label-2.0.5+-2F+2011-05-05+Charlie+Savage">2.0.5 / 2011-05-05 Charlie Savage<span><a href="#label-2.0.5+-2F+2011-05-05+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Document#validate_dtd would sometimes cause segmentation faults due to an
             improperly initialized data structure (Charlie Savage)</p>
             </li></ul>
             
-            <h2 id="label-2.0.4+%2F+2011-05-02+Charlie+Savage">2.0.4 / 2011-05-02 Charlie Savage</h2>
+            <h2 id="label-2.0.4+-2F+2011-05-02+Charlie+Savage">2.0.4 / 2011-05-02 Charlie Savage<span><a href="#label-2.0.4+-2F+2011-05-02+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Fix compile issues on platforms using older versions of libxml2.</p>
             
@@ -221,7 +272,7 @@
             2009 (Charlie Savage).</p>
             </li></ul>
             
-            <h2 id="label-2.0.3+%2F+2011-05-01+Charlie+Savage">2.0.3 / 2011-05-01 Charlie Savage</h2>
+            <h2 id="label-2.0.3+-2F+2011-05-01+Charlie+Savage">2.0.3 / 2011-05-01 Charlie Savage<span><a href="#label-2.0.3+-2F+2011-05-01+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>The biggest change in this release is supporting the use of libxml-ruby in
             native background Ruby threads.  Previously, the use of libxml-ruby in
@@ -271,7 +322,7 @@
             </li><li>
             <p>gem mislav-hanna does not exist; use hanna.</p>
             </li><li>
-            <p>rake rdoc 'depends' on hanna; no need of RDOCOPTS</p>
+            <p>rake rdoc &#39;depends&#39; on hanna; no need of RDOCOPTS</p>
             </li><li>
             <p>Point to the github issue tracker instead of Ruby Forge</p>
             </li><li>
@@ -283,7 +334,7 @@
             <p>Add sax test (Stanislav O.Pogrebnyak).</p>
             </li></ul>
             
-            <h2 id="label-2.0.2+%2F+2011-04-17+Charlie+Savage">2.0.2 / 2011-04-17 Charlie Savage</h2>
+            <h2 id="label-2.0.2+-2F+2011-04-17+Charlie+Savage">2.0.2 / 2011-04-17 Charlie Savage<span><a href="#label-2.0.2+-2F+2011-04-17+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Added binaries for windows (Charlie Savage).</p>
             </li><li>
@@ -305,12 +356,12 @@
             <p>Add api to allow setting of attribute namespaces.  Fixes issue #10 (Charlie
             Savage).</p>
             </li><li>
-            <p>Remove old hack to call the on_error method.  This hack isn't needed
+            <p>Remove old hack to call the on_error method.  This hack isn&#39;t needed
             anymore since a better workaround was put in place in the parser context.
             Fixes This fixes issue #12  (Charlie Savage).</p>
             </li><li>
             <p>Remove references to passing blocks to validation functions.  The blocks
-            are no longer called since the bindings use libxml's structured error
+            are no longer called since the bindings use libxml&#39;s structured error
             handling.  See issue #6 (Charlie Savage).</p>
             </li><li>
             <p>Fix up comment in Document and Node.  See issue #8 (Charlie Savage).</p>
@@ -318,7 +369,7 @@
             <p>Update website text (Charlie Savage).</p>
             </li></ul>
             
-            <h2 id="label-2.0.0+%2F+2011-04-16+Charlie+Savage">2.0.0 / 2011-04-16 Charlie Savage</h2>
+            <h2 id="label-2.0.0+-2F+2011-04-16+Charlie+Savage">2.0.0 / 2011-04-16 Charlie Savage<span><a href="#label-2.0.0+-2F+2011-04-16+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Ruby 1.9.2 support.  The biggest addition is encoding support. Strings
             returned by the libxml bindings are now set to the encoding of the
@@ -352,27 +403,28 @@
             <p>Modernize project metadata and layout (7rans)</p>
             </li></ul>
             
-            <h2 id="label-1.1.3+%2F+2009-03-18+Charlie+Savage">1.1.3 / 2009-03-18 Charlie Savage</h2>
+            <h2 id="label-1.1.3+-2F+2009-03-18+Charlie+Savage">1.1.3 / 2009-03-18 Charlie Savage<span><a href="#label-1.1.3+-2F+2009-03-18+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
-            <p>Improve performance 10 to 20% by turning on libxml2's dictionary feature
-            that allows parsers to reuse previously parsed strings.</p>
+            <p>Improve performance 10 to 20% by turning on libxml2&#39;s dictionary
+            feature that allows parsers to reuse previously parsed strings.</p>
             </li><li>
-            <p>Fix XML::Node#remove! to work correctly with libxml's dictionary feature.</p>
+            <p>Fix XML::Node#remove! to work correctly with libxml&#39;s dictionary
+            feature.</p>
             </li><li>
             <p>Correctly set up parser context options.</p>
             </li><li>
             <p>Simplify DOM modification code (Node#next=, Node#prev=, Node#sibling=) and
             update documentation.</p>
             </li><li>
-            <p>Deprecated Node#add_child and Node#child=, use Node#&lt;&lt; instead</p>
+            <p>Deprecated Node#add_child and Node#child=, use Node#<< instead</p>
             </li><li>
-            <p>Fix documentation for Node#&lt;&lt;</p>
+            <p>Fix documentation for Node#<<</p>
             </li><li>
             <p>Added Document#import to enable moving nodes from one document to another
             document.</p>
             </li></ul>
             
-            <h2 id="label-1.1.2+%2F+2009-03-12+Charlie+Savage">1.1.2 / 2009-03-12 Charlie Savage</h2>
+            <h2 id="label-1.1.2+-2F+2009-03-12+Charlie+Savage">1.1.2 / 2009-03-12 Charlie Savage<span><a href="#label-1.1.2+-2F+2009-03-12+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Added XML::Node#inner_xml helper method.</p>
             </li><li>
@@ -380,28 +432,28 @@
             previously freed node.</p>
             </li></ul>
             
-            <h2 id="label-1.1.1+%2F+2009-03-10+Charlie+Savage">1.1.1 / 2009-03-10 Charlie Savage</h2>
+            <h2 id="label-1.1.1+-2F+2009-03-10+Charlie+Savage">1.1.1 / 2009-03-10 Charlie Savage<span><a href="#label-1.1.1+-2F+2009-03-10+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Fix - Only include extra html parser context methods for versions of libxml
             older than 2.6.27.</p>
             </li></ul>
             
-            <h2 id="label-1.1.0+%2F+2009-03-09+Charlie+Savage">1.1.0 / 2009-03-09 Charlie Savage</h2>
+            <h2 id="label-1.1.0+-2F+2009-03-09+Charlie+Savage">1.1.0 / 2009-03-09 Charlie Savage<span><a href="#label-1.1.0+-2F+2009-03-09+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Fix bug caused by the mark function being called on partially initialized
             attributes.</p>
             </li><li>
-            <p>Revert back to libxml2's internal memory manager.</p>
+            <p>Revert back to libxml2&#39;s internal memory manager.</p>
             </li></ul>
             
-            <h2 id="label-1.0.0+%2F+2009-03-05+Charlie+Savage">1.0.0 / 2009-03-05 Charlie Savage</h2>
+            <h2 id="label-1.0.0+-2F+2009-03-05+Charlie+Savage">1.0.0 / 2009-03-05 Charlie Savage<span><a href="#label-1.0.0+-2F+2009-03-05+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>OS X (Charlie Savage).  Update bindings to support the default installed
             version of libxml2 (2.6.16) on OS X 10.5 and the latest version available
             via MacPorts.</p>
             </li></ul>
             
-            <h2 id="label-0.9.9+%2F+2009-03-05+Charlie+Savage">0.9.9 / 2009-03-05 Charlie Savage</h2>
+            <h2 id="label-0.9.9+-2F+2009-03-05+Charlie+Savage">0.9.9 / 2009-03-05 Charlie Savage<span><a href="#label-0.9.9+-2F+2009-03-05+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Ruby 1.9.1 support (Charlie Savage). libxml-ruby now compiles and runs on
             either 1.8.6 and 1.9.1.  With 1.8.6 all tests should pass while on 1.9.1
@@ -415,14 +467,14 @@
             
             <p>This can be fixed by using MacPorts to get a newer version of libxml2. To
             make use of MacPorts, the build script has been updated to use xml2-config.
-            This can be fine-tuned using the new --with-xml2-config /
-            --without-xml2-config options to extconf.rb (default is 
-            --without-xml2-config to match existing behavior).</p>
+            This can be fine-tuned using the new –with-xml2-config /
+            –without-xml2-config options to extconf.rb (default is 
+            –without-xml2-config to match existing behavior).</p>
             </li><li>
             <p>Greatly reduced memory usage (Joe Khoobyar). See <a
-            href="http://rubyforge.org/pipermail/libxml-devel/2009-February/001375.html.">rubyforge.org/pipermail/libxml-devel/2009-February/001375.html.</a></p>
+            href="http://rubyforge.org/pipermail/libxml-devel/2009-February/001375.html">rubyforge.org/pipermail/libxml-devel/2009-February/001375.html</a>.</p>
             </li><li>
-            <p>Add Document#xhtml? and documentnode_type methods (Joe Khoobyar)</p>
+            <p>Add Document#xhtml? and document#node_type methods (Joe Khoobyar)</p>
             </li><li>
             <p>Add XPath::Object#last (Joe Khoobyar)</p>
             </li><li>
@@ -438,8 +490,8 @@
             <p>Bug fix - If reader.node is NULL, return nil instead of crashing (Charlie
             Savage)</p>
             </li><li>
-            <p>Bug fix - Dtd's owned by documents were freed twice in some circumstances
-            (Joe Khoobyar).</p>
+            <p>Bug fix - Dtd&#39;s owned by documents were freed twice in some
+            circumstances (Joe Khoobyar).</p>
             </li><li>
             <p>Bug fix - Fix output escaping on attributes nodes (Joe Khoobyar).</p>
             </li><li>
@@ -447,7 +499,7 @@
             parser sources (Charlie Savage).</p>
             </li></ul>
             
-            <h2 id="label-0.9.8+%2F+2009-1-24+Charlie+Savage">0.9.8 / 2009-1-24 Charlie Savage</h2>
+            <h2 id="label-0.9.8+-2F+2009-1-24+Charlie+Savage">0.9.8 / 2009-1-24 Charlie Savage<span><a href="#label-0.9.8+-2F+2009-1-24+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Refactored XML::Parser, XML::HTMLParser, XML::SaxParser and XML::Reader to
             have consistent APIs.  All the parsers now take a context object in their
@@ -459,11 +511,12 @@
             <p>Updated all APIs to use the encoding constants defined in XML::Encoding
             versus string values.  This API change is not backwards compatible.</p>
             </li><li>
-            <p>Added support for attribute declarations in DTD's via the new XML::AttrDecl
-            class (Len Lattanzi)</p>
+            <p>Added support for attribute declarations in DTD&#39;s via the new
+            XML::AttrDecl class (Len Lattanzi)</p>
             </li><li>
-            <p>Support libxml's content escaping capabilities for text nodes by wrapping
-            libxml's "xmlStringText" and "xmlStringTextNoenc" (Joe Khoobyar).</p>
+            <p>Support libxml&#39;s content escaping capabilities for text nodes by
+            wrapping libxml&#39;s “xmlStringText” and “xmlStringTextNoenc” (Joe
+            Khoobyar).</p>
             </li><li>
             <p>Updated XML::Reader#read API to return true if a node was read, false if
             node was not read and raises an exception on an error. Previously read
@@ -473,7 +526,7 @@
             
             <p>while reader.read</p>
             
-            <pre># do stuff</pre>
+            <pre class="ruby"><span class="ruby-comment"># do stuff</span></pre>
             
             <p>end</p>
             </li><li>
@@ -489,13 +542,13 @@
             </li><li>
             <p>Fixed rdocs.</p>
             </li><li>
-            <p>Don't override libxml's default settings for entity substitution and
-            loading external DTDs.  This may break some code - you may need to add in a
-            call to XML.default_substitute_entities = true or
+            <p>Don&#39;t override libxml&#39;s default settings for entity substitution
+            and loading external DTDs.  This may break some code - you may need to add
+            in a call to XML.default_substitute_entities = true or
             XML.default_load_external_dtd = true.</p>
             </li></ul>
             
-            <h2 id="label-0.9.7+%2F+2008-12-08+Charlie+Savage">0.9.7 / 2008-12-08 Charlie Savage</h2>
+            <h2 id="label-0.9.7+-2F+2008-12-08+Charlie+Savage">0.9.7 / 2008-12-08 Charlie Savage<span><a href="#label-0.9.7+-2F+2008-12-08+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Added SAX2 support.  SAX handlers now define two new callbacks,
             on_start_element_ns and on_end_element_ns methods.  These new callbacks
@@ -504,12 +557,12 @@
             supported, but may be deprecated in the future depending on community
             feedback.</p>
             </li><li>
-            <p>Added SAX support for libxml's structured error handling. That menas sax
-            handlers now define a new callback, on_error, which takes one parameter, an
-            instance of XML::Error.  The older on_parser_error, on_parser_warning and
-            on_parser_fatal_error callbacks are no longer suported so you must port
-            your code. Note that the older callbacks took one string parameter, instead
-            of an XML::Error object.</p>
+            <p>Added SAX support for libxml&#39;s structured error handling. That menas
+            sax handlers now define a new callback, on_error, which takes one
+            parameter, an instance of XML::Error.  The older on_parser_error,
+            on_parser_warning and on_parser_fatal_error callbacks are no longer
+            suported so you must port your code. Note that the older callbacks took one
+            string parameter, instead of an XML::Error object.</p>
             </li><li>
             <p>Experimental work-around for libxml error handling bug - see <a
             href="http://mail.gnome.org/archives/xml/2008-December/msg00014.html">mail.gnome.org/archives/xml/2008-December/msg00014.html</a>
@@ -520,13 +573,13 @@
             <p>Fix Rdoc compilation bug.</p>
             </li></ul>
             
-            <h2 id="label-0.9.6+%2F+2008-12-08+Charlie+Savage">0.9.6 / 2008-12-08 Charlie Savage</h2>
+            <h2 id="label-0.9.6+-2F+2008-12-08+Charlie+Savage">0.9.6 / 2008-12-08 Charlie Savage<span><a href="#label-0.9.6+-2F+2008-12-08+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Refactored namespace handling.  The existing, and inconsistent, namespace
             methods defined on XML::Node have been deprecated.</p>
             
             <p>They have been replaced by a the new XML::Namespaces class. Use this class
-            to inspect a node's namespace, its default namespace, its namespace
+            to inspect a node&#39;s namespace, its default namespace, its namespace
             definitions and which namespaces are in scope.  It can be accessed via the
             the XML::Node#namespaces method.</p>
             </li><li>
@@ -549,7 +602,7 @@
             <p>Cleaned up header file guards.</p>
             </li></ul>
             
-            <h2 id="label-0.9.5+%2F+2008-11-29+Charlie+Savage">0.9.5 / 2008-11-29 Charlie Savage</h2>
+            <h2 id="label-0.9.5+-2F+2008-11-29+Charlie+Savage">0.9.5 / 2008-11-29 Charlie Savage<span><a href="#label-0.9.5+-2F+2008-11-29+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Ruby 1.9.1 preview release compatability (Felipe Contreras)</p>
             </li><li>
@@ -569,7 +622,7 @@
             <p>Updated C code base to use BSD/Allman style</p>
             </li></ul>
             
-            <h2 id="label-0.9.4+%2F+2008-11-24+Charlie+Savage">0.9.4 / 2008-11-24 Charlie Savage</h2>
+            <h2 id="label-0.9.4+-2F+2008-11-24+Charlie+Savage">0.9.4 / 2008-11-24 Charlie Savage<span><a href="#label-0.9.4+-2F+2008-11-24+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Update HTML parser so that it can read files, strings and io streams.</p>
             </li><li>
@@ -578,7 +631,7 @@
             <p>Additional C code cleanup.</p>
             </li></ul>
             
-            <h2 id="label-0.9.3+%2F+2008-11-22+Charlie+Savage">0.9.3 / 2008-11-22 Charlie Savage</h2>
+            <h2 id="label-0.9.3+-2F+2008-11-22+Charlie+Savage">0.9.3 / 2008-11-22 Charlie Savage<span><a href="#label-0.9.3+-2F+2008-11-22+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Fixed segmentation fault caused by documents being freed before xpath
             results that referenced the document (take 2).</p>
@@ -591,16 +644,16 @@
             most methods, changed C namespace from ruby_xml to rxml</p>
             </li></ul>
             
-            <h2 id="label-0.9.2+%2F+2008-11-19+Charlie+Savage">0.9.2 / 2008-11-19 Charlie Savage</h2>
+            <h2 id="label-0.9.2+-2F+2008-11-19+Charlie+Savage">0.9.2 / 2008-11-19 Charlie Savage<span><a href="#label-0.9.2+-2F+2008-11-19+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Add support for compiled XPath expressions (donated by Pavel Valodzka)</p>
             </li><li>
             <p>Fixes for compiling on OS X 10.5.4 and 10.5.5</p>
             </li></ul>
             
-            <h2 id="label-0.9.1+%2F+2008-11-18+Charlie+Savage">0.9.1 / 2008-11-18 Charlie Savage</h2>
+            <h2 id="label-0.9.1+-2F+2008-11-18+Charlie+Savage">0.9.1 / 2008-11-18 Charlie Savage<span><a href="#label-0.9.1+-2F+2008-11-18+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
-            <p>Expose LibXML's encoding support via a new Encoding object.</p>
+            <p>Expose LibXML&#39;s encoding support via a new Encoding object.</p>
             </li><li>
             <p>Revamp error handling to be much easier to use.  Errors are now wrapped by
             the new XML::Error class and are thrown as exceptions when it is
@@ -616,24 +669,24 @@
             <p>A number of bug fixes and patches.</p>
             </li></ul>
             
-            <h2 id="label-0.9.0+%2F+2008-11-18+Charlie+Savage">0.9.0 / 2008-11-18 Charlie Savage</h2>
+            <h2 id="label-0.9.0+-2F+2008-11-18+Charlie+Savage">0.9.0 / 2008-11-18 Charlie Savage<span><a href="#label-0.9.0+-2F+2008-11-18+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Version 0.9.0 was removed due to packaging errors.</p>
             </li></ul>
             
-            <h2 id="label-0.8.3+%2F+2008-07-21+Charlie+Savage">0.8.3 / 2008-07-21 Charlie Savage</h2>
+            <h2 id="label-0.8.3+-2F+2008-07-21+Charlie+Savage">0.8.3 / 2008-07-21 Charlie Savage<span><a href="#label-0.8.3+-2F+2008-07-21+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Missed several files in last release</p>
             </li></ul>
             
-            <h2 id="label-0.8.2+%2F+2008-07-21+Charlie+Savage">0.8.2 / 2008-07-21 Charlie Savage</h2>
+            <h2 id="label-0.8.2+-2F+2008-07-21+Charlie+Savage">0.8.2 / 2008-07-21 Charlie Savage<span><a href="#label-0.8.2+-2F+2008-07-21+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>To use <a href="../classes/LibXML.html">LibXML</a> you can either require
-            'xml' or require 'libxml'.  The differences is that require 'xml' mixes the
-            <a href="../classes/LibXML.html">LibXML</a> module into the global
-            namespace, thereby allowing you to write code such as document =
-            XML::Document.new.  Note that this is different  from 0.8.0 and 0.8.1 and
-            may require updating your code.</p>
+            &#39;xml&#39; or require &#39;libxml&#39;.  The differences is that require
+            &#39;xml&#39; mixes the <a href="../classes/LibXML.html">LibXML</a> module
+            into the global namespace, thereby allowing you to write code such as
+            document = XML::Document.new.  Note that this is different  from 0.8.0 and
+            0.8.1 and may require updating your code.</p>
             </li><li>
             <p>Support RelaxNG validation (thanks to Morus Walter)</p>
             </li><li>
@@ -645,17 +698,17 @@
             </li><li>
             <p>Improved Windows support - libxml-ruby should now work out of the box.</p>
             </li><li>
-            <p>Improved Windows support - turned on libxml's zlib and iconv support.</p>
+            <p>Improved Windows support - turned on libxml&#39;s zlib and iconv support.</p>
             </li></ul>
             
-            <h2 id="label-0.8.1+%2F+2008-07-09+Charlie+Savage">0.8.1 / 2008-07-09 Charlie Savage</h2>
+            <h2 id="label-0.8.1+-2F+2008-07-09+Charlie+Savage">0.8.1 / 2008-07-09 Charlie Savage<span><a href="#label-0.8.1+-2F+2008-07-09+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Reimplmented Node#each_attr for backwards compatability</p>
             </li><li>
             <p>Moved node type test to Ruby.</p>
             </li></ul>
             
-            <h2 id="label-0.8.0+%2F+2008-07-09+Charlie+Savage">0.8.0 / 2008-07-09 Charlie Savage</h2>
+            <h2 id="label-0.8.0+-2F+2008-07-09+Charlie+Savage">0.8.0 / 2008-07-09 Charlie Savage<span><a href="#label-0.8.0+-2F+2008-07-09+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Fixed bug in returning attributes from XPath results</p>
             </li><li>
@@ -679,7 +732,7 @@
             <p>Moved libxml into <a href="../classes/LibXML.html">LibXML</a> namespace</p>
             </li></ul>
             
-            <h2 id="label-0.7.0+%2F+2008-07-09+Charlie+Savage">0.7.0 / 2008-07-09 Charlie Savage</h2>
+            <h2 id="label-0.7.0+-2F+2008-07-09+Charlie+Savage">0.7.0 / 2008-07-09 Charlie Savage<span><a href="#label-0.7.0+-2F+2008-07-09+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Added new attributes class to provide a more natural way of working with
             attributes</p>
@@ -698,14 +751,14 @@
             <p>Cleaned out most of the bug list</p>
             </li></ul>
             
-            <h2 id="label-0.6.0+%2F+2008-07-01+Charlie+Savage">0.6.0 / 2008-07-01 Charlie Savage</h2>
+            <h2 id="label-0.6.0+-2F+2008-07-01+Charlie+Savage">0.6.0 / 2008-07-01 Charlie Savage<span><a href="#label-0.6.0+-2F+2008-07-01+Charlie+Savage">&para;</a> <a href="#top">&uarr;</a></span></h2>
             <ul><li>
             <p>Fixed memory allocation errors in Windows.  On Windows, it is essential
             that the same library that allocates memory must free it. Thus ALLOC calls
             must be matched to ruby_xfree calls, which they were not.  In addition, in
             one case Ruby was allocating memory to be freed by libxml.  On Windows,
-            that's a segmentation fault.  On Linux it might fly, but still seems like a
-            bad idea.</p>
+            that&#39;s a segmentation fault.  On Linux it might fly, but still seems
+            like a bad idea.</p>
             </li><li>
             <p>Fixed segmentation fault in xml reader expand (same xml tree freed twice)</p>
             </li><li>
@@ -714,15 +767,15 @@
             </li><li>
             <p>Cleaned up a number of compiler warnings</p>
             </li><li>
-            <p>Renamed libxml_so.so to libxml_ruby.so (same for xslt).  That wasn't
+            <p>Renamed libxml_so.so to libxml_ruby.so (same for xslt).  That wasn&#39;t
             actually my original intention, but um, it kind of sort of happened.  It
             should not be noticeable from an end-user perspective.</p>
             </li><li>
             <p>Added rake files for building with MingW</p>
             </li><li>
             <p>Added rake files for packing gems.  Note that I did this outside the
-            existing rake tasks because I didn't see how they were actually building
-            the gems.</p>
+            existing rake tasks because I didn&#39;t see how they were actually
+            building the gems.</p>
             </li><li>
             <p>Cleaned up the tests and added a few more based on bug reports from the
             Tracker and mailing list.</p>
@@ -730,57 +783,57 @@
             <p>Cleaned out the patch queue and went through about 1/2 the bug list</p>
             </li></ul>
             
-            <h3 id="label-2007-11-16+%22Dan+Janowski%22+%3Cdanj+at+3skel.com%3E">2007-11-16 "Dan Janowski" &lt;danj at 3skel.com&gt;</h3>
+            <h3 id="label-2007-11-16+-22Dan+Janowski-22+-3Cdanj+at+3skel.com-3E">2007-11-16 “Dan Janowski” &lt;danj at 3skel.com&gt;<span><a href="#label-2007-11-16+-22Dan+Janowski-22+-3Cdanj+at+3skel.com-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
-            <p>Merged Dan's MEM2 branch to trunk.</p>
+            <p>Merged Dan&#39;s MEM2 branch to trunk.</p>
             </li></ul>
             
-            <h2 id="label-0.5.3+%2F">0.5.3 /</h2>
+            <h2 id="label-0.5.3+-2F">0.5.3 /<span><a href="#label-0.5.3+-2F">&para;</a> <a href="#top">&uarr;</a></span></h2>
             
-            <h3 id="label-2007-11-16+%22Dan+Janowski%22+%3Cdanj+at+3skel.com%3E">2007-11-16 "Dan Janowski" &lt;danj at 3skel.com&gt;</h3>
+            <h3 id="label-2007-11-16+-22Dan+Janowski-22+-3Cdanj+at+3skel.com-3E">2007-11-16 “Dan Janowski” &lt;danj at 3skel.com&gt;<span><a href="#label-2007-11-16+-22Dan+Janowski-22+-3Cdanj+at+3skel.com-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
-            <p>Merged Dan's MEM2 branch to trunk.</p>
+            <p>Merged Dan&#39;s MEM2 branch to trunk.</p>
             </li></ul>
             
-            <h2 id="label-0.5.2+%2F+2007-10-10">0.5.2 / 2007-10-10</h2>
+            <h2 id="label-0.5.2+-2F+2007-10-10">0.5.2 / 2007-10-10<span><a href="#label-0.5.2+-2F+2007-10-10">&para;</a> <a href="#top">&uarr;</a></span></h2>
             
-            <h3 id="label-2007-10-10+%22Dan+Janowski%22+%3Cdanj+at+3skel.com%3E">2007-10-10 "Dan Janowski" &lt;danj at 3skel.com&gt;</h3>
+            <h3 id="label-2007-10-10+-22Dan+Janowski-22+-3Cdanj+at+3skel.com-3E">2007-10-10 “Dan Janowski” &lt;danj at 3skel.com&gt;<span><a href="#label-2007-10-10+-22Dan+Janowski-22+-3Cdanj+at+3skel.com-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>(Dan, fill in the major points of the changes you made up to here -thanks)</p>
             </li></ul>
             
-            <h3 id="label-2007-01-14+%22Laurent+Sansonetti%22+%3Clrz+at+chopine.be%3E">2007-01-14 "Laurent Sansonetti" &lt;lrz at chopine.be&gt;</h3>
+            <h3 id="label-2007-01-14+-22Laurent+Sansonetti-22+-3Clrz+at+chopine.be-3E">2007-01-14 “Laurent Sansonetti” &lt;lrz at chopine.be&gt;<span><a href="#label-2007-01-14+-22Laurent+Sansonetti-22+-3Clrz+at+chopine.be-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>Added some preliminary RDoc comments for XML::Reader.</p>
             </li></ul>
             
-            <h3 id="label-2006-12-05+%22Laurent+Sansonetti%22+%3Clrz+at+chopine.be%3E">2006-12-05 "Laurent Sansonetti" &lt;lrz at chopine.be&gt;</h3>
+            <h3 id="label-2006-12-05+-22Laurent+Sansonetti-22+-3Clrz+at+chopine.be-3E">2006-12-05 “Laurent Sansonetti” &lt;lrz at chopine.be&gt;<span><a href="#label-2006-12-05+-22Laurent+Sansonetti-22+-3Clrz+at+chopine.be-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>Added XML::Reader, a set of bindings to the xmlTextReader API.</p>
             </li></ul>
             
-            <h2 id="label-0.3.8.4+%2F+2006-12-02">0.3.8.4 / 2006-12-02</h2>
+            <h2 id="label-0.3.8.4+-2F+2006-12-02">0.3.8.4 / 2006-12-02<span><a href="#label-0.3.8.4+-2F+2006-12-02">&para;</a> <a href="#top">&uarr;</a></span></h2>
             
-            <h3 id="label-2006-04-15+%22Ross+Bamform%22+%3Crosco+at+roscopeco.co.uk%3E">2006-04-15 "Ross Bamform" &lt;rosco at roscopeco.co.uk&gt;</h3>
+            <h3 id="label-2006-04-15+-22Ross+Bamform-22+-3Crosco+at+roscopeco.co.uk-3E">2006-04-15 “Ross Bamform” &lt;rosco at roscopeco.co.uk&gt;<span><a href="#label-2006-04-15+-22Ross+Bamform-22+-3Crosco+at+roscopeco.co.uk-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>Implemented SAX parser callback handling.</p>
             </li></ul>
             
-            <h3 id="label-2006-04-12+%22Ross+Bamford%22+%3Crosco+at+roscopeco.co.uk%3E">2006-04-12 "Ross Bamford" &lt;rosco at roscopeco.co.uk&gt;</h3>
+            <h3 id="label-2006-04-12+-22Ross+Bamford-22+-3Crosco+at+roscopeco.co.uk-3E">2006-04-12 “Ross Bamford” &lt;rosco at roscopeco.co.uk&gt;<span><a href="#label-2006-04-12+-22Ross+Bamford-22+-3Crosco+at+roscopeco.co.uk-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>Integrated and tested community patches.</p>
             </li><li>
             <p>Defined XML::Node (hash) equality in terms of XML representation.</p>
             </li></ul>
             
-            <h3 id="label-2006-04-12+%22Tim+Yamin%22+%3Cplasmaroo+at+gentoo.org%3E">2006-04-12 "Tim Yamin" &lt;plasmaroo at gentoo.org&gt;</h3>
+            <h3 id="label-2006-04-12+-22Tim+Yamin-22+-3Cplasmaroo+at+gentoo.org-3E">2006-04-12 “Tim Yamin” &lt;plasmaroo at gentoo.org&gt;<span><a href="#label-2006-04-12+-22Tim+Yamin-22+-3Cplasmaroo+at+gentoo.org-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>Fixed XML::Node#content inoperable bug  (plasmaroo) [patch]</p>
             </li><li>
             <p>Fixed memory leak in same</p>
             </li></ul>
             
-            <h3 id="label-2006-04-12+%22Mark+Van+Holstyn%22+%3Cmvette13+at+gmail.com%3E">2006-04-12 "Mark Van Holstyn" &lt;mvette13 at gmail.com&gt;</h3>
+            <h3 id="label-2006-04-12+-22Mark+Van+Holstyn-22+-3Cmvette13+at+gmail.com-3E">2006-04-12 “Mark Van Holstyn” &lt;mvette13 at gmail.com&gt;<span><a href="#label-2006-04-12+-22Mark+Van+Holstyn-22+-3Cmvette13+at+gmail.com-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>Added XML::Node::Set#first  (mvette13) [patch]</p>
             </li><li>
@@ -793,21 +846,21 @@
             <p>Added XML::Node#remove!</p>
             </li></ul>
             
-            <h3 id="label-2006-03-27+%22Ross+Bamford%22+%3Crosco+at+roscopeco.co.uk%3E">2006-03-27 "Ross Bamford" &lt;rosco at roscopeco.co.uk&gt;</h3>
+            <h3 id="label-2006-03-27+-22Ross+Bamford-22+-3Crosco+at+roscopeco.co.uk-3E">2006-03-27 “Ross Bamford” &lt;rosco at roscopeco.co.uk&gt;<span><a href="#label-2006-03-27+-22Ross+Bamford-22+-3Crosco+at+roscopeco.co.uk-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>Integrated contributed XML::Parser.register_error_handler patch  (rosco)</p>
             </li></ul>
             
-            <h3 id="label-2006-02-27+%22Ross+Bamford%22+%3Crosco+at+roscopeco.co.uk%3E">2006-02-27 "Ross Bamford" &lt;rosco at roscopeco.co.uk&gt;</h3>
+            <h3 id="label-2006-02-27+-22Ross+Bamford-22+-3Crosco+at+roscopeco.co.uk-3E">2006-02-27 “Ross Bamford” &lt;rosco at roscopeco.co.uk&gt;<span><a href="#label-2006-02-27+-22Ross+Bamford-22+-3Crosco+at+roscopeco.co.uk-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>Fixed all multiple symbol definitions for -fno-common.</p>
             </li><li>
             <p>Removed OSX -fno-common workaround.</p>
             </li></ul>
             
-            <h2 id="label-0.3.6+%2F+2006-02-23">0.3.6 / 2006-02-23</h2>
+            <h2 id="label-0.3.6+-2F+2006-02-23">0.3.6 / 2006-02-23<span><a href="#label-0.3.6+-2F+2006-02-23">&para;</a> <a href="#top">&uarr;</a></span></h2>
             
-            <h3 id="label-2006-02-21+%22Ross+Bamford%22+%3Crosco+at+roscopeco.co.uk%3E">2006-02-21 "Ross Bamford" &lt;rosco at roscopeco.co.uk&gt;</h3>
+            <h3 id="label-2006-02-21+-22Ross+Bamford-22+-3Crosco+at+roscopeco.co.uk-3E">2006-02-21 “Ross Bamford” &lt;rosco at roscopeco.co.uk&gt;<span><a href="#label-2006-02-21+-22Ross+Bamford-22+-3Crosco+at+roscopeco.co.uk-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>Patched extconf.rb with OSX -fno-common workaround</p>
             </li><li>
@@ -818,14 +871,14 @@
             <p>Removed legacy project utility scripts</p>
             </li></ul>
             
-            <h3 id="label-2005-02-19+%22Ross+Bamford%22+%3Crosco+at+roscopeco.co.uk%3E">2005-02-19 "Ross Bamford" &lt;rosco at roscopeco.co.uk&gt;</h3>
+            <h3 id="label-2005-02-19+-22Ross+Bamford-22+-3Crosco+at+roscopeco.co.uk-3E">2005-02-19 “Ross Bamford” &lt;rosco at roscopeco.co.uk&gt;<span><a href="#label-2005-02-19+-22Ross+Bamford-22+-3Crosco+at+roscopeco.co.uk-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>Fixed doublefree bug in ruby_xml_attr.</p>
             </li><li>
             <p>Fixed small leak in parser</p>
             </li></ul>
             
-            <h3 id="label-2005-12-18+%22Ross+Bamford%22+%3Crosco+at+roscopeco.co.uk%3E">2005-12-18 "Ross Bamford" &lt;rosco at roscopeco.co.uk&gt;</h3>
+            <h3 id="label-2005-12-18+-22Ross+Bamford-22+-3Crosco+at+roscopeco.co.uk-3E">2005-12-18 “Ross Bamford” &lt;rosco at roscopeco.co.uk&gt;<span><a href="#label-2005-12-18+-22Ross+Bamford-22+-3Crosco+at+roscopeco.co.uk-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>Updated for GCC 4.0 (community patches)</p>
             </li><li>
@@ -838,26 +891,26 @@
             <p>Fixed up a few strings.</p>
             </li></ul>
             
-            <h3 id="label-2004-04-04+%22Mangler+Jurgen%22+%3Cet%40wkv.at%3E">2004-04-04 "Mangler Jurgen" &lt;et@wkv.at&gt;</h3>
+            <h3 id="label-2004-04-04+-22Mangler+Jurgen-22+-3Cet-40wkv.at-3E">2004-04-04 “Mangler Jurgen” &lt;et@wkv.at&gt;<span><a href="#label-2004-04-04+-22Mangler+Jurgen-22+-3Cet-40wkv.at-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>ruby_xml_node.cz: fixed ruby_xml_node_property_set. The ill-behaviour was,
             that there was added a second attribute of the same name, when you were
             setting the value of an already existing attribute.</p>
             </li></ul>
             
-            <h3 id="label-2004-03-17+%22Lukas+Svoboda%22+%3Cluks%40fi.muni.cz%3E">2004-03-17 "Lukas Svoboda" &lt;luks@fi.muni.cz&gt;</h3>
+            <h3 id="label-2004-03-17+-22Lukas+Svoboda-22+-3Cluks-40fi.muni.cz-3E">2004-03-17 “Lukas Svoboda” &lt;luks@fi.muni.cz&gt;<span><a href="#label-2004-03-17+-22Lukas+Svoboda-22+-3Cluks-40fi.muni.cz-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>ruby_xml_node.c: ruby_xml_node_to_s now returns XML subtree dump.</p>
             </li></ul>
             
-            <h3 id="label-2004-02-27+%22Martin+Povolny%22+%3Cmartin%40solnet.cz%3E">2004-02-27 "Martin Povolny" &lt;martin@solnet.cz&gt;</h3>
+            <h3 id="label-2004-02-27+-22Martin+Povolny-22+-3Cmartin-40solnet.cz-3E">2004-02-27 “Martin Povolny” &lt;martin@solnet.cz&gt;<span><a href="#label-2004-02-27+-22Martin+Povolny-22+-3Cmartin-40solnet.cz-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>ruby_xml_node.c: added XML::Node.copy, this makes possible building of xml
             documents from nodes taken from other xml documents without making ruby
             SIGSEGV (see tests/copy_bug.rb).</p>
             </li></ul>
             
-            <h3 id="label-2004-02-26+%22Martin+Povolny%22+%3Cmartin%40solnet.cz%3E">2004-02-26 "Martin Povolny" &lt;martin@solnet.cz&gt;</h3>
+            <h3 id="label-2004-02-26+-22Martin+Povolny-22+-3Cmartin-40solnet.cz-3E">2004-02-26 “Martin Povolny” &lt;martin@solnet.cz&gt;<span><a href="#label-2004-02-26+-22Martin+Povolny-22+-3Cmartin-40solnet.cz-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>ruby_xml_dtd.c, ruby_xml_dtd.h, ruby_xml_schema.c, ruby_xml_schema.h: more
             work on validation, now you can actually validate document using dtd or xml
@@ -865,20 +918,20 @@
             tests/{dtd|schema}-test.rb).</p>
             </li></ul>
             
-            <h3 id="label-2003-12-30+%22Martin+Povolny%22+%3Cmartin%40solnet.cz%3E">2003-12-30 "Martin Povolny" &lt;martin@solnet.cz&gt;</h3>
+            <h3 id="label-2003-12-30+-22Martin+Povolny-22+-3Cmartin-40solnet.cz-3E">2003-12-30 “Martin Povolny” &lt;martin@solnet.cz&gt;<span><a href="#label-2003-12-30+-22Martin+Povolny-22+-3Cmartin-40solnet.cz-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>ruby_xml_dtd.c, ruby_xml_dtd.h, ruby_xml_schema.c, ruby_xml_schema.h:
             prelimitary support for dtd and schema validation</p>
             </li></ul>
             
-            <h3 id="label-2003-09-15+%22Martin+Povolny%22+%3Cmartin%40solnet.cz%3E">2003-09-15 "Martin Povolny" &lt;martin@solnet.cz&gt;</h3>
+            <h3 id="label-2003-09-15+-22Martin+Povolny-22+-3Cmartin-40solnet.cz-3E">2003-09-15 “Martin Povolny” &lt;martin@solnet.cz&gt;<span><a href="#label-2003-09-15+-22Martin+Povolny-22+-3Cmartin-40solnet.cz-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>ruby_xml_input_cbg.c, libxml.c: added class InputCallbacks to make possible
             registering custom input callbacks handlers (xmlRegisterInputCallbacks)
             written in ruby</p>
             </li></ul>
             
-            <h3 id="label-2003-08-01+%22Martin+Povolny%22+%3Cmartin%40solnet.cz%3E">2003-08-01 "Martin Povolny" &lt;martin@solnet.cz&gt;</h3>
+            <h3 id="label-2003-08-01+-22Martin+Povolny-22+-3Cmartin-40solnet.cz-3E">2003-08-01 “Martin Povolny” &lt;martin@solnet.cz&gt;<span><a href="#label-2003-08-01+-22Martin+Povolny-22+-3Cmartin-40solnet.cz-3E">&para;</a> <a href="#top">&uarr;</a></span></h3>
             <ul><li>
             <p>ruby_xml_document.c: corrected argument handling in ruby_xml_document_find</p>
             </li><li>

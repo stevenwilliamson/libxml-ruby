@@ -35,8 +35,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -57,7 +57,7 @@
             
             <p>Basic Usage:</p>
             
-            <pre># parse schema as xml document&#x000A;relaxng_document = XML::Document.file('schema.rng')&#x000A;# prepare schema for validation&#x000A;relaxng_schema = XML::RelaxNG.document(relaxng_document)&#x000A;&#x000A;# parse xml document to be validated&#x000A;instance = XML::Document.file('instance.xml')&#x000A;&#x000A;# validate&#x000A;instance.validate_relaxng(relaxng_schema)</pre>
+            <pre class="ruby"><span class="ruby-comment"># parse schema as xml document</span>&#x000A;<span class="ruby-identifier">relaxng_document</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">file</span>(<span class="ruby-string">&#39;schema.rng&#39;</span>)&#x000A;&#x000A;<span class="ruby-comment"># prepare schema for validation</span>&#x000A;<span class="ruby-identifier">relaxng_schema</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">RelaxNG</span>.<span class="ruby-identifier">document</span>(<span class="ruby-identifier">relaxng_document</span>)&#x000A;&#x000A;<span class="ruby-comment"># parse xml document to be validated</span>&#x000A;<span class="ruby-identifier">instance</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">file</span>(<span class="ruby-string">&#39;instance.xml&#39;</span>)&#x000A;&#x000A;<span class="ruby-comment"># validate</span>&#x000A;<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">validate_relaxng</span>(<span class="ruby-identifier">relaxng_schema</span>)</pre>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>

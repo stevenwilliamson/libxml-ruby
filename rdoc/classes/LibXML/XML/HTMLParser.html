@@ -41,8 +41,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -51,7 +51,7 @@
             
             <p>The HTML parser implements an HTML 4.0 non-verifying parser with an API
             compatible with the <a href="Parser.html">XML::Parser</a>.  In contrast
-            with the <a href="Parser.html">XML::Parser</a>, it can parse "real world"
+            with the <a href="Parser.html">XML::Parser</a>, it can parse “real world”
             HTML, even if it severely broken from a specification point of view.</p>
             
             <p>The HTML parser creates an in-memory document object that consist of any
@@ -61,7 +61,7 @@
             
             <p>Using the html parser is simple:</p>
             
-            <pre>parser = XML::HTMLParser.file('my_file')&#x000A;doc = parser.parse</pre>
+            <pre class="ruby"><span class="ruby-identifier">parser</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">HTMLParser</span>.<span class="ruby-identifier">file</span>(<span class="ruby-string">&#39;my_file&#39;</span>)&#x000A;<span class="ruby-identifier">doc</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span></pre>
             
             <p>You can also parse documents (see XML::HTMLParser.document),  strings (see
             <a href="HTMLParser.html#method-c-string">::string</a>) and io objects (see
@@ -216,7 +216,7 @@
                 <div class='description'>
                   
                   <p>Parse the input <a href="../XML.html">XML</a> and create an <a
-                  href="Document.html">XML::Document</a> with it's content. If an error
+                  href="Document.html">XML::Document</a> with it&#39;s content. If an error
                   occurs, XML::Parser::ParseError is thrown.</p>
                 </div>
                 <div class='source'>

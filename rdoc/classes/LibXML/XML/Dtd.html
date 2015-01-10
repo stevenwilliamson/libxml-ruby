@@ -35,15 +35,15 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
         <div id='text'>
           <div id='description'>
             
-            <p>The <a href="Dtd.html">XML::Dtd</a> class is used to prepare DTD's for
+            <p>The <a href="Dtd.html">XML::Dtd</a> class is used to prepare DTD&#39;s for
             validation of xml documents.</p>
             
             <p>DTDs can be created from a string or a pair of public and system
@@ -55,7 +55,7 @@
             
             <p>Basic usage:</p>
             
-            <pre># parse DTD&#x000A;dtd = XML::Dtd.new(&lt;&lt;EOF)&#x000A;&lt;!ELEMENT root (item*) &gt;&#x000A;&lt;!ELEMENT item (#PCDATA) &gt;&#x000A;EOF&#x000A;# parse xml document to be validated&#x000A;instance = XML::Document.file('instance.xml')&#x000A;&#x000A;# validate&#x000A;instance.validate(dtd)</pre>
+            <pre class="ruby"><span class="ruby-comment"># parse DTD</span>&#x000A;<span class="ruby-identifier">dtd</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Dtd</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;&lt;!ELEMENT root (item*) &gt;&#x000A;&lt;!ELEMENT item (#PCDATA) &gt;&#x000A;&quot;</span>)&#x000A;&#x000A;<span class="ruby-comment"># parse xml document to be validated</span>&#x000A;<span class="ruby-identifier">instance</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">file</span>(<span class="ruby-string">&#39;instance.xml&#39;</span>)&#x000A;&#x000A;<span class="ruby-comment"># validate</span>&#x000A;<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">validate</span>(<span class="ruby-identifier">dtd</span>)</pre>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
@@ -67,6 +67,7 @@
             <ol>
               <li><a target="docwin" href="#method-i-external_id">external_id</a></li>
               <li><a target="docwin" href="#method-i-name">name</a></li>
+              <li><a target="docwin" href="#method-i-node_type">node_type</a></li>
               <li><a target="docwin" href="#method-i-uri">uri</a></li>
             </ol>
           </div>
@@ -120,7 +121,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this dtd's external identifer (for a PUBLIC DTD).</p>
+                  <p>Obtain this dtd&#39;s external identifer (for a PUBLIC DTD).</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-external_id-source'); return false">
@@ -138,13 +139,31 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this dtd's name.</p>
+                  <p>Obtain this dtd&#39;s name.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-name-source'); return false">
                     [show source]
                   </a>
                   <pre id='method-i-name-source'>static VALUE rxml_dtd_name_get(VALUE self)&#x000A;{&#x000A;  xmlDtdPtr xdtd;&#x000A;  Data_Get_Struct(self, xmlDtd, xdtd);&#x000A;&#x000A;&#x000A;  if (xdtd-&gt;name == NULL)&#x000A;    return (Qnil);&#x000A;  else&#x000A;    return (rxml_new_cstr((const char*) xdtd-&gt;name, NULL));&#x000A;}</pre>
+                </div>
+              </div>
+              <div class='method public-instance' id='method-method-i-node_type'>
+                <a name='method-i-node_type'></a>
+                <div class='synopsis'>
+                  <span class='name'>
+                    <div>node.type -> num</div>
+                  </span>
+                </div>
+                <div class='description'>
+                  
+                  <p>Obtain this node&#39;s type identifier.</p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('method-i-node_type-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='method-i-node_type-source'>static VALUE rxml_dtd_type(VALUE self)&#x000A;{&#x000A;  xmlDtdPtr xdtd;&#x000A;  Data_Get_Struct(self, xmlDtd, xdtd);&#x000A;  return (INT2NUM(xdtd-&gt;type));&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-instance' id='method-method-i-uri'>
@@ -156,13 +175,13 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this dtd's URI (for a SYSTEM or PUBLIC DTD).</p>
+                  <p>Obtain this dtd&#39;s URI (for a SYSTEM or PUBLIC DTD).</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-uri-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-i-uri-source'>static VALUE rxml_dtd_uri_get(VALUE self)&#x000A;{&#x000A;  xmlDtdPtr xdtd;&#x000A;  Data_Get_Struct(self, xmlDtd, xdtd);&#x000A;&#x000A;&#x000A;  if (xdtd-&gt;SystemID == NULL)&#x000A;    return (Qnil);&#x000A;  else&#x000A;    return (rxml_new_cstr((const char*) xdtd-&gt;SystemID, NULL));&#x000A;}</pre>
+                  <pre id='method-i-uri-source'>static VALUE rxml_dtd_uri_get(VALUE self)&#x000A;{&#x000A;  xmlDtdPtr xdtd;&#x000A;  Data_Get_Struct(self, xmlDtd, xdtd);&#x000A;&#x000A;  if (xdtd-&gt;SystemID == NULL)&#x000A;    return (Qnil);&#x000A;  else&#x000A;    return (rxml_new_cstr((const char*) xdtd-&gt;SystemID, NULL));&#x000A;}</pre>
                 </div>
               </div>
             </div>

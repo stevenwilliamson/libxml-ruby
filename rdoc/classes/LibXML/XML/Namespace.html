@@ -41,8 +41,8 @@
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -58,7 +58,7 @@
             
             <p>Usage:</p>
             
-            <pre>node = XML::Node.new('&lt;Envelope&gt;')&#x000A;XML::Namespace.new(node, 'soap', 'http://schemas.xmlsoap.org/soap/envelope/')&#x000A;assert_equal(&quot;&lt;Envelope xmlns:soap=\&quot;http://schemas.xmlsoap.org/soap/envelope/\&quot;/&gt;&quot;, node.to_s)&#x000A;assert_nil(node.namespaces.namespace)</pre>
+            <pre class="ruby"><span class="ruby-identifier">node</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;&lt;Envelope&gt;&#39;</span>)&#x000A;<span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Namespace</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">node</span>, <span class="ruby-string">&#39;soap&#39;</span>, <span class="ruby-string">&#39;http://schemas.xmlsoap.org/soap/envelope/&#39;</span>)&#x000A;<span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;&lt;Envelope xmlns:soap=\&quot;http://schemas.xmlsoap.org/soap/envelope/\&quot;/&gt;&quot;</span>, <span class="ruby-identifier">node</span>.<span class="ruby-identifier">to_s</span>)&#x000A;<span class="ruby-identifier">assert_nil</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">namespaces</span>.<span class="ruby-identifier">namespace</span>)</pre>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
@@ -146,7 +146,7 @@
                   
                   <p>Usage:</p>
                   
-                  <pre class="ruby"><span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ns</span><span class="ruby-operator">|</span>&#x000A;  <span class="ruby-operator">..</span>&#x000A;<span class="ruby-keyword">end</span></pre>
+                  <pre>namespace.each do |ns|&#x000A;  ..&#x000A;end</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-each-source'); return false">
@@ -166,7 +166,7 @@
                   
                   <p>Usage:</p>
                   
-                  <pre>doc = XML::Document.string('&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;')&#x000A;ns = doc.root.namespaces.find_by_href('http://schemas.xmlsoap.org/soap/envelope/')&#x000A;assert_equal('http://schemas.xmlsoap.org/soap/envelope/', ns.href)</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">string</span>(<span class="ruby-string">&#39;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;&#39;</span>)&#x000A;<span class="ruby-identifier">ns</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">namespaces</span>.<span class="ruby-identifier">find_by_href</span>(<span class="ruby-string">&#39;http://schemas.xmlsoap.org/soap/envelope/&#39;</span>)&#x000A;<span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&#39;http://schemas.xmlsoap.org/soap/envelope/&#39;</span>, <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">href</span>)</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-href-source'); return false">
@@ -188,7 +188,7 @@
                   
                   <p>Usage:</p>
                   
-                  <pre>doc = XML::Document.string('&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;')&#x000A;ns = doc.root.namespaces.find_by_href('http://schemas.xmlsoap.org/soap/envelope/')&#x000A;assert_nil(ns.next)</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">string</span>(<span class="ruby-string">&#39;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;&#39;</span>)&#x000A;<span class="ruby-identifier">ns</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">namespaces</span>.<span class="ruby-identifier">find_by_href</span>(<span class="ruby-string">&#39;http://schemas.xmlsoap.org/soap/envelope/&#39;</span>)&#x000A;<span class="ruby-identifier">assert_nil</span>(<span class="ruby-identifier">ns</span>.<span class="ruby-identifier">next</span>)</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-next-source'); return false">
@@ -206,7 +206,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain this namespace's type identifier.</p>
+                  <p>Obtain this namespace&#39;s type identifier.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-node_type-source'); return false">
@@ -224,11 +224,11 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Obtain the namespace's prefix.</p>
+                  <p>Obtain the namespace&#39;s prefix.</p>
                   
                   <p>Usage:</p>
                   
-                  <pre>doc = XML::Document.string('&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;')&#x000A;ns = doc.root.namespaces.find_by_href('http://schemas.xmlsoap.org/soap/envelope/')&#x000A;assert_equal('soap', ns.prefix)</pre>
+                  <pre class="ruby"><span class="ruby-identifier">doc</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">string</span>(<span class="ruby-string">&#39;&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;/&gt;&#39;</span>)&#x000A;<span class="ruby-identifier">ns</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">namespaces</span>.<span class="ruby-identifier">find_by_href</span>(<span class="ruby-string">&#39;http://schemas.xmlsoap.org/soap/envelope/&#39;</span>)&#x000A;<span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&#39;soap&#39;</span>, <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">prefix</span>)</pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-prefix-source'); return false">
@@ -250,7 +250,7 @@
                   
                   <p>Usage:</p>
                   
-                  <pre>namespace.to_s</pre>
+                  <pre class="ruby"><span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">to_s</span></pre>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-i-to_s-source'); return false">

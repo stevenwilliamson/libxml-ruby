@@ -37,10 +37,10 @@
             <a target="docwin" href="../../files/lib/libxml/attr_rb.html">lib/libxml/attr.rb</a>
           </li>
           <li class='other'>
-            <a target="docwin" href="../../files/lib/libxml/attributes_rb.html">lib/libxml/attributes.rb</a>
+            <a target="docwin" href="../../files/lib/libxml/attr_decl_rb.html">lib/libxml/attr_decl.rb</a>
           </li>
           <li class='other'>
-            <a target="docwin" href="../../files/lib/libxml/attr_decl_rb.html">lib/libxml/attr_decl.rb</a>
+            <a target="docwin" href="../../files/lib/libxml/attributes_rb.html">lib/libxml/attributes.rb</a>
           </li>
           <li class='other'>
             <a target="docwin" href="../../files/lib/libxml/document_rb.html">lib/libxml/document.rb</a>
@@ -79,6 +79,9 @@
             <a target="docwin" href="../../files/lib/libxml/sax_parser_rb.html">lib/libxml/sax_parser.rb</a>
           </li>
           <li class='other'>
+            <a target="docwin" href="../../files/lib/libxml/schema_rb.html">lib/libxml/schema.rb</a>
+          </li>
+          <li class='other'>
             <a target="docwin" href="../../files/lib/libxml/schema/attribute_rb.html">lib/libxml/schema/attribute.rb</a>
           </li>
           <li class='other'>
@@ -86,9 +89,6 @@
           </li>
           <li class='other'>
             <a target="docwin" href="../../files/lib/libxml/schema/type_rb.html">lib/libxml/schema/type.rb</a>
-          </li>
-          <li class='other'>
-            <a target="docwin" href="../../files/lib/libxml/schema_rb.html">lib/libxml/schema.rb</a>
           </li>
           <li class='other'>
             <a target="docwin" href="../../files/lib/libxml/tree_rb.html">lib/libxml/tree.rb</a>
@@ -100,10 +100,6 @@
             <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
           </li>
         </ol>
-        <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../LibXML.html">LibXML</a></strong>
-        </div>
       </div>
       <div id='content'>
         <div id='text'>
@@ -478,7 +474,7 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Returns an integer that summarize libxml2's default options.</p>
+                  <p>Returns an integer that summarize libxml2&#39;s default options.</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-default_options-source'); return false">
@@ -700,8 +696,9 @@
                 </div>
                 <div class='description'>
                   
-                  <p>Determine whether libxml 'canonical XML' support is enabled. See "Canonical
-                  XML" (<a target="_top" href="http://www.w3.org/TR/xml-c14n">www.w3.org/TR/xml-c14n</a>)</p>
+                  <p>Determine whether libxml &#39;canonical XML&#39; support is enabled. See
+                  “Canonical XML” (<a
+                  href="http://www.w3.org/TR/xml-c14n">www.w3.org/TR/xml-c14n</a>)</p>
                 </div>
                 <div class='source'>
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-enabled_c14n-3F-source'); return false">
@@ -907,7 +904,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-enabled_thread-3F-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-enabled_thread-3F-source'>static VALUE rxml_enabled_thread_q(VALUE klass)&#x000A;{&#x000A;  /* This won't be defined unless this code is compiled with _REENTRANT or __MT__&#x000A;   * defined or the compiler is in C99 mode.&#x000A;   *&#x000A;   * Note the relevant portion libxml/xmlversion.h on a thread-enabled build:&#x000A;   *&#x000A;   *    #if defined(_REENTRANT) || defined(__MT__) || \&#x000A;   *        (defined(_POSIX_C_SOURCE) &amp;&amp; (_POSIX_C_SOURCE - 0 &gt;= 199506L))&#x000A;   *        #define LIBXML_THREAD_ENABLED&#x000A;   *    #endif&#x000A;   *&#x000A;   */&#x000A;#ifdef LIBXML_THREAD_ENABLED&#x000A;  return(Qtrue);&#x000A;#else&#x000A;  return (Qfalse);&#x000A;#endif&#x000A;}</pre>
+                  <pre id='method-c-enabled_thread-3F-source'>static VALUE rxml_enabled_thread_q(VALUE klass)&#x000A;{&#x000A;  /* This won&#39;t be defined unless this code is compiled with _REENTRANT or __MT__&#x000A;   * defined or the compiler is in C99 mode.&#x000A;   *&#x000A;   * Note the relevant portion libxml/xmlversion.h on a thread-enabled build:&#x000A;   *&#x000A;   *    #if defined(_REENTRANT) || defined(__MT__) || \&#x000A;   *        (defined(_POSIX_C_SOURCE) &amp;&amp; (_POSIX_C_SOURCE - 0 &gt;= 199506L))&#x000A;   *        #define LIBXML_THREAD_ENABLED&#x000A;   *    #endif&#x000A;   *&#x000A;   */&#x000A;#ifdef LIBXML_THREAD_ENABLED&#x000A;  return(Qtrue);&#x000A;#else&#x000A;  return (Qfalse);&#x000A;#endif&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-class' id='method-method-c-enabled_unicode-3F'>

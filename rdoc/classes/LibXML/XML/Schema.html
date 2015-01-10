@@ -36,13 +36,22 @@
           <li class='other'>
             <a target="docwin" href="../../../files/lib/libxml/schema_rb.html">lib/libxml/schema.rb</a>
           </li>
+          <li class='other'>
+            <a target="docwin" href="../../../files/lib/libxml/schema/attribute_rb.html">lib/libxml/schema/attribute.rb</a>
+          </li>
+          <li class='other'>
+            <a target="docwin" href="../../../files/lib/libxml/schema/element_rb.html">lib/libxml/schema/element.rb</a>
+          </li>
+          <li class='other'>
+            <a target="docwin" href="../../../files/lib/libxml/schema/type_rb.html">lib/libxml/schema/type.rb</a>
+          </li>
           <li>
             <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
           </li>
         </ol>
         <div class='parent'>
-          Parent:
-          <strong><a target="docwin" href="../XML.html">XML</a></strong>
+          Superclass:
+          <strong><a target="docwin" href="../../Object.html">Object</a></strong>
         </div>
       </div>
       <div id='content'>
@@ -64,7 +73,7 @@
             
             <p>Basic usage:</p>
             
-            <pre># parse schema as xml document&#x000A;schema_document = XML::Document.file('schema.rng')&#x000A;# prepare schema for validation&#x000A;schema = XML::Schema.document(schema_document)&#x000A;&#x000A;# parse xml document to be validated&#x000A;instance = XML::Document.file('instance.xml')&#x000A;&#x000A;# validate&#x000A;instance.validate_schema(schema)</pre>
+            <pre class="ruby"><span class="ruby-comment"># parse schema as xml document</span>&#x000A;<span class="ruby-identifier">schema_document</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">file</span>(<span class="ruby-string">&#39;schema.rng&#39;</span>)&#x000A;&#x000A;<span class="ruby-comment"># prepare schema for validation</span>&#x000A;<span class="ruby-identifier">schema</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Schema</span>.<span class="ruby-identifier">document</span>(<span class="ruby-identifier">schema_document</span>)&#x000A;&#x000A;<span class="ruby-comment"># parse xml document to be validated</span>&#x000A;<span class="ruby-identifier">instance</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">file</span>(<span class="ruby-string">&#39;instance.xml&#39;</span>)&#x000A;&#x000A;<span class="ruby-comment"># validate</span>&#x000A;<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">validate_schema</span>(<span class="ruby-identifier">schema</span>)</pre>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
@@ -136,14 +145,14 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('method-c-document-source'); return false">
                     [show source]
                   </a>
-                  <pre id='method-c-document-source'>static VALUE rxml_schema_init_from_document(VALUE class, VALUE document)&#x000A;{&#x000A;  xmlDocPtr xdoc;&#x000A;  xmlSchemaPtr xschema;&#x000A;  xmlSchemaParserCtxtPtr xparser;&#x000A;&#x000A;  Data_Get_Struct(document, xmlDoc, xdoc);&#x000A;&#x000A;  xparser = xmlSchemaNewDocParserCtxt(xdoc);&#x000A;  xschema = xmlSchemaParse(xparser);&#x000A;  xmlSchemaFreeParserCtxt(xparser);&#x000A;&#x000A;  return Data_Wrap_Struct(cXMLSchema, NULL, rxml_schema_free, xschema);&#x000A;}</pre>
+                  <pre id='method-c-document-source'>static VALUE rxml_schema_init_from_document(VALUE class, VALUE document)&#x000A;{&#x000A;  xmlDocPtr xdoc;&#x000A;  xmlSchemaPtr xschema;&#x000A;  xmlSchemaParserCtxtPtr xparser;&#x000A;&#x000A;  Data_Get_Struct(document, xmlDoc, xdoc);&#x000A;&#x000A;  xparser = xmlSchemaNewDocParserCtxt(xdoc);&#x000A;  xschema = xmlSchemaParse(xparser);&#x000A;  xmlSchemaFreeParserCtxt(xparser);&#x000A;&#x000A;  if (xschema == NULL)&#x000A;    return Qnil;&#x000A;&#x000A;  return Data_Wrap_Struct(cXMLSchema, NULL, rxml_schema_free, xschema);&#x000A;}</pre>
                 </div>
               </div>
               <div class='method public-class' id='method-method-c-from_string'>
                 <a name='method-c-from_string'></a>
                 <div class='synopsis'>
                   <span class='name'>
-                    <div>XML::Schema.string("schema_data") -> "value"</div>
+                    <div>XML::Schema.from_string("schema_data") -> "value"</div>
                   </span>
                 </div>
                 <div class='description'>
